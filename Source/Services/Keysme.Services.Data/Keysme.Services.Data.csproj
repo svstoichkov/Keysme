@@ -42,6 +42,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Keysme.Data.Models\Keysme.Data.Models.csproj">
+      <Project>{98ec3e35-01d8-43cc-b277-2243b995cb1a}</Project>
+      <Name>Keysme.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Keysme.Data\Keysme.Data.csproj">
+      <Project>{7ebcbdfe-8c1a-4d0f-bed4-34f8adaa148a}</Project>
+      <Name>Keysme.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

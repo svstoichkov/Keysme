@@ -1,4 +1,4 @@
-namespace Keysme.Web.Areas.HelpPage
+namespace Keysme.Web.Areas.HelpPage.SampleGeneration
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

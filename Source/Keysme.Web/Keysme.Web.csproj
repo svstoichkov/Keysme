@@ -213,7 +213,6 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -284,6 +283,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Keysme.Data.Models\Keysme.Data.Models.csproj">
+      <Project>{98ec3e35-01d8-43cc-b277-2243b995cb1a}</Project>
+      <Name>Keysme.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Keysme.Data\Keysme.Data.csproj">
+      <Project>{7ebcbdfe-8c1a-4d0f-bed4-34f8adaa148a}</Project>
+      <Name>Keysme.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Keysme.Services.Data\Keysme.Services.Data.csproj">
+      <Project>{8a9bf3db-c813-43a8-8e81-7c51f79037cf}</Project>
+      <Name>Keysme.Services.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
