@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Amenities.cs" />
     <Compile Include="CancellationPolicy.cs" />
+    <Compile Include="Currency.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="HostType.cs" />

@@ -12,12 +12,14 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        public IDbSet<Host> Hosts { get; set; }
+
+        public IDbSet<Currency> Currencies { get; set; }
+
         public static KeysmeDbContext Create()
         {
             return new KeysmeDbContext();
         }
-
-        public IDbSet<Host> Hosts { get; set; }
     }
 }

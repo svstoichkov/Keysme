@@ -9,6 +9,8 @@
     {
         IDbSet<Host> Hosts { get; set; }
 
+        IDbSet<Currency> Currencies { get; set; }
+
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

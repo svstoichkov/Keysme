@@ -1,6 +1,8 @@
-namespace Keysme.Data.Migrations
+﻿namespace Keysme.Data.Migrations
 {
     using System.Data.Entity.Migrations;
+
+    using Models;
 
     public class Configuration : DbMigrationsConfiguration<KeysmeDbContext>
     {
@@ -12,18 +14,14 @@ namespace Keysme.Data.Migrations
 
         protected override void Seed(KeysmeDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Currencies.AddOrUpdate(x => x.Name, 
+                new Currency { Name = "US Dollar", Code = "USD", Symbol = "$", IsActive = true },
+                new Currency { Name = "Euro", Code = "EUR", Symbol = "€", IsActive = true },
+                new Currency { Name = "British Pound", Code = "GBP", Symbol = "£", IsActive = true },
+                new Currency { Name = "Australian Dollar", Code = "AUD", Symbol = "$", IsActive = true },
+                new Currency { Name = "Chinese Yuan", Code = "CNY", Symbol = "¥", IsActive = true },
+                new Currency { Name = "Hong Kong Dollar", Code = "HKD", Symbol = "HK$", IsActive = true },
+                new Currency { Name = "Singapore Dollar", Code = "SGD", Symbol = "$", IsActive = true });
         }
     }
 }

@@ -2,11 +2,13 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity.Spatial;
 
     public class Host
     {
         public int Id { get; set; }
 
+        [Required]
         public string UserId { get; set; }
 
         public int? AmenitiesId { get; set; }
@@ -39,7 +41,9 @@
 
         public decimal Price { get; set; }
 
-        //TODO: currency
+        public int CurrencyId { get; set; }
+
+        public Currency Currency { get; set; }
 
         public bool IsInstantBook { get; set; }
 
@@ -49,14 +53,14 @@
 
         public bool IsApproved { get; set; }
 
-        public bool? IsListed { get; set; }
+        public ListedType ListedType { get; set; }
         
         [MaxLength(1000)]
         public string UnlistedReason { get; set; }
 
-        public DateTime SnoozedFrom { get; set; }
+        public DateTime? SnoozedFrom { get; set; }
 
-        public DateTime SnoozedTo { get; set; }
+        public DateTime? SnoozedTo { get; set; }
 
         public bool SmokingAllowed { get; set; }
 
@@ -69,28 +73,19 @@
         public string State { get; set; }
 
         [Required]
-        [MaxLength(10)]
+        [MaxLength(20)]
         public string PostalCode { get; set; }
 
         [Required]
         [MaxLength(3)]
         public string CountryCode { get; set; }
-
-        //TODO: fix types and attributes if necessary
-
-        [Required]
-        [MaxLength(100)]
-        public string Latitude { get; set; }
-
-        [Required]
-        [MaxLength(100)]
-        public string Longitude { get; set; }
-
-        [Required]
-        [MaxLength(100)]
-        public string GeoPoint { get; set; }
-
-        [Required]
+        
+        public decimal Latitude { get; set; }
+        
+        public decimal Longitude { get; set; }
+        
+        public DbGeography GeoPoint { get; set; }
+        
         [MaxLength(100)]
         public string LocationName { get; set; }
         
@@ -104,16 +99,13 @@
         public int CheckOutBefore { get; set; }
 
         public CancellationPolicy CancellationPolicy { get; set; }
-
-        [Required]
+        
         [MaxLength(32)]
         public string WirelessName { get; set; }
-
-        [Required]
+        
         [MaxLength(64)]
         public string WirelessPassword { get; set; }
-
-        [Required]
+        
         [MaxLength(1000)]
         public string HouseManual { get; set; }
 
@@ -124,5 +116,12 @@
         [Required]
         [MaxLength(20)]
         public string ReservationPhone { get; set; }
+    }
+
+    public enum ListedType
+    {
+        Unlisted = 0,
+        Snoozed = 1,
+        Listed = 2
     }
 }
