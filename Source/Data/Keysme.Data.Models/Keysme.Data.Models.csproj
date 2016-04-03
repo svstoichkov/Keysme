@@ -63,6 +63,7 @@
     <Compile Include="Gender.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="HostType.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomType.cs" />
     <Compile Include="User.cs" />

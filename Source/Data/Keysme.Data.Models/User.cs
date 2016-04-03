@@ -54,6 +54,18 @@
         [MaxLength(1000)]
         public string Comment { get; set; }
 
+        [Required]
+        [MaxLength(100)]
+        public string FrontPicture { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string BackPicture { get; set; }
+
+        [Required]
+        [MaxLength(3)]
+        public string CountryCodeIssued { get; set; }
+
         public ICollection<Host> Hosts
         {
             get

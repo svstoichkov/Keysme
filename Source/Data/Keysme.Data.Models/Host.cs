@@ -1,15 +1,26 @@
 ﻿namespace Keysme.Data.Models
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.Spatial;
 
     public class Host
     {
+        private ICollection<Image> images;
+
+        public Host()
+        {
+            this.images = new HashSet<Image>();
+        }
+
         public int Id { get; set; }
 
         [Required]
         public string UserId { get; set; }
+
+        public User User { get; set; }
 
         public int? AmenitiesId { get; set; }
 
@@ -116,6 +127,19 @@
         [Required]
         [MaxLength(20)]
         public string ReservationPhone { get; set; }
+
+        public ICollection<Image> Images
+        {
+            get
+            {
+                return images;
+            }
+
+            set
+            {
+                images = value;
+            }
+        }
     }
 
     public enum ListedType
