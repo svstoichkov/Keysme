@@ -17,6 +17,7 @@
         public void Create(string userId, Host host)
         {
             var user = this.users.GetById(userId);
+            host.Amenities = new Amenities();
             user.Hosts.Add(host);
             this.users.SaveChanges();
         }

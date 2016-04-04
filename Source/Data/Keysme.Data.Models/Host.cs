@@ -21,8 +21,6 @@
 
         public virtual User User { get; set; }
 
-        public int? AmenitiesId { get; set; }
-
         public virtual Amenities Amenities { get; set; }
 
         public HostType Type { get; set; }
