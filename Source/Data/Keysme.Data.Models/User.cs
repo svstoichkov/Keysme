@@ -54,19 +54,11 @@
         [MaxLength(1000)]
         public string Comment { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string FrontPicture { get; set; }
+        public int? VerificationId { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string BackPicture { get; set; }
+        public virtual Verification Verification { get; set; }
 
-        [Required]
-        [MaxLength(3)]
-        public string CountryCodeIssued { get; set; }
-
-        public ICollection<Host> Hosts
+        public virtual ICollection<Host> Hosts
         {
             get
             {

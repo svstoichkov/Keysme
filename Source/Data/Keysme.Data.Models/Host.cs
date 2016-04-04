@@ -1,7 +1,6 @@
 ﻿namespace Keysme.Data.Models
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.Spatial;
@@ -20,11 +19,11 @@
         [Required]
         public string UserId { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         public int? AmenitiesId { get; set; }
 
-        public Amenities Amenities { get; set; }
+        public virtual Amenities Amenities { get; set; }
 
         public HostType Type { get; set; }
 
@@ -112,10 +111,10 @@
         public CancellationPolicy CancellationPolicy { get; set; }
         
         [MaxLength(32)]
-        public string WirelessName { get; set; }
+        public string WiFiName { get; set; }
         
         [MaxLength(64)]
-        public string WirelessPassword { get; set; }
+        public string WiFiPassword { get; set; }
         
         [MaxLength(1000)]
         public string HouseManual { get; set; }
@@ -128,7 +127,7 @@
         [MaxLength(20)]
         public string ReservationPhone { get; set; }
 
-        public ICollection<Image> Images
+        public virtual ICollection<Image> Images
         {
             get
             {

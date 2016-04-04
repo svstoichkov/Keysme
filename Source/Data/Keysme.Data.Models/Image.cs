@@ -7,7 +7,9 @@
         public int Id { get; set; }
 
         public int HostId { get; set; }
-        
+
+        public virtual Host Host { get; set; }
+
         [Required]
         [MaxLength(300)]
         public string Filename { get; set; }
