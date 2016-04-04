@@ -56,6 +56,10 @@
       <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -218,23 +222,31 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="App_Start\Automapper\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\Automapper\QueryableExtensions.cs" />
+    <Compile Include="App_Start\Automapper\IHaveCustomMappings.cs" />
+    <Compile Include="App_Start\Automapper\IMapFrom.cs" />
+    <Compile Include="App_Start\Automapper\IMapTo.cs" />
+    <Compile Include="Controllers\MVC\BaseController.cs" />
     <Compile Include="Controllers\WebApi\AccountController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
+    <Compile Include="Controllers\WebApi\BaseController.cs" />
+    <Compile Include="Controllers\WebApi\HostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account\AddExternalLoginBindingModel.cs" />
-    <Compile Include="Models\Account\ExternalLoginViewModel.cs" />
-    <Compile Include="Models\Account\ChangePasswordBindingModel.cs" />
-    <Compile Include="Models\Account\ManageInfoViewModel.cs" />
-    <Compile Include="Models\Account\RegisterBindingModel.cs" />
-    <Compile Include="Models\Account\RegisterExternalBindingModel.cs" />
-    <Compile Include="Models\Account\RemoveLoginBindingModel.cs" />
-    <Compile Include="Models\Account\SetPasswordBindingModel.cs" />
-    <Compile Include="Models\Account\UserInfoViewModel.cs" />
-    <Compile Include="Models\Account\UserLoginInfoViewModel.cs" />
-    <Compile Include="Models\Host\HostBindingModel.cs" />
+    <Compile Include="ViewModels\Account\AddExternalLoginBindingModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\ChangePasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Account\ManageInfoViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterBindingModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
+    <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
+    <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
+    <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
+    <Compile Include="ViewModels\Host\HostBindingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

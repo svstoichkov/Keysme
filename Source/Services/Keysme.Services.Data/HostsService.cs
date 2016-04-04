@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Keysme.Services.Data
+﻿namespace Keysme.Services.Data
 {
-    class HostsService
+    using Keysme.Data;
+    using Keysme.Data.Models;
+
+    public class HostsService : IHostsService
     {
+        private readonly IRepository<User> users;
+        private readonly IRepository<Host> hosts;
+
+        public HostsService(IRepository<User> users, IRepository<Host> hosts)
+        {
+            this.users = users;
+            this.hosts = hosts;
+        }
+
+        public void Create(string userId, Host host)
+        {
+            var user = this.users.GetById(userId);
+            user.Hosts.Add(host);
+            this.users.SaveChanges();
+        }
     }
 }

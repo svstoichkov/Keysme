@@ -1,13 +1,12 @@
 ﻿namespace Keysme.Web.Models.Host
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Data.Entity.Spatial;
+
+    using Automapper;
 
     using Data.Models;
 
-    public class HostBindingModel
+    public class HostViewModel : IMapTo<Host>
     {
         public HostType Type { get; set; }
 

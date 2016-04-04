@@ -6,6 +6,8 @@
     using System.Web.Optimization;
     using System.Web.Routing;
 
+    using Automapper;
+
     public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
@@ -17,6 +19,7 @@
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DatabaseConfig.Initialize();
             AutofacConfig.Register();
+            AutoMapperConfig.Register();
         }
     }
 }
