@@ -10,6 +10,9 @@
 
     using Data;
 
+    using Services.Data;
+    using Services.Data.Contracts;
+
     public static class AutofacConfig
     {
         public static void Register()
@@ -30,8 +33,8 @@
             builder.RegisterType<KeysmeDbContext>().As<IKeysmeDbContext>().InstancePerRequest();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerRequest();
 
-            //var servicesAssembly = Assembly.GetAssembly(typeof(IProductsService));
-            //builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            var servicesAssembly = Assembly.GetAssembly(typeof(IUsersService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             //builder.RegisterType<ProductsService>().As<IProductsService>().InstancePerRequest();
             //builder.RegisterType<DealsService>().As<IDealsService>().InstancePerRequest();

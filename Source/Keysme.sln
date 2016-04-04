@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Services.Data", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Web", "Keysme.Web\Keysme.Web.csproj", "{640F595C-DA0C-48CD-996E-D2D07680F8CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Global", "Keysme.Global\Keysme.Global.csproj", "{315916A9-6D85-451D-A4EC-E89419DB2574}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{640F595C-DA0C-48CD-996E-D2D07680F8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{640F595C-DA0C-48CD-996E-D2D07680F8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{640F595C-DA0C-48CD-996E-D2D07680F8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315916A9-6D85-451D-A4EC-E89419DB2574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315916A9-6D85-451D-A4EC-E89419DB2574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315916A9-6D85-451D-A4EC-E89419DB2574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315916A9-6D85-451D-A4EC-E89419DB2574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

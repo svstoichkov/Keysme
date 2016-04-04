@@ -1,31 +1,17 @@
-﻿namespace Keysme.Data.Models
+﻿namespace Keysme.Web.Models.Host
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.Spatial;
 
-    public class Host
+    using Data.Models;
+
+    public class HostBindingModel
     {
-        private ICollection<Image> images;
-
-        public Host()
-        {
-            this.images = new HashSet<Image>();
-        }
-
-        public int Id { get; set; }
-
-        [Required]
-        public string UserId { get; set; }
-
-        public virtual User User { get; set; }
-
-        public int? AmenitiesId { get; set; }
-
-        public virtual Amenities Amenities { get; set; }
-
         public HostType Type { get; set; }
+
+        public RoomType RoomType { get; set; }
 
         public int MaxGuests { get; set; }
 
@@ -34,43 +20,28 @@
         public int BedsCount { get; set; }
 
         public int BathsCount { get; set; }
-
-        public RoomType RoomType { get; set; }
-
+        
         [Required]
         [MaxLength(100)]
         public string City { get; set; }
 
         [Required]
-        [MaxLength(40)]
-        public string Header { get; set; }
-
-        [Required]
         [MaxLength(1000)]
         public string Description { get; set; }
+
+        [Required]
+        [MaxLength(40)]
+        public string Header { get; set; }
 
         public decimal Price { get; set; }
 
         public int CurrencyId { get; set; }
-
-        public Currency Currency { get; set; }
 
         public bool IsInstantBook { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string HostName { get; set; }
-
-        public bool IsApproved { get; set; }
-
-        public ListedType ListedType { get; set; }
-        
-        [MaxLength(1000)]
-        public string UnlistedReason { get; set; }
-
-        public DateTime? SnoozedFrom { get; set; }
-
-        public DateTime? SnoozedTo { get; set; }
 
         public bool SmokingAllowed { get; set; }
 
@@ -89,16 +60,16 @@
         [Required]
         [MaxLength(3)]
         public string CountryCode { get; set; }
-        
+
         public decimal Latitude { get; set; }
-        
+
         public decimal Longitude { get; set; }
-        
-        public DbGeography GeoPoint { get; set; }
-        
+
+        //public DbGeography GeoPoint { get; set; }
+
         [MaxLength(100)]
         public string LocationName { get; set; }
-        
+
         [Required]
         [MaxLength(1000)]
         public string Comment { get; set; }
@@ -109,13 +80,13 @@
         public int CheckOutBefore { get; set; }
 
         public CancellationPolicy CancellationPolicy { get; set; }
-        
+
         [MaxLength(32)]
         public string WiFiName { get; set; }
-        
+
         [MaxLength(64)]
         public string WiFiPassword { get; set; }
-        
+
         [MaxLength(1000)]
         public string HouseManual { get; set; }
 
@@ -126,18 +97,5 @@
         [Required]
         [MaxLength(20)]
         public string ReservationPhone { get; set; }
-
-        public virtual ICollection<Image> Images
-        {
-            get
-            {
-                return images;
-            }
-
-            set
-            {
-                images = value;
-            }
-        }
     }
 }

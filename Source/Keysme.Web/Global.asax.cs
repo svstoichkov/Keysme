@@ -6,8 +6,6 @@
     using System.Web.Optimization;
     using System.Web.Routing;
 
-    using App_Start;
-
     public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()

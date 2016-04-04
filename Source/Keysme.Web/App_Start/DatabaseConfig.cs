@@ -1,4 +1,4 @@
-﻿namespace Keysme.Web.App_Start
+﻿namespace Keysme.Web
 {
     using System.Data.Entity;
 

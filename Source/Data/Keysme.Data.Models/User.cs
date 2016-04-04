@@ -6,6 +6,8 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
 
+    using Global;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     
@@ -19,44 +21,41 @@
         }
 
         [Required]
-        [MaxLength(100)]
-        public string Firstname { get; set; }
+        [MaxLength(ValidationConstants.UserFirstNameMaxLength)]
+        public string FirstName { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string Lastname { get; set; }
+        [MaxLength(ValidationConstants.UserLastNameMaxLength)]
+        public string LastName { get; set; }
 
         public Gender Gender { get; set; }
 
         public DateTime BirthDate { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserAboutMaxLength)]
         public string About { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserLocationMaxLength)]
         public string Location { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserSchoolMaxLength)]
         public string School { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserWorkMaxLength)]
         public string Work { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserWorkMaxLength)]
         public string Languages { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        
+        [MaxLength(ValidationConstants.UserCommentMaxLength)]
         public string Comment { get; set; }
 
         public int? VerificationId { get; set; }
 
         public virtual Verification Verification { get; set; }
+
+        [MaxLength(300)]
+        public string ProfileImage { get; set; }
 
         public virtual ICollection<Host> Hosts
         {

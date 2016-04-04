@@ -218,15 +218,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\WebApi\AccountController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\MVC\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Account\AddExternalLoginBindingModel.cs" />
+    <Compile Include="Models\Account\ExternalLoginViewModel.cs" />
+    <Compile Include="Models\Account\ChangePasswordBindingModel.cs" />
+    <Compile Include="Models\Account\ManageInfoViewModel.cs" />
+    <Compile Include="Models\Account\RegisterBindingModel.cs" />
+    <Compile Include="Models\Account\RegisterExternalBindingModel.cs" />
+    <Compile Include="Models\Account\RemoveLoginBindingModel.cs" />
+    <Compile Include="Models\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="Models\Account\UserInfoViewModel.cs" />
+    <Compile Include="Models\Account\UserLoginInfoViewModel.cs" />
+    <Compile Include="Models\Host\HostBindingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -289,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ProfileImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -306,6 +315,10 @@
     <ProjectReference Include="..\Data\Keysme.Data\Keysme.Data.csproj">
       <Project>{7ebcbdfe-8c1a-4d0f-bed4-34f8adaa148a}</Project>
       <Name>Keysme.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Keysme.Global\Keysme.Global.csproj">
+      <Project>{315916a9-6d85-451d-a4ec-e89419db2574}</Project>
+      <Name>Keysme.Global</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Keysme.Services.Data\Keysme.Services.Data.csproj">
       <Project>{8a9bf3db-c813-43a8-8e81-7c51f79037cf}</Project>

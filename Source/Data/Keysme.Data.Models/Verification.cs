@@ -15,11 +15,11 @@
         public VerificationType Type { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(300)]
         public string FrontPicture { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(300)]
         public string BackPicture { get; set; }
 
         [Required]
