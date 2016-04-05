@@ -4,6 +4,8 @@
     using System.Data.Entity;
     using System.Linq;
 
+    using Models.Base;
+
     public class Repository<T> : IRepository<T> where T : class
     {
         public Repository(IKeysmeDbContext context)

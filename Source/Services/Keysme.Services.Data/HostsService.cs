@@ -28,12 +28,12 @@
 
         public IQueryable<Host> GetOwn(string userId)
         {
-            return this.hosts.All().Where(x => x.UserId == userId && x.IsDeleted == false);
+            return this.hosts.All().Where(x => x.UserId == userId && !x.IsDeleted);
         }
 
         public IQueryable<Host> GetAll()
         {
-            return this.hosts.All().Where(x => x.IsDeleted == false);
+            return this.hosts.All().Where(x => !x.IsDeleted);
         }
 
         public void Update(string userId, int hostId, Host host, Amenities amenities)
@@ -83,7 +83,7 @@
         public void Delete(string userId, int hostId)
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
-            this.hosts.Delete(existingHost);
+            existingHost.IsDeleted = true;
             this.hosts.SaveChanges();
         }
     }

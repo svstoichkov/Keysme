@@ -34,7 +34,7 @@
         }
 
         [HttpPost]
-        public IHttpActionResult Post(HostCreateViewModel model)
+        public IHttpActionResult Create(HostCreateViewModel model)
         {
             if (!this.ModelState.IsValid)
             {
@@ -49,7 +49,7 @@
         }
 
         [HttpPut]
-        public IHttpActionResult Put(HostUpdateViewModel model)
+        public IHttpActionResult Edit(HostUpdateViewModel model)
         {
             if (!this.ModelState.IsValid)
             {
