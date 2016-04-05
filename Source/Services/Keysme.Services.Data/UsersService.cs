@@ -30,5 +30,23 @@
             user.ProfileImage = userId + ".jpg";
             this.users.SaveChanges();
         }
+
+        public void Update(string userId, User user)
+        {
+            var existingUser = this.users.GetById(userId);
+            existingUser.FirstName = user.FirstName;
+            existingUser.LastName = user.LastName;
+            existingUser.Gender = user.Gender;
+            existingUser.BirthDate = user.BirthDate;
+            existingUser.About = user.About;
+            existingUser.LastName = user.Location;
+            existingUser.School = user.School;
+            existingUser.Work = user.Work;
+            existingUser.Languages = user.Languages;
+            existingUser.Comment = user.Comment;
+            existingUser.PhoneNumber = user.PhoneNumber;
+
+            this.users.SaveChanges();
+        }
     }
 }

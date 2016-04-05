@@ -1,23 +1,16 @@
 ﻿namespace Keysme.Web.Controllers.WebApi
 {
-    using System;
-    using System.Linq;
     using System.Web.Http;
-
-    using Automapper;
-
-    using AutoMapper;
 
     using Data.Models;
 
     using Microsoft.AspNet.Identity;
 
-    using Models.Host;
-
     using Services.Data;
 
     using ViewModels.Host;
 
+    [Authorize]
     public class HostController : BaseController
     {
         private readonly IHostsService hostsService;
@@ -28,14 +21,19 @@
         }
 
         [HttpGet]
-        [Authorize]
-        public IHttpActionResult Get()
+        public IHttpActionResult GetOwn()
         {
-            return this.Ok(this.hostsService.Read(this.User.Identity.GetUserId()));
+            return this.Ok(this.hostsService.GetOwn(this.User.Identity.GetUserId()));
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IHttpActionResult GetAll()
+        {
+            return this.Ok(this.hostsService.GetAll());
         }
 
         [HttpPost]
-        [Authorize]
         public IHttpActionResult Post(HostCreateViewModel model)
         {
             if (!this.ModelState.IsValid)
@@ -51,7 +49,6 @@
         }
 
         [HttpPut]
-        [Authorize]
         public IHttpActionResult Put(HostUpdateViewModel model)
         {
             if (!this.ModelState.IsValid)
@@ -64,17 +61,16 @@
 
             try
             {
-              this.hostsService.Update(this.User.Identity.GetUserId(), model.HostId, host, amenities);
-              return this.Ok();
+                this.hostsService.Update(this.User.Identity.GetUserId(), model.HostId, host, amenities);
+                return this.Ok();
             }
             catch
             {
-              return this.BadRequest();
+                return this.BadRequest();
             }
         }
 
         [HttpDelete]
-        [Authorize]
         public IHttpActionResult Delete(int id)
         {
             try

@@ -244,6 +244,7 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Account\UpdateProfileViewModel.cs" />
     <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
     <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
     <Compile Include="ViewModels\Host\AmenitiesViewModel.cs" />

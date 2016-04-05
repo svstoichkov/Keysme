@@ -26,9 +26,14 @@
             this.users.SaveChanges();
         }
 
-        public IQueryable<Host> Read(string userId)
+        public IQueryable<Host> GetOwn(string userId)
         {
             return this.hosts.All().Where(x => x.UserId == userId && x.IsDeleted == false);
+        }
+
+        public IQueryable<Host> GetAll()
+        {
+            return this.hosts.All().Where(x => x.IsDeleted == false);
         }
 
         public void Update(string userId, int hostId, Host host, Amenities amenities)

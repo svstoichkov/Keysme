@@ -21,20 +21,16 @@
 
     using Services.Data.Contracts;
 
+    using ViewModels.Account;
+
     using Image = System.Drawing.Image;
 
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : BaseController
     {
         private readonly IUsersService usersService;
-        private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
-
-        public AccountController(IUsersService usersService)
-        {
-            this.usersService = usersService;
-        }
 
         public AccountController(ApplicationUserManager userManager,
                                  ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
@@ -52,6 +48,26 @@
             private set
             {
                 this._userManager = value;
+            }
+        }
+
+        [HttpPut]
+        public IHttpActionResult Put(UpdateProfileViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            try
+            {
+                var user = this.Mapper.Map<User>(model);
+                this.usersService.Update(this.User.Identity.GetUserId(), user);
+                return this.Ok();
+            }
+            catch
+            {
+                return this.BadRequest();
             }
         }
 
@@ -103,7 +119,7 @@
 
             return this.Ok();
         }
-        
+
         [Route("UploadProfileImage")]
         public HttpResponseMessage UploadProfileImage()
         {
