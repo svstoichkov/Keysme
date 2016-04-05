@@ -40,7 +40,7 @@
                                  ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             this.UserManager = userManager;
-            this.AccessTokenFormat = accessTokenFormat;
+            //this.AccessTokenFormat = accessTokenFormat;
         }
 
         public ApplicationUserManager UserManager
@@ -53,31 +53,6 @@
             {
                 this._userManager = value;
             }
-        }
-
-        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; }
-
-        // GET api/Account/UserInfo
-        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
-        [Route("UserInfo")]
-        public UserInfoViewModel GetUserInfo()
-        {
-            var externalLogin = ExternalLoginData.FromIdentity(this.User.Identity as ClaimsIdentity);
-
-            return new UserInfoViewModel
-            {
-                Email = this.User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
-            };
-        }
-
-        // POST api/Account/Logout
-        [Route("Logout")]
-        public IHttpActionResult Logout()
-        {
-            this.Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-            return this.Ok();
         }
 
         // POST api/Account/ChangePassword
@@ -151,6 +126,31 @@
 
             return this.Request.CreateResponse(HttpStatusCode.BadRequest);
         }
+
+        //public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; }
+
+        // GET api/Account/UserInfo
+        //[HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        //[Route("UserInfo")]
+        //public UserInfoViewModel GetUserInfo()
+        //{
+        //    var externalLogin = ExternalLoginData.FromIdentity(this.User.Identity as ClaimsIdentity);
+        //
+        //    return new UserInfoViewModel
+        //    {
+        //        Email = this.User.Identity.GetUserName(),
+        //        HasRegistered = externalLogin == null,
+        //        LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+        //    };
+        //}
+
+        // POST api/Account/Logout
+        //[Route("Logout")]
+        //public IHttpActionResult Logout()
+        //{
+        //    this.Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
+        //    return this.Ok();
+        //}
 
         // POST api/Account/SetPassword
         //[Route("SetPassword")]
