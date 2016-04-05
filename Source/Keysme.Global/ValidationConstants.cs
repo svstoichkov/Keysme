@@ -10,5 +10,7 @@
         public const int UserWorkMaxLength = 100;
         public const int UserLanguagesMaxLength = 100;
         public const int UserCommentMaxLength = 1000;
+
+        public const int MaxImagesPerHost = 10;
     }
 }

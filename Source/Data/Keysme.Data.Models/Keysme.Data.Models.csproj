@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Amenities.cs" />
+    <Compile Include="Base\BaseModel.cs" />
+    <Compile Include="Base\IAuditInfo.cs" />
+    <Compile Include="Base\IDeletableEntity.cs" />
     <Compile Include="CancellationPolicy.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="Gender.cs" />

@@ -5,7 +5,9 @@
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.Spatial;
 
-    public class Host
+    using Base;
+
+    public class Host : BaseModel
     {
         private ICollection<Image> images;
 

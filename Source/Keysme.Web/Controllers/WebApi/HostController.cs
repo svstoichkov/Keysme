@@ -1,6 +1,5 @@
 ﻿namespace Keysme.Web.Controllers.WebApi
 {
-    using System;
     using System.Web.Http;
 
     using Data.Models;
@@ -10,6 +9,8 @@
     using Models.Host;
 
     using Services.Data;
+
+    using ViewModels.Host;
 
     public class HostController : BaseController
     {
@@ -22,16 +23,17 @@
 
         [HttpPost]
         [Authorize]
-        public IHttpActionResult Create(HostViewModel model)
+        public IHttpActionResult Create(HostCreateViewModel model)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest(this.ModelState);
             }
 
-            var host = this.Mapper.Map<Host>(model);
+            var host = this.Mapper.Map<Host>(model.Host);
+            var amenities = this.Mapper.Map<Amenities>(model.Amenities);
 
-            this.hostsService.Create(this.User.Identity.GetUserId(), host);
+            this.hostsService.Create(this.User.Identity.GetUserId(), host, amenities);
             return this.Ok();
         }
     }

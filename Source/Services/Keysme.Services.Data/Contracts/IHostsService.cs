@@ -4,6 +4,6 @@
 
     public interface IHostsService
     {
-        void Create(string getUserId, Host host);
+        void Create(string getUserId, Host host, Amenities amenities);
     }
 }

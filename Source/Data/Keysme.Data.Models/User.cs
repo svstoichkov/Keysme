@@ -6,12 +6,14 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
 
+    using Base;
+
     using Global;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     
-    public class User : IdentityUser
+    public class User : IdentityUser, IAuditInfo
     {
         private ICollection<Host> hosts;
 
@@ -76,5 +78,9 @@
             // Add custom user claims here
             return userIdentity;
         }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }

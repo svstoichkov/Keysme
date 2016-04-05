@@ -14,10 +14,10 @@
             this.hosts = hosts;
         }
 
-        public void Create(string userId, Host host)
+        public void Create(string userId, Host host, Amenities amenities)
         {
             var user = this.users.GetById(userId);
-            host.Amenities = new Amenities();
+            host.Amenities = amenities;
             user.Hosts.Add(host);
             this.users.SaveChanges();
         }

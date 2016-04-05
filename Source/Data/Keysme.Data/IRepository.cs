@@ -7,6 +7,8 @@
     {
         IQueryable<T> All();
 
+        //IQueryable<T> AllWithDeleted();
+
         T GetById(object id);
 
         void Add(T entity);
@@ -16,6 +18,10 @@
         void Delete(T entity);
 
         void Delete(object id);
+
+        //void HardDelete(T entity);
+
+        //void HardDelete(object id);
 
         T Attach(T entity);
 
