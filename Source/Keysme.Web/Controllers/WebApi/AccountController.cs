@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Net;
     using System.Net.Http;
     using System.Security.Claims;
     using System.Security.Cryptography;
@@ -15,7 +14,6 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
-    using Microsoft.Owin.Security.Cookies;
 
     using Models.Account;
 
@@ -31,6 +29,11 @@
     {
         private readonly IUsersService usersService;
         private ApplicationUserManager _userManager;
+
+        public AccountController(IUsersService usersService)
+        {
+            this.usersService = usersService;
+        }
 
         public AccountController(ApplicationUserManager userManager,
                                  ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
@@ -120,8 +123,9 @@
             return this.Ok();
         }
 
+        [HttpPost]
         [Route("UploadProfileImage")]
-        public HttpResponseMessage UploadProfileImage()
+        public IHttpActionResult UploadProfileImage()
         {
             var httpRequest = HttpContext.Current.Request;
             if (httpRequest.Files.Count == 1)
@@ -134,14 +138,42 @@
                 }
                 catch
                 {
-                    return this.Request.CreateResponse(HttpStatusCode.BadRequest);
+                    return this.BadRequest();
                 }
 
-                return this.Request.CreateResponse(HttpStatusCode.Created);
+                return this.Ok();
             }
 
-            return this.Request.CreateResponse(HttpStatusCode.BadRequest);
+            return this.BadRequest();
         }
+
+        [HttpPost]
+        [Route("verify")]
+        public IHttpActionResult Verify(string type, string countryCode)
+        {
+            var httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Files.Count == 2)
+            {
+                var front = httpRequest.Files["front"];
+                var back = httpRequest.Files["back"];
+                try
+                {
+                    var frontImage = Image.FromStream(front.InputStream);
+                    var backImage = Image.FromStream(back.InputStream);
+                    this.usersService.Verify(this.User.Identity.GetUserId(), type, countryCode, frontImage, backImage);
+                }
+                catch
+                {
+                    return this.BadRequest();
+                }
+
+                return this.Ok();
+            }
+
+            return this.BadRequest();
+        }
+
+
 
         //public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; }
 

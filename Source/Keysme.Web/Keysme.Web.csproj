@@ -314,6 +314,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ProfileImages\" />
+    <Folder Include="Content\VerificationImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -9,5 +9,7 @@
         void AddProfileImage(string userId, Image image);
 
         void Update(string userId, User user);
+
+        void Verify(string userId, string type, string countryCode, Image frontImage, Image backImage);
     }
 }

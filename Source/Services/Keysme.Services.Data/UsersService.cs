@@ -11,16 +11,20 @@
 
     using Global;
 
+    using Image = System.Drawing.Image;
+
     public class UsersService : IUsersService
     {
         private readonly IRepository<User> users;
+        private readonly IRepository<Verification> verifications;
 
-        public UsersService(IRepository<User> users)
+        public UsersService(IRepository<User> users, IRepository<Verification> verifications)
         {
             this.users = users;
+            this.verifications = verifications;
         }
 
-        public void AddProfileImage(string userId, System.Drawing.Image image)
+        public void AddProfileImage(string userId, Image image)
         {
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserProfileImageFolder, userId + ".jpg"));
@@ -46,6 +50,32 @@
             existingUser.Comment = user.Comment;
             existingUser.PhoneNumber = user.PhoneNumber;
 
+            this.users.SaveChanges();
+        }
+
+        public void Verify(string userId, string type, string countryCode, Image frontImage, Image backImage)
+        {
+            var verification = new Verification();
+            verification.Type = (VerificationType)Enum.Parse(typeof(VerificationType), type);
+            verification.CountryCodeIssued = countryCode;
+            verification.FrontPicture = userId + "_front.jpg";
+            verification.BackPicture = userId + "_back.jpg";
+
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
+
+            var frontImagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserVerificationImageFolder, verification.FrontPicture));
+            frontImage.Save(frontImagePath, ImageFormat.Jpeg);
+
+            var backImagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserVerificationImageFolder, verification.BackPicture));
+            backImage.Save(backImagePath, ImageFormat.Jpeg);
+
+            var user = this.users.GetById(userId);
+            if (user.Verification != null)
+            {
+                this.verifications.Delete(user.Verification);
+            }
+
+            user.Verification = verification;
             this.users.SaveChanges();
         }
     }

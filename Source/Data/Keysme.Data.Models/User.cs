@@ -52,8 +52,6 @@
         [MaxLength(ValidationConstants.UserCommentMaxLength)]
         public string Comment { get; set; }
 
-        public int? VerificationId { get; set; }
-
         public virtual Verification Verification { get; set; }
 
         [MaxLength(300)]
