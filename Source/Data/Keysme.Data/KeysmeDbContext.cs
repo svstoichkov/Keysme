@@ -21,6 +21,8 @@
 
         public IDbSet<Currency> Currencies { get; set; }
 
+        public IDbSet<Country> Countries { get; set; }
+
         public static KeysmeDbContext Create()
         {
             return new KeysmeDbContext();

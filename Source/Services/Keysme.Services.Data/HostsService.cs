@@ -57,11 +57,12 @@
             existingHost.Address = host.Address;
             existingHost.State = host.State;
             existingHost.PostalCode = host.PostalCode;
-            existingHost.CountryCode = host.CountryCode;
+            // TODO: !!!
+            //existingHost.CountryCode = host.CountryCode;
             existingHost.Latitude = host.Latitude;
             existingHost.Longitude = host.Longitude;
             existingHost.LocationName = host.LocationName;
-            existingHost.Comment = host.CountryCode;
+            existingHost.Comment = host.Comment;
             existingHost.CheckInAfter = host.CheckInAfter;
             existingHost.CheckOutBefore = host.CheckOutBefore;
             existingHost.CancellationPolicy = host.CancellationPolicy;

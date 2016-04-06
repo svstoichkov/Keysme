@@ -86,9 +86,9 @@
         [MaxLength(20)]
         public string PostalCode { get; set; }
 
-        [Required]
-        [MaxLength(3)]
-        public string CountryCode { get; set; }
+        public int CountryId { get; set; }
+
+        public virtual Country Country { get; set; }
         
         public decimal Latitude { get; set; }
         
