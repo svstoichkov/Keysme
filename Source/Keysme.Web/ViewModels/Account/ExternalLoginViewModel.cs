@@ -1,4 +1,4 @@
-﻿namespace Keysme.Web.Models.Account
+﻿namespace Keysme.Web.ViewModels.Account
 {
     // Models returned by AccountController actions.
 

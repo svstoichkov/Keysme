@@ -1,6 +1,7 @@
 ﻿namespace Keysme.Web
 {
     using System.Reflection;
+    using System.Web;
     using System.Web.Http;
     using System.Web.Mvc;
 
@@ -21,6 +22,18 @@
             Register(builder);
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            builder.RegisterModelBinders(Assembly.GetExecutingAssembly());
+            builder.RegisterModelBinderProvider();
+
+            // OPTIONAL: Register web abstractions like HttpContextBase.
+            builder.RegisterModule<AutofacWebTypesModule>();
+
+            // OPTIONAL: Enable property injection in view pages.
+            builder.RegisterSource(new ViewRegistrationSource());
+
+            // OPTIONAL: Enable property injection into action filters.
+            builder.RegisterFilterProvider();
 
             var container = builder.Build();
 

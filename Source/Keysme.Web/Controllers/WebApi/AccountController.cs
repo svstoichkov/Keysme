@@ -15,8 +15,6 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
-    using Models.Account;
-
     using Services.Data.Contracts;
 
     using ViewModels.Account;
