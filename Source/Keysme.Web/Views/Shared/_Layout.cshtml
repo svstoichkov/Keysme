@@ -897,7 +897,6 @@
         </div>
         <!--=== End Footer Version 1 ===-->
     </div>
-    @RenderSection("scripts", required: false)
     <!-- JS Global Compulsory -->
     <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -916,6 +915,7 @@
 			StyleSwitcher.initStyleSwitcher();
 		});
     </script>
+    @RenderSection("scripts", required: false)
     <!--[if lt IE 9]>
         <script src="/assets/plugins/respond.js"></script>
         <script src="/assets/plugins/html5shiv.js"></script>

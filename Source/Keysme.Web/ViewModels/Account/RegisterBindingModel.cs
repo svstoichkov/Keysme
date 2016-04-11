@@ -33,6 +33,7 @@
         public string ConfirmPassword { get; set; }
 
         [Required]
+        [Display(Name = "Date of birth")]
         public DateTime BirthDate { get; set; }
     }
 }

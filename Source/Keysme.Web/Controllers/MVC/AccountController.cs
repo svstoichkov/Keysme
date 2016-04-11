@@ -1,5 +1,6 @@
 ﻿namespace Keysme.Web.Controllers.MVC
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
@@ -160,7 +161,8 @@
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    BirthDate = model.BirthDate
+                    BirthDate = model.BirthDate,
+                    CreatedOn = DateTime.Now
                 };
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
