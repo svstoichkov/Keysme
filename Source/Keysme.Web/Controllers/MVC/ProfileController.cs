@@ -1,6 +1,5 @@
 ﻿namespace Keysme.Web.Controllers.MVC
 {
-    using System.IO;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
@@ -39,6 +38,7 @@
             var model = new ProfileViewModel();
             model.ChangeInfoViewModel = this.Mapper.Map<ChangeInfoViewModel>(user);
             model.ChangePasswordViewModel = new ChangePasswordViewModel();
+            model.RequestVerificationViewModel = new RequestVerificationViewModel();
             return this.View(model);
         }
 
@@ -87,6 +87,24 @@
             {
                 var image = Image.FromStream(file.InputStream);
                 this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
+
+                return this.RedirectToAction("Index");
+            }
+            catch
+            {
+                return this.RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RequestVerification(RequestVerificationViewModel model)
+        {
+            try
+            {
+                var frontImage = Image.FromStream(model.Front.InputStream);
+                var backImage = Image.FromStream(model.Back.InputStream);
+                this.usersService.Verify(this.User.Identity.GetUserId(), model.VerificationType, model.CountryCode, frontImage, backImage);
 
                 return this.RedirectToAction("Index");
             }

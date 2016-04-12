@@ -1,4 +1,5 @@
 ﻿@using Keysme.Global
+
 @model Keysme.Web.ViewModels.Profile.ProfileViewModel
 
 @{
@@ -29,6 +30,7 @@
                     <li class="active"><a data-toggle="tab" href="#profile">Edit Profile</a></li>
                     <li><a data-toggle="tab" href="#passwordTab">Change Password</a></li>
                     <li><a data-toggle="tab" href="#profileImage">Change Profile Image</a></li>
+                    <li><a data-toggle="tab" href="#verification">Request Verification</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="profile" class="profile-edit tab-pane fade in active">
@@ -49,11 +51,16 @@
                         <br>
                         @Html.Partial("ChangeProfileImagePartial")
                     </div>
+
+                    <div id="verification" class="profile-edit tab-pane fade">
+                        <h2 class="heading-md">Request verification</h2>
+                        <br>
+                        @Html.Partial("RequestVerificationPartial", this.Model.RequestVerificationViewModel)
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Profile Content -->
 </div>
 
 @section Css{

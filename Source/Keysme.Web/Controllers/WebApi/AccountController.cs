@@ -147,31 +147,31 @@
             return this.BadRequest();
         }
 
-        [HttpPost]
-        [Route("verify")]
-        public IHttpActionResult Verify(string type, string countryCode)
-        {
-            var httpRequest = HttpContext.Current.Request;
-            if (httpRequest.Files.Count == 2)
-            {
-                var front = httpRequest.Files["front"];
-                var back = httpRequest.Files["back"];
-                try
-                {
-                    var frontImage = Image.FromStream(front.InputStream);
-                    var backImage = Image.FromStream(back.InputStream);
-                    this.usersService.Verify(this.User.Identity.GetUserId(), type, countryCode, frontImage, backImage);
-                }
-                catch
-                {
-                    return this.BadRequest();
-                }
-
-                return this.Ok();
-            }
-
-            return this.BadRequest();
-        }
+        //[HttpPost]
+        //[Route("verify")]
+        //public IHttpActionResult Verify(string type, string countryCode)
+        //{
+        //    var httpRequest = HttpContext.Current.Request;
+        //    if (httpRequest.Files.Count == 2)
+        //    {
+        //        var front = httpRequest.Files["front"];
+        //        var back = httpRequest.Files["back"];
+        //        try
+        //        {
+        //            var frontImage = Image.FromStream(front.InputStream);
+        //            var backImage = Image.FromStream(back.InputStream);
+        //            this.usersService.Verify(this.User.Identity.GetUserId(), type, countryCode, frontImage, backImage);
+        //        }
+        //        catch
+        //        {
+        //            return this.BadRequest();
+        //        }
+        //
+        //        return this.Ok();
+        //    }
+        //
+        //    return this.BadRequest();
+        //}
 
 
 

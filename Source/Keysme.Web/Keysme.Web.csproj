@@ -232,6 +232,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Profile\RequestVerificationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\ajax\cube-portfolio\project1.html" />
@@ -5385,6 +5386,7 @@
     <Content Include="Views\Profile\ChangeInfoPartial.cshtml" />
     <Content Include="Views\Profile\ChangePasswordPartial.cshtml" />
     <Content Include="Views\Profile\ChangeProfileImagePartial.cshtml" />
+    <Content Include="Views\Profile\RequestVerificationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

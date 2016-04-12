@@ -1,0 +1,32 @@
+﻿@using Keysme.Data.Models
+
+@model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
+    
+@using (Html.BeginForm("RequestVerification", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <dt>Select front image</dt>
+        <dd>
+            <input type="file" name="Front" id="Front">
+        </dd>
+        <hr>
+        <dt>Select back image</dt>
+        <dd>
+            <input type="file" name="Back" id="Back">
+        </dd>
+        <hr>
+        <dt>Type of verification</dt>
+        <dd>
+            @Html.EnumDropDownListFor(m => m.VerificationType)
+        </dd>
+        <hr>
+        <dt>Country code</dt>
+        <dd>
+            @Html.TextBoxFor(m => m.CountryCode)
+        </dd>
+        <hr>
+    </dl>
+    <button class="btn-u" type="submit">Request</button>
+}

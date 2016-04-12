@@ -53,10 +53,10 @@
             this.users.SaveChanges();
         }
 
-        public void Verify(string userId, string type, string countryCode, Image frontImage, Image backImage)
+        public void Verify(string userId, VerificationType type, string countryCode, Image frontImage, Image backImage)
         {
             var verification = new Verification();
-            verification.Type = (VerificationType)Enum.Parse(typeof(VerificationType), type);
+            verification.Type = type;
             verification.CountryCodeIssued = countryCode;
             verification.FrontPicture = userId + "_front.jpg";
             verification.BackPicture = userId + "_back.jpg";
@@ -64,10 +64,7 @@
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
 
             var frontImagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserVerificationImageFolder, verification.FrontPicture));
-            frontImage.Save(frontImagePath, ImageFormat.Jpeg);
-
             var backImagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserVerificationImageFolder, verification.BackPicture));
-            backImage.Save(backImagePath, ImageFormat.Jpeg);
 
             var user = this.users.GetById(userId);
             if (user.Verification != null)
@@ -77,6 +74,8 @@
 
             user.Verification = verification;
             this.users.SaveChanges();
+            frontImage.Save(frontImagePath, ImageFormat.Jpeg);
+            backImage.Save(backImagePath, ImageFormat.Jpeg);
         }
 
         public User GetUser(string userId)
