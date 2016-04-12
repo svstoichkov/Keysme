@@ -219,6 +219,8 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Profile\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ChangeInfoViewModel.cs" />
     <Compile Include="ViewModels\Profile\ProfileViewModel.cs" />
     <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
     <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
@@ -5380,6 +5382,8 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\ChangeInfoPartial.cshtml" />
+    <Content Include="Views\Profile\ChangePasswordPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

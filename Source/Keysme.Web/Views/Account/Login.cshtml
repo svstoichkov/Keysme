@@ -10,7 +10,9 @@
             @Html.AntiForgeryToken()
 
             <div class="reg-header">
-                <h2>Login to your account</h2>
+                <h2>Login to your account</h2><p>
+                    You do not have an account? Click <a href="/Account/Register" class="color-green">Sign Up</a> to register your account.
+                </p>
             </div>
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -43,5 +45,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-<link rel="stylesheet" href="/assets/css/pages/page_log_reg_v1.css">
+    <link rel="stylesheet" href="/assets/css/pages/page_log_reg_v1.css">
 }

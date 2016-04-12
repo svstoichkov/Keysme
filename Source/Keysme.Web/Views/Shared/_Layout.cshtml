@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <title>@ViewBag.Title | Keys.me</title>
     <!-- Meta -->
@@ -44,24 +44,27 @@
                 <!-- End Logo -->
                 <!-- Topbar -->
                 <div class="topbar">
-                    <ul class="loginbar pull-right">
-                        <li class="hoverSelector">
-                            <i class="fa fa-globe"></i>
-                            <a>Languages</a>
-                            <ul class="languages hoverSelectorBlock">
-                                <li class="active">
-                                    <a href="#">English <i class="fa fa-check"></i></a>
-                                </li>
-                                <li><a href="#">Spanish</a></li>
-                                <li><a href="#">Russian</a></li>
-                                <li><a href="#">German</a></li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="loginbar pull-right">
+                                <li><a href="/profile/">@this.User.Identity.Name</a></li>
+                                <li class="topbar-devider"></li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
                             </ul>
-                        </li>
-                        <li class="topbar-devider"></li>
-                        <li><a href="page_faq.html">Help</a></li>
-                        <li class="topbar-devider"></li>
-                        <li><a href="page_login.html">Login</a></li>
-                    </ul>
+                        }
+                    }
+                    else
+                    {
+                        <ul class="loginbar pull-right">
+                            <li><a href="/Account/Register">Sign up</a></li>
+                            <li class="topbar-devider"></li>
+                            <li><a href="/Account/Login">Sign in</a></li>
+                        </ul>
+                    }
                 </div>
                 <!-- End Topbar -->
                 <!-- Toggle get grouped for better mobile display -->
@@ -910,10 +913,10 @@
     <script type="text/javascript" src="/assets/js/app.js"></script>
     <script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script>
     <script type="text/javascript">
-		jQuery(document).ready(function() {
-			App.init();
-			StyleSwitcher.initStyleSwitcher();
-		});
+        jQuery(document).ready(function () {
+            App.init();
+            StyleSwitcher.initStyleSwitcher();
+        });
     </script>
     @RenderSection("scripts", required: false)
     <!--[if lt IE 9]>

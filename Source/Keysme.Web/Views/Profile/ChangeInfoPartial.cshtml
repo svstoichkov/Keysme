@@ -1,0 +1,69 @@
+﻿@model Keysme.Web.ViewModels.Profile.ChangeInfoViewModel
+
+@using (Html.BeginForm("ChangeInfo", "Profile", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <dl class="dl-horizontal">
+        <dt><strong>First name</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Last name</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Gender</strong></dt>
+        <dd>
+            edward-rooster@gmail.com
+            <span>
+                <a class="pull-right" href="#">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+        <dt><strong>Date of birth</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control", name = "date", id = "date1" })
+        </dd>
+        <hr>
+        <dt><strong>Phone Number</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>About</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.About, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Location</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>School</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.School, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Work</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Work, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Languages</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Languages, new { @class = "form-control" })
+        </dd>
+        <hr>
+        <dt><strong>Comment</strong></dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Comment, new { @class = "form-control" })
+        </dd>
+        <hr>
+    </dl>
+    <button type="submit" class="btn-u">Save Changes</button>
+}
