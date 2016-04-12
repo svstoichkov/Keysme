@@ -22,6 +22,8 @@
 
         [Required]
         [MaxLength(3)]
-        public string CountryCodeIssued { get; set; }
+        public string CountryCode { get; set; }
+
+        public bool IsApproved { get; set; }
     }
 }

@@ -57,7 +57,7 @@
         {
             var verification = new Verification();
             verification.Type = type;
-            verification.CountryCodeIssued = countryCode;
+            verification.CountryCode = countryCode;
             verification.FrontPicture = userId + "_front.jpg";
             verification.BackPicture = userId + "_back.jpg";
 

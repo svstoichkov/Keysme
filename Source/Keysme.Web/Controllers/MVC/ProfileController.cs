@@ -19,8 +19,6 @@
     public class ProfileController : BaseController
     {
         private readonly IUsersService usersService;
-        private ApplicationSignInManager signInManager;
-        private ApplicationUserManager userManager;
 
         public ProfileController(IUsersService usersService)
         {
