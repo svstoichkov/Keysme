@@ -78,5 +78,10 @@
             user.Verification = verification;
             this.users.SaveChanges();
         }
+
+        public User GetUser(string userId)
+        {
+            return this.users.GetById(userId);
+        }
     }
 }

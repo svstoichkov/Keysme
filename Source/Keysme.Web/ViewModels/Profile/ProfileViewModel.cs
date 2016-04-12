@@ -1,4 +1,4 @@
-﻿namespace Keysme.Web.ViewModels.Account
+﻿namespace Keysme.Web.ViewModels.Profile
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -9,7 +9,7 @@
 
     using Global;
 
-    public class UpdateProfileViewModel : IMapTo<User>
+    public class ProfileViewModel : IMapTo<User>, IMapFrom<User>
     {
         [Required]
         [MaxLength(ValidationConstants.UserFirstNameMaxLength)]

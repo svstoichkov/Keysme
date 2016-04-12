@@ -202,6 +202,7 @@
     <Compile Include="Controllers\MVC\AccountController.cs" />
     <Compile Include="Controllers\MVC\BaseController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
+    <Compile Include="Controllers\MVC\ProfileController.cs" />
     <Compile Include="Controllers\WebApi\AccountController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="Controllers\WebApi\BaseController.cs" />
@@ -218,7 +219,7 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
-    <Compile Include="ViewModels\Account\UpdateProfileViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileViewModel.cs" />
     <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
     <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
     <Compile Include="ViewModels\Host\AmenitiesViewModel.cs" />
@@ -4448,10 +4449,14 @@
     <Content Include="assets\plugins\revolution-slider\assets\images\gym2-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\gym2.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\gymlogo.png" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\hammock-100x50.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\hammock.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\hand.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\hero_element_ipad.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\hero_element_iphone.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\hero_element_laptop.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\hotel-room-100x50.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\hotel-room.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\iceberg-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\iceberg-250x100.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\iceberg.jpg" />
@@ -4460,6 +4465,7 @@
     <Content Include="assets\plugins\revolution-slider\assets\images\ihpone_dark.png" />
     <Content Include="assets\plugins\revolution-slider\assets\images\ipad.png" />
     <Content Include="assets\plugins\revolution-slider\assets\images\ipad_dark.png" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\keysme-logo.png" />
     <Content Include="assets\plugins\revolution-slider\assets\images\lambo-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\lambo-60x60.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\lambo.jpg" />
@@ -4598,6 +4604,8 @@
     <Content Include="assets\plugins\revolution-slider\assets\images\restaurant_bg_3-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\restaurant_bg_3.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\restaurant_logo1.png" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\rockfall-100x50.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\rockfall.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\shortcode.png" />
     <Content Include="assets\plugins\revolution-slider\assets\images\slider_element_ipad1.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\slider_element_iphone.jpg" />
@@ -4617,6 +4625,8 @@
     <Content Include="assets\plugins\revolution-slider\assets\images\touchit.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\tplogo_black.png" />
     <Content Include="assets\plugins\revolution-slider\assets\images\transparent.png" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\travel-100x50.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\travel.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\travel1-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\travel1-280x43.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\travel1-70x70.jpg" />
@@ -5369,6 +5379,7 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

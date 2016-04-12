@@ -11,5 +11,7 @@
         void Update(string userId, User user);
 
         void Verify(string userId, string type, string countryCode, Image frontImage, Image backImage);
+
+        User GetUser(string userId);
     }
 }

@@ -18,6 +18,7 @@
     using Services.Data.Contracts;
 
     using ViewModels.Account;
+    using ViewModels.Profile;
 
     using Image = System.Drawing.Image;
 
@@ -53,7 +54,7 @@
         }
 
         [HttpPut]
-        public IHttpActionResult Put(UpdateProfileViewModel model)
+        public IHttpActionResult Put(ProfileViewModel model)
         {
             if (!this.ModelState.IsValid)
             {

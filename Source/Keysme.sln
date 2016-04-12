@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Data", "Data\Keysme.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Data.Models", "Data\Keysme.Data.Models\Keysme.Data.Models.csproj", "{98EC3E35-01D8-43CC-B277-2243B995CB1A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F2218A93-8655-4E71-A82D-A76780A25A7E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Services.Data", "Services\Keysme.Services.Data\Keysme.Services.Data.csproj", "{8A9BF3DB-C813-43A8-8E81-7C51F79037CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Web", "Keysme.Web\Keysme.Web.csproj", "{640F595C-DA0C-48CD-996E-D2D07680F8CC}"
@@ -18,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keysme.Global", "Keysme.Global\Keysme.Global.csproj", "{315916A9-6D85-451D-A4EC-E89419DB2574}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{E573EAA1-E996-42A2-B4BF-CB26A8DCE7F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{89FF20C7-2C91-4B6E-A785-07C3AFF1F631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +56,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7EBCBDFE-8C1A-4D0F-BED4-34F8ADAA148A} = {1497364B-786B-48A2-BE09-279242E167F8}
 		{98EC3E35-01D8-43CC-B277-2243B995CB1A} = {1497364B-786B-48A2-BE09-279242E167F8}
-		{8A9BF3DB-C813-43A8-8E81-7C51F79037CF} = {F2218A93-8655-4E71-A82D-A76780A25A7E}
+		{8A9BF3DB-C813-43A8-8E81-7C51F79037CF} = {89FF20C7-2C91-4B6E-A785-07C3AFF1F631}
 	EndGlobalSection
 EndGlobal
