@@ -1,0 +1,13 @@
+﻿@using (Html.BeginForm("UploadProfileImage", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <dt>Select image</dt>
+        <dd>
+            <input type="file" name="file" id="file">
+        </dd>
+        <hr>
+    </dl>
+    <button class="btn-u" type="submit">Upload</button>
+}

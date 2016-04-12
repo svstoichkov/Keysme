@@ -1,5 +1,6 @@
 ﻿namespace Keysme.Web.Controllers.MVC
 {
+    using System.IO;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
@@ -12,6 +13,8 @@
     using Services.Data.Contracts;
 
     using ViewModels.Profile;
+
+    using Image = System.Drawing.Image;
 
     [Authorize]
     public class ProfileController : BaseController
@@ -58,7 +61,7 @@
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.RedirectToAction("Index");
             }
@@ -74,6 +77,23 @@
             }
             //AddErrors(result);
             return this.RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UploadProfileImage(HttpPostedFileBase file)
+        {
+            try
+            {
+                var image = Image.FromStream(file.InputStream);
+                this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
+
+                return this.RedirectToAction("Index");
+            }
+            catch
+            {
+                return this.RedirectToAction("Index");
+            }
         }
     }
 }
