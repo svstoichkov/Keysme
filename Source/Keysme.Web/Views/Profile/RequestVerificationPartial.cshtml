@@ -1,6 +1,4 @@
-﻿@using Keysme.Data.Models
-
-@model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
+﻿@model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
     
 @using (Html.BeginForm("RequestVerification", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -9,22 +7,22 @@
     <dl class="dl-horizontal">
         <dt>Select front image</dt>
         <dd>
-            <input type="file" name="Front" id="Front">
+            <input type="file" name="Front" id="Front" class="btn-u form-control" accept="image/*" >
         </dd>
         <hr>
         <dt>Select back image</dt>
         <dd>
-            <input type="file" name="Back" id="Back">
+            <input type="file" name="Back" id="Back" class="btn-u form-control" accept="image/*" >
         </dd>
         <hr>
         <dt>Type of verification</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.VerificationType)
+            @Html.EnumDropDownListFor(m => m.VerificationType, new { @class = "form-control" })
         </dd>
         <hr>
         <dt>Country code</dt>
         <dd>
-            @Html.TextBoxFor(m => m.CountryCode)
+            @Html.TextBoxFor(m => m.CountryCode, new { @class = "form-control" })
         </dd>
         <hr>
     </dl>
