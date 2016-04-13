@@ -35,5 +35,17 @@
         [Required]
         [Display(Name = "Date of birth")]
         public DateTime BirthDate { get; set; }
+
+        [Required]
+        [Display(Name = "Day of birth")]
+        public int BirthDay { get; set; }
+
+        [Required]
+        [Display(Name = "Year of birth")]
+        public int BirthYear { get; set; }
+
+        [Required]
+        [Display(Name = "Month of birth")]
+        public int BirthMonth { get; set; }
     }
 }

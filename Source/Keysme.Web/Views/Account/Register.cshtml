@@ -1,11 +1,12 @@
-﻿@model Keysme.Web.ViewModels.Account.RegisterBindingModel
+﻿@using System.Globalization
+@model Keysme.Web.ViewModels.Account.RegisterBindingModel
 @{
     ViewBag.Title = "Register";
 }
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "reg-page sky-form" }))
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "reg-page" }))
         {
             @Html.AntiForgeryToken()
 
@@ -39,10 +40,18 @@
             </div>
 
             <label>Date of birth</label>
-            <label class="input">
-                <i class="icon-append fa fa-calendar"></i>
-                @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control margin-bottom-20", name="date", id="date1"})
-            </label>
+            <div class="row">
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthMonth, Enumerable.Range(1, 12).Select(i => new SelectListItem { Value = i.ToString(), Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(i) }), "Select Month", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthDay, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Day", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthYear, Enumerable.Range(1910, DateTime.Now.Year - 1909).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Year", new { @class = "form-control" })
+                </div>
+            </div>
+            <hr>
 
             @Html.ValidationSummary("", new { @class = "text-danger" })
 
@@ -64,25 +73,8 @@
 
 @section Css {
     <link rel="stylesheet" href="/assets/css/pages/page_log_reg_v1.css">
-    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
-    <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/assets/js/plugins/masking.js"></script>
-    <script type="text/javascript" src="/assets/js/plugins/datepicker.js"></script>
-    <script type="text/javascript" src="/assets/js/plugins/validation.js"></script>
-
-<script type="text/javascript">
-		jQuery(document).ready(function() {
-			App.init();
-			Masking.initMasking();
-			Datepicker.initDatepicker();
-			Validation.initValidation();
-			StyleSwitcher.initStyleSwitcher();
-		});
-</script>
 }

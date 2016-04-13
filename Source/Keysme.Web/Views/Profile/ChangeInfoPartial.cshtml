@@ -1,4 +1,5 @@
-﻿@model Keysme.Web.ViewModels.Profile.ChangeInfoViewModel
+﻿@using System.Globalization
+@model Keysme.Web.ViewModels.Profile.ChangeInfoViewModel
 
 @using (Html.BeginForm("ChangeInfo", "Profile", FormMethod.Post))
 {
@@ -22,17 +23,27 @@
         <hr>
         <dt><strong>Date of birth</strong></dt>
         <dd>
-            @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control", name = "date", id = "date1" })
+            <div class="row">
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthMonth, Enumerable.Range(1, 12).Select(i => new SelectListItem { Value = i.ToString(), Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(i) }), "Select Month", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthDay, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Day", new { @class = "form-control" })
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownListFor(m => m.BirthYear, Enumerable.Range(1910, DateTime.Now.Year - 1909).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Year", new { @class = "form-control" })
+                </div>
+            </div>
         </dd>
         <hr>
         <dt><strong>Phone Number</strong></dt>
         <dd>
-            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @type= "number" })
+            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @type = "number" })
         </dd>
         <hr>
         <dt><strong>About</strong></dt>
         <dd>
-            @Html.TextAreaFor(m => m.About, new { @class = "form-control", rows="5"})
+            @Html.TextAreaFor(m => m.About, new { @class = "form-control", rows = "5" })
         </dd>
         <hr>
         <dt><strong>Location</strong></dt>

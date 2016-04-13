@@ -155,6 +155,10 @@
         {
             if (this.ModelState.IsValid)
             {
+                var monthDaysCount = DateTime.DaysInMonth(model.BirthYear, model.BirthMonth);
+                var birthDate = new DateTime(model.BirthYear, model.BirthMonth, model.BirthDay > monthDaysCount ? monthDaysCount : model.BirthDay);
+                model.BirthDate = birthDate;
+
                 var user = new User
                 {
                     UserName = model.Email,

@@ -11,6 +11,8 @@
 
     public class ChangeInfoViewModel : IMapTo<User>, IMapFrom<User>
     {
+        private DateTime birthDate;
+
         [Required]
         [MaxLength(ValidationConstants.UserFirstNameMaxLength)]
         public string FirstName { get; set; }
@@ -21,7 +23,26 @@
 
         public Gender Gender { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate
+        {
+            get
+            {
+                return this.birthDate;
+            }
+            set
+            {
+                this.birthDate = value;
+                this.BirthDay = value.Day;
+                this.BirthMonth = value.Month;
+                this.BirthYear = value.Year;
+            }
+        }
+
+        public int BirthDay { get; set; }
+
+        public int BirthYear { get; set; }
+
+        public int BirthMonth { get; set; }
 
         [MaxLength(ValidationConstants.UserAboutMaxLength)]
         public string About { get; set; }

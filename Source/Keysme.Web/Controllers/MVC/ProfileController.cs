@@ -1,5 +1,6 @@
 ﻿namespace Keysme.Web.Controllers.MVC
 {
+    using System;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
@@ -48,6 +49,10 @@
             {
                 return this.RedirectToAction("Index");
             }
+
+            var monthDaysCount = DateTime.DaysInMonth(model.BirthYear, model.BirthMonth);
+            var birthDate = new DateTime(model.BirthYear, model.BirthMonth, model.BirthDay > monthDaysCount ? monthDaysCount : model.BirthDay);
+            model.BirthDate = birthDate;
 
             var user = this.Mapper.Map<User>(model);
             this.usersService.Update(this.User.Identity.GetUserId(), user);
