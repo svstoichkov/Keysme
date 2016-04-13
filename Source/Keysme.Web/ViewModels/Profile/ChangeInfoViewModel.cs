@@ -41,6 +41,7 @@
         [MaxLength(ValidationConstants.UserCommentMaxLength)]
         public string Comment { get; set; }
 
+        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
         
         public string ProfileImage { get; set; }

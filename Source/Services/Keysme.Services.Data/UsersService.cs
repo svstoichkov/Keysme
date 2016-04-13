@@ -28,6 +28,7 @@
         {
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserProfileImageFolder, userId + ".jpg"));
+            image = image.ResizeImage(440, 440);
             image.Save(imagePath, ImageFormat.Jpeg);
 
             var user = this.users.GetById(userId);
@@ -43,7 +44,7 @@
             existingUser.Gender = user.Gender;
             existingUser.BirthDate = user.BirthDate;
             existingUser.About = user.About;
-            existingUser.LastName = user.Location;
+            existingUser.Location = user.Location;
             existingUser.School = user.School;
             existingUser.Work = user.Work;
             existingUser.Languages = user.Languages;

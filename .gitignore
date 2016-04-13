@@ -234,3 +234,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/Source/Keysme.Web/Content/VerificationImages
+/Source/Keysme.Web/Content/ProfileImages
