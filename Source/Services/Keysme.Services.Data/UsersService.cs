@@ -54,7 +54,7 @@
             this.users.SaveChanges();
         }
 
-        public void Verify(string userId, VerificationType type, string countryCode, Image frontImage, Image backImage)
+        public void Verify(string userId, VerificationType type, CountryCode countryCode, Image frontImage, Image backImage)
         {
             var verification = new Verification();
             verification.Type = type;

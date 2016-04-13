@@ -10,11 +10,11 @@
     <div class="col-md-3 md-margin-bottom-40">
         @if (this.Model.ChangeInfoViewModel.ProfileImage != null)
         {
-            <img class="img-responsive profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserProfileImageFolder, this.Model.ChangeInfoViewModel.ProfileImage)" alt="">
+            <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserProfileImageFolder, this.Model.ChangeInfoViewModel.ProfileImage)" alt="">
         }
         else
         {
-            <img class="img-responsive profile-img margin-bottom-20" src="/assets/img/testimonials/user.jpg" alt="">
+            <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/assets/img/testimonials/user.jpg" alt="">
         }
         <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
             <li class="list-group-item active">
@@ -23,6 +23,18 @@
         </ul>
         <hr>
     </div>
+    @if (this.TempData["Error"] != null)
+    {
+        <div class="alert alert-danger fade in col-md-9">
+            <strong>Oh snap!</strong> @this.TempData["Error"]
+        </div>
+    }
+    else if (this.TempData["Success"] != null)
+    {
+        <div class="alert alert-success fade in col-md-9">
+            <strong>Success!</strong> @this.TempData["Success"]
+        </div>
+    }
     <div class="col-md-9">
         <div class="profile-body margin-bottom-20">
             <div class="tab-v1">

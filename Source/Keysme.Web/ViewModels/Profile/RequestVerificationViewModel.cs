@@ -12,6 +12,6 @@
 
         public VerificationType VerificationType { get; set; }
 
-        public string CountryCode { get; set; }
+        public CountryCode CountryCode { get; set; }
     }
 }

@@ -21,8 +21,7 @@
         public string BackPicture { get; set; }
 
         [Required]
-        [MaxLength(3)]
-        public string CountryCode { get; set; }
+        public CountryCode CountryCode { get; set; }
 
         public bool IsApproved { get; set; }
     }

@@ -11,8 +11,7 @@
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(3)]
-        public string Code { get; set; }
+        public CountryCode Code { get; set; }
 
         public bool IsActive { get; set; }
     }

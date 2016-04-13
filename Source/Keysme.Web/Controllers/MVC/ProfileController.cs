@@ -45,8 +45,9 @@
         [ValidateAntiForgeryToken]
         public ActionResult ChangeInfo(ChangeInfoViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
+                this.TempData["Error"] = "Error.";
                 return this.RedirectToAction("Index");
             }
 
@@ -57,6 +58,8 @@
             var user = this.Mapper.Map<User>(model);
             this.usersService.Update(this.User.Identity.GetUserId(), user);
 
+            this.TempData["Success"] = "Profile information has been updated.";
+
             return this.RedirectToAction("Index");
         }
 
@@ -66,19 +69,23 @@
         {
             if (!this.ModelState.IsValid)
             {
+                this.TempData["Error"] = "Error.";
                 return this.RedirectToAction("Index");
             }
             var result = await this.UserManager.ChangePasswordAsync(this.User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
             if (result.Succeeded)
             {
-                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                var user = await this.UserManager.FindByIdAsync(this.User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Index");
+
+                this.TempData["Success"] = "Password has been changed.";
+                return this.RedirectToAction("Index");
             }
-            //AddErrors(result);
+
+            this.TempData["Error"] = "Error.";
             return this.RedirectToAction("Index");
         }
 
@@ -91,10 +98,12 @@
                 var image = Image.FromStream(file.InputStream);
                 this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
 
+                this.TempData["Success"] = "Profile image has been changed.";
                 return this.RedirectToAction("Index");
             }
             catch
             {
+                this.TempData["Error"] = "Error.";
                 return this.RedirectToAction("Index");
             }
         }
@@ -109,10 +118,12 @@
                 var backImage = Image.FromStream(model.Back.InputStream);
                 this.usersService.Verify(this.User.Identity.GetUserId(), model.VerificationType, model.CountryCode, frontImage, backImage);
 
+                this.TempData["Success"] = "Verification has been requested.";
                 return this.RedirectToAction("Index");
             }
             catch
             {
+                this.TempData["Error"] = "Error.";
                 return this.RedirectToAction("Index");
             }
         }

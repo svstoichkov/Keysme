@@ -62,6 +62,7 @@
     <Compile Include="Base\IAuditInfo.cs" />
     <Compile Include="Base\IDeletableEntity.cs" />
     <Compile Include="CancellationPolicy.cs" />
+    <Compile Include="CountryCode.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="Gender.cs" />

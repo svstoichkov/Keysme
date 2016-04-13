@@ -22,7 +22,7 @@
         <hr>
         <dt>Country code</dt>
         <dd>
-            @Html.TextBoxFor(m => m.CountryCode, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.CountryCode, new { @class = "form-control" })
         </dd>
         <hr>
     </dl>

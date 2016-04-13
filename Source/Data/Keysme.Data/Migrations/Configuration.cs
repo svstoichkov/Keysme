@@ -21,7 +21,7 @@
             var countriesCsv = Path.Combine(basePath, "country.csv");
             var countries = File.ReadAllLines(countriesCsv);
             var countriesOrdered = countries.OrderBy(x => x.Split(',')[2]);
-
+            
             if (!context.Countries.Any())
             {
                 foreach (var country in countriesOrdered)
@@ -29,14 +29,14 @@
                     var split = country.Split(',');
                     var countryModel = new Country
                                        {
-                                           Code = split[1],
+                                           Code = (CountryCode)Enum.Parse(typeof(CountryCode), split[1]),
                                            Name = split[2],
                                            IsActive = true
                                        };
-
+            
                     context.Countries.Add(countryModel);
                 }
-
+            
                 context.SaveChanges();
             }
 
