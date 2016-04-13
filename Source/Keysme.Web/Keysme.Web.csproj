@@ -4484,6 +4484,8 @@
     <Content Include="assets\plugins\revolution-slider\assets\images\media1-250x100.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\media1-280x43.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\media1.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\morning-100x50.jpg" />
+    <Content Include="assets\plugins\revolution-slider\assets\images\morning.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\mountainbg-100x50.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\mountainbg.jpg" />
     <Content Include="assets\plugins\revolution-slider\assets\images\muesli-150x100.jpg" />
