@@ -7,7 +7,7 @@
 
     using Data.Models;
 
-    public class HostMainInformationViewModel : IMapTo<Host>, IMapFrom<Host>
+    public class MainInformationViewModel : IMapTo<Host>, IMapFrom<Host>
     {
         [MaxLength(100)]
         [Display(Name = "Hotel/Motel/B&B name (optional)")]
@@ -54,6 +54,9 @@
         [Display(Name = "Currency")]
         public int? CurrencyId { get; set; }
 
+        //[Required]
+        //public string IsInstantBookString { get; set; }
+
         public bool IsInstantBook { get; set; }
 
         [Required]
@@ -91,42 +94,5 @@
         public string ReservationPhone { get; set; }
 
         public bool SmokingAllowed { get; set; }
-
-        //[Required]
-        //[MaxLength(50)]
-        //public string Country { get; set; }
-        //
-        //[Required]
-        //[MaxLength(100)]
-        //public string City { get; set; }
-        //
-        //[Required]
-        //[MaxLength(255)]
-        //public string Address { get; set; }
-        //
-        //[Required]
-        //[MaxLength(50)]
-        //public string State { get; set; }
-        //
-        //[Required]
-        //[MaxLength(20)]
-        //public string PostalCode { get; set; }
-
-        //[Required]
-        //[MaxLength(3)]
-        //public string CountryCode { get; set; }
-
-        //public decimal Latitude { get; set; }
-
-        //public decimal Longitude { get; set; }
-
-        //public DbGeography GeoPoint { get; set; }
-
-        //[MaxLength(100)]
-        //public string LocationName { get; set; }
-
-        //[Required]
-        //[MaxLength(1000)]
-        //public string Comment { get; set; }
     }
 }

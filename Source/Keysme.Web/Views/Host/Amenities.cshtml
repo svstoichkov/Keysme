@@ -1,0 +1,182 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create host";
+}
+@model Keysme.Web.ViewModels.Host.AmenitiesViewModel
+
+<div class="row">
+    @Html.Partial("SideBarPartial")
+    <div class="col-md-9">
+        @using (Html.BeginForm("CreateAmenities", "Host", FormMethod.Post, new { @class = "sky-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <header>Amenities</header>
+            <fieldset>
+                <section>
+                    <div class="row">
+                        <div class="col col-4">
+                            <label class="checkbox">
+                                <input type="checkbox" name="AirConditioned" value="true" @( this.Model.AirConditioned ? "checked" : "")>
+                                <i></i>Air Conditioned
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="BarOrLounge" value="true" @( this.Model.BarOrLounge ? "checked" : "")>
+                                <i></i>Bar Or Lounge
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="ConciergeService" value="true" @( this.Model.ConciergeService ? "checked" : "")>
+                                <i></i>Concierge Service
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="ComplimentaryBreakfast" value="true" @( this.Model.ComplimentaryBreakfast ? "checked" : "")>
+                                <i></i>Complimentary Breakfast
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="ContinentalBreakfast" value="true" @( this.Model.ContinentalBreakfast ? "checked" : "")>
+                                <i></i>Continental Breakfast
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Essentials" value="true" @( this.Model.Essentials ? "checked" : "")>
+                                <i></i>Essentials
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Shampoo" value="true" @( this.Model.Shampoo ? "checked" : "")>
+                                <i></i>Shampoo
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Tv" value="true" @( this.Model.Tv ? "checked" : "")>
+                                <i></i>TV
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Heating" value="true" @( this.Model.Heating ? "checked" : "")>
+                                <i></i>Heating
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Kitchen" value="true" @( this.Model.Kitchen ? "checked" : "")>
+                                <i></i>Kitchen
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Internet" value="true" @( this.Model.Internet ? "checked" : "")>
+                                <i></i>Internet
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Wifi" value="true" @( this.Model.Wifi ? "checked" : "")>
+                                <i></i>Wifi
+                            </label>
+                        </div>
+                        <div class="col col-4">
+                            <label class="checkbox">
+                                <input type="checkbox" name="HotTub" value="true" @( this.Model.HotTub ? "checked" : "")>
+                                <i></i>Hot Tub
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Washer" value="true" @( this.Model.Washer ? "checked" : "")>
+                                <i></i>Washer
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Pool" value="true" @( this.Model.Pool ? "checked" : "")>
+                                <i></i>Pool
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Dryer" value="true" @( this.Model.Dryer ? "checked" : "")>
+                                <i></i>Dryer
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="ParkingFree" value="true" value="true" @( this.Model.ParkingFree ? "checked" : "")>
+                                <i></i>Parking Free
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="FitnessCenter" value="true" @( this.Model.FitnessCenter ? "checked" : "")>
+                                <i></i>Fitness Center
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Elevator" value="true" @( this.Model.Elevator ? "checked" : "")>
+                                <i></i>Elevator
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="SmokeDetector" value="true" @( this.Model.SmokeDetector ? "checked" : "")>
+                                <i></i>Smoke Detector
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="CarbonMonoxideDetector" value="true" @( this.Model.CarbonMonoxideDetector ? "checked" : "")>
+                                <i></i>Carbon Monoxide Detector
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="FirstAidKit" value="true" @( this.Model.FirstAidKit ? "checked" : "")>
+                                <i></i>First-Aid Kit
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="SafetyCard" value="true" @( this.Model.SafetyCard ? "checked" : "")>
+                                <i></i>Safety Card
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="FireExtinguisher" value="true" @( this.Model.FireExtinguisher ? "checked" : "")>
+                                <i></i>Fire Extinguisher
+                            </label>
+                        </div>
+                        <div class="col col-4">
+                            <label class="checkbox">
+                                <input type="checkbox" name="AllTimeCheckin" value="true" @( this.Model.AllTimeCheckin ? "checked" : "")>
+                                <i></i>Alltime Checkin
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Hangers" value="true" @( this.Model.Hangers ? "checked" : "")>
+                                <i></i>Hangers
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="HairDryer" value="true" @( this.Model.HairDryer ? "checked" : "")>
+                                <i></i>Hair Dryer
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="Iron" value="true" @( this.Model.Iron ? "checked" : "")>
+                                <i></i>Iron
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="DeskOrWorkspace" value="true" @( this.Model.DeskOrWorkspace ? "checked" : "")>
+                                <i></i>Desk Or Workspace
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="FamilyFriendly" value="true" @( this.Model.FamilyFriendly ? "checked" : "")>
+                                <i></i>Family Friendly
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="SmokingAllowed" value="true" @( this.Model.SmokingAllowed ? "checked" : "")>
+                                <i></i>Smoking Allowed
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="PetsAllowed" value="true" @( this.Model.PetsAllowed ? "checked" : "")>
+                                <i></i>Pets Allowed
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="WheelchairAccessible" value="true" @( this.Model.WheelchairAccessible ? "checked" : "")>
+                                <i></i>Wheelchair Accessible
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="HasPets" value="true" @( this.Model.HasPets ? "checked" : "")>
+                                <i></i>Has Pets
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="AirportShuttleFree" value="true" @( this.Model.AirportShuttleFree ? "checked" : "")>
+                                <i></i>Airport Shuttle-Free
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </fieldset>
+
+            <footer>
+                <button type="submit" class="btn-u">Continue</button>
+            </footer>
+        }
+    </div>
+</div>
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+}
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+}

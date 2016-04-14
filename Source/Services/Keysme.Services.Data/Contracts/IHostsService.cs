@@ -18,6 +18,10 @@
 
         Host GetWorkInProgressOrCreateNew(string userId);
 
-        void AddMainInformation(string userId, Host host);
+        void CreateMainInformation(string userId, Host host);
+
+        void CreateLocation(string userId, Host host);
+
+        void CreateAmenities(string userId, Amenities amenities);
     }
 }

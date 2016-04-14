@@ -1,17 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create host";
 }
-@model Keysme.Web.ViewModels.Host.HostMainInformationViewModel
+@model Keysme.Web.ViewModels.Host.MainInformationViewModel
 
 <div class="row">
-    <!-- Begin Sidebar Menu -->
     @Html.Partial("SideBarPartial")
     <div class="col-md-9">
-        <!-- Checkout-Form -->
         @using (Html.BeginForm("CreateMainInformation", "Host", FormMethod.Post, new { @class="sky-form"}))
         {
             @Html.AntiForgeryToken()
-            @*<form action="#" id="sky-form" class="sky-form" novalidate="novalidate">*@
                 <header>Main information</header>
                 <fieldset>
                     <section>
@@ -77,7 +75,7 @@
                     <div class="row">
                         <section class="col col-5">
                             <label class="toggle">
-                                <input type="checkbox" name="IsInstantBook">
+                                <input type="checkbox" name="IsInstantBook" value="true" @( this.Model.IsInstantBook ? "checked" : "")>
                                 <i class="no-rounded"></i>Can be instantly booked
                             </label>
                         </section>
@@ -117,7 +115,7 @@
                 <fieldset>
                     <section>
                         @Html.LabelFor(m => m.HouseManual, new { @class = "input" })
-                        @Html.TextBoxFor(m => m.HouseManual, new { @class = "form-control" })
+                        @Html.TextAreaFor(m => m.HouseManual, new { @class = "form-control", rows="5" })
                     </section>
                 </fieldset>
 
@@ -138,7 +136,7 @@
                     <div class="row">
                         <section class="col col-5">
                             <label class="toggle">
-                                <input type="checkbox" name="SmokingAllowed">
+                                <input type="checkbox" name="SmokingAllowed" value="true" @(this.Model.SmokingAllowed ? "checked" :"")>
                                 <i class="no-rounded"></i>Smoking is allowed
                             </label>
                         </section>
@@ -148,10 +146,8 @@
                 <footer>
                     <button type="submit" class="btn-u">Continue</button>
                 </footer>
-            @*</form>*@
 }
     </div>
-    <!-- End Content -->
 </div>
 
 @section Css{
@@ -161,5 +157,5 @@
 }
 
 @section Scripts{
-    //@Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
 }
