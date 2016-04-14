@@ -4,7 +4,7 @@
     {
         public int HostId { get; set; }
 
-        public HostViewModel Host { get; set; }
+        public HostMainInformationViewModel HostMainInformation { get; set; }
 
         public AmenitiesViewModel Amenities { get; set; }
     }

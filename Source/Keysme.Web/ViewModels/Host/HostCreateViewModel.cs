@@ -2,7 +2,7 @@
 {
     public class HostCreateViewModel
     {
-        public HostViewModel Host { get; set; }
+        public HostMainInformationViewModel HostMainInformation { get; set; }
 
         public AmenitiesViewModel Amenities { get; set; }
     }

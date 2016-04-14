@@ -5,11 +5,12 @@ namespace Keysme.Data.Models
     public enum HostType
     {
         Hotel = 1,
-        Hostel = 2,
+        Motel = 2,
+        Hostel = 3,
 
         [Display(Name = "Bed & Breakfast")]
-        BAndB = 3,
-        Apartment = 4,
-        House = 5
+        BAndB = 4,
+        Apartment = 5,
+        House = 6
     }
 }

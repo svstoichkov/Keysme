@@ -64,7 +64,7 @@
             existingHost.BathsCount = host.BathsCount;
             existingHost.City = host.City;
             existingHost.Description = host.Description;
-            existingHost.Header = host.Header;
+            existingHost.Title = host.Title;
             existingHost.Price = host.Price;
             existingHost.CurrencyId = host.CurrencyId;
             existingHost.IsInstantBook = host.IsInstantBook;
