@@ -1,16 +1,16 @@
 namespace Keysme.Data.Models
 {
-    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public enum RoomType
     {
-        [Description("Entire house")]
-        EntireHouse = 0,
+        [Display(Name = "Entire house")]
+        EntireHouse = 1,
 
-        [Description("Private room")]
-        PrivateRoom = 1,
+        [Display(Name = "Private room")]
+        PrivateRoom = 2,
 
-        [Description("Shared space")]
-        SharedSpace = 2
+        [Display(Name = "Shared space")]
+        SharedSpace = 3
     }
 }

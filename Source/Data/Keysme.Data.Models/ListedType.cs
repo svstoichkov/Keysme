@@ -2,8 +2,8 @@
 {
     public enum ListedType
     {
-        Unlisted = 0,
-        Snoozed = 1,
-        Listed = 2
+        Unlisted = 1,
+        Snoozed = 2,
+        Listed = 3
     }
 }

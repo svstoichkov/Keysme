@@ -1,15 +1,15 @@
 namespace Keysme.Data.Models
 {
-    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public enum HostType
     {
-        Hotel = 0,
-        Hostel = 1,
+        Hotel = 1,
+        Hostel = 2,
 
-        [Description("B&B")]
-        BAndB = 2,
-        Apartment = 3,
-        House = 4
+        [Display(Name = "Bed & Breakfast")]
+        BAndB = 3,
+        Apartment = 4,
+        House = 5
     }
 }

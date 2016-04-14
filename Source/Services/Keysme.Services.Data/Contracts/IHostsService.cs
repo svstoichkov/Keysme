@@ -1,4 +1,4 @@
-﻿namespace Keysme.Services.Data
+﻿namespace Keysme.Services.Data.Contracts
 {
     using System.Linq;
 
@@ -15,5 +15,7 @@
         void Delete(string getUserId, int id);
 
         IQueryable<Host> GetAll();
+
+        Host GetWorkInProgressOrCreateNew(string userId);
     }
 }

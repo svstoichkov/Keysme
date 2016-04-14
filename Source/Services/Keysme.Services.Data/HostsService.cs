@@ -2,6 +2,8 @@
 {
     using System.Linq;
 
+    using Contracts;
+
     using Keysme.Data;
     using Keysme.Data.Models;
 
@@ -16,6 +18,20 @@
             this.users = users;
             this.hosts = hosts;
             this.amenitiesRepository = amenitiesRepository;
+        }
+
+        public Host GetWorkInProgressOrCreateNew(string userId)
+        {
+            var host = this.hosts.All().FirstOrDefault(x => x.UserId == userId && x.IsComplete == false);
+            if (host == null)
+            {
+                host = new Host();
+                host.UserId = userId;
+                this.hosts.Add(host);
+                this.hosts.SaveChanges();
+            }
+
+            return host;
         }
 
         public void Create(string userId, Host host, Amenities amenities)

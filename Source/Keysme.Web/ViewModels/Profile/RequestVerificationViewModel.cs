@@ -13,5 +13,7 @@
         public VerificationType VerificationType { get; set; }
 
         public CountryCode CountryCode { get; set; }
+
+        public bool HasRequestedVerification { get; set; }
     }
 }

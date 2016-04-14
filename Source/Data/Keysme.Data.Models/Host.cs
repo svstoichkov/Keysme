@@ -18,6 +18,8 @@
 
         public int Id { get; set; }
 
+        public bool IsComplete { get; set; }
+
         [Required]
         public string UserId { get; set; }
 
@@ -25,45 +27,41 @@
 
         public virtual Amenities Amenities { get; set; }
 
-        public HostType Type { get; set; }
+        public HostType? Type { get; set; }
 
-        public int MaxGuests { get; set; }
+        public RoomType? RoomType { get; set; }
 
-        public int RoomsCount { get; set; }
+        public int? RoomsCount { get; set; }
 
-        public int BedsCount { get; set; }
+        public int? MaxGuests { get; set; }
 
-        public int BathsCount { get; set; }
+        public int? BedsCount { get; set; }
 
-        public RoomType RoomType { get; set; }
-
-        [Required]
+        public int? BathsCount { get; set; }
+        
         [MaxLength(100)]
         public string City { get; set; }
 
-        [Required]
+        [MaxLength(100)]
+        public string HostName { get; set; }
+
         [MaxLength(40)]
         public string Header { get; set; }
-
-        [Required]
+        
         [MaxLength(1000)]
         public string Description { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
-        public int CurrencyId { get; set; }
+        public int? CurrencyId { get; set; }
 
         public Currency Currency { get; set; }
 
         public bool IsInstantBook { get; set; }
-
-        [Required]
-        [MaxLength(100)]
-        public string HostName { get; set; }
-
+        
         public bool IsApproved { get; set; }
 
-        public ListedType ListedType { get; set; }
+        public ListedType? ListedType { get; set; }
         
         [MaxLength(1000)]
         public string UnlistedReason { get; set; }
@@ -73,22 +71,19 @@
         public DateTime? SnoozedTo { get; set; }
 
         public bool SmokingAllowed { get; set; }
-
-        [Required]
+        
         [MaxLength(255)]
         public string Address { get; set; }
-
-        [Required]
+        
         [MaxLength(50)]
         public string State { get; set; }
-
-        [Required]
+        
         [MaxLength(20)]
         public string PostalCode { get; set; }
 
         public int CountryId { get; set; }
 
-        public virtual Country Country { get; set; }
+        //public virtual Country Country { get; set; }
         
         public decimal Latitude { get; set; }
         
@@ -99,7 +94,6 @@
         [MaxLength(100)]
         public string LocationName { get; set; }
         
-        [Required]
         [MaxLength(1000)]
         public string Comment { get; set; }
 
@@ -108,7 +102,7 @@
 
         public int CheckOutBefore { get; set; }
 
-        public CancellationPolicy CancellationPolicy { get; set; }
+        public CancellationPolicy? CancellationPolicy { get; set; }
         
         [MaxLength(32)]
         public string WiFiName { get; set; }
@@ -118,12 +112,10 @@
         
         [MaxLength(1000)]
         public string HouseManual { get; set; }
-
-        [Required]
+        
         [MaxLength(20)]
         public string MainPhone { get; set; }
-
-        [Required]
+        
         [MaxLength(20)]
         public string ReservationPhone { get; set; }
 

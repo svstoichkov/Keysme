@@ -202,6 +202,7 @@
     <Compile Include="Controllers\MVC\AccountController.cs" />
     <Compile Include="Controllers\MVC\BaseController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
+    <Compile Include="Controllers\MVC\HostController.cs" />
     <Compile Include="Controllers\MVC\ProfileController.cs" />
     <Compile Include="Controllers\WebApi\AccountController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
@@ -5345,6 +5346,12 @@
     <Content Include="assets\plugins\wow-animations\LICENSE-MIT" />
     <Content Include="assets\plugins\wow-animations\README.md" />
     <Content Include="assets\plugins\wow\README.md" />
+    <Content Include="Content\ProfileImages\dummy">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\VerificationImages\dummy">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\Keysme - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Keysme - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -5389,11 +5396,13 @@
     <Content Include="Views\Profile\ChangePasswordPartial.cshtml" />
     <Content Include="Views\Profile\ChangeProfileImagePartial.cshtml" />
     <Content Include="Views\Profile\RequestVerificationPartial.cshtml" />
+    <Content Include="Views\Host\Create.cshtml" />
+    <Content Include="Views\Host\AddAmenities.cshtml" />
+    <Content Include="Views\Host\SideBarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\ProfileImages\" />
-    <Folder Include="Content\VerificationImages\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

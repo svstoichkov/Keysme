@@ -5,8 +5,8 @@ namespace Keysme.Data.Models
     public enum VerificationType
     {
         [Display(Name = "Driver License")]
-        DriverLicense = 0,
-        Passport = 1,
-        Government = 2
+        DriverLicense = 1,
+        Passport = 2,
+        Government = 3
     }
 }

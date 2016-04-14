@@ -38,6 +38,7 @@
             model.ChangeInfoViewModel = this.Mapper.Map<ChangeInfoViewModel>(user);
             model.ChangePasswordViewModel = new ChangePasswordViewModel();
             model.RequestVerificationViewModel = new RequestVerificationViewModel();
+            model.RequestVerificationViewModel.HasRequestedVerification = user.Verification != null;
             return this.View(model);
         }
 
@@ -95,11 +96,11 @@
         {
             try
             {
-                var image = Image.FromStream(file.InputStream);
-                this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
+              var image = Image.FromStream(file.InputStream);
+              this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
 
-                this.TempData["Success"] = "Profile image has been changed.";
-                return this.RedirectToAction("Index");
+              this.TempData["Success"] = "Profile image has been changed.";
+              return this.RedirectToAction("Index");
             }
             catch
             {

@@ -1,5 +1,7 @@
-﻿@model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
-    
+﻿@using Keysme.Global
+@using Microsoft.AspNet.Identity
+@model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
+
 @using (Html.BeginForm("RequestVerification", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -7,12 +9,12 @@
     <dl class="dl-horizontal">
         <dt>Select front image</dt>
         <dd>
-            <input type="file" name="Front" id="Front" class="btn-u form-control" accept="image/*" >
+            <input type="file" name="Front" id="Front" class="btn-u form-control" accept="image/*">
         </dd>
         <hr>
         <dt>Select back image</dt>
         <dd>
-            <input type="file" name="Back" id="Back" class="btn-u form-control" accept="image/*" >
+            <input type="file" name="Back" id="Back" class="btn-u form-control" accept="image/*">
         </dd>
         <hr>
         <dt>Type of verification</dt>
@@ -25,6 +27,26 @@
             @Html.EnumDropDownListFor(m => m.CountryCode, new { @class = "form-control" })
         </dd>
         <hr>
+        <dt>
+            <button class="btn-u" type="submit">Request</button>
+        </dt>
+        <dd>
+        </dd>
+        <hr>
+        @if (this.Model.HasRequestedVerification)
+        {
+            <dt>Last verification images</dt>
+            <dd>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.User.Identity.GetUserId() + "_front.jpg")">
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.User.Identity.GetUserId() + "_back.jpg")">
+                    </div>
+                </div>
+            </dd>
+            <hr>
+        }
     </dl>
-    <button class="btn-u" type="submit">Request</button>
 }

@@ -2,8 +2,8 @@ namespace Keysme.Data.Models
 {
     public enum CancellationPolicy 
     {
-        Flexible = 0,
-        Moderate = 1,
-        Strict = 2
+        Flexible = 1,
+        Moderate = 2,
+        Strict = 3
     }
 }

@@ -4,7 +4,7 @@
 
     using Data.Models;
 
-    public class AmenitiesViewModel : IMapTo<Amenities>
+    public class AmenitiesViewModel : IMapTo<Amenities>, IMapFrom<Amenities>
     {
         public bool AirConditioned { get; set; }
 
