@@ -23,11 +23,11 @@
 
         [Required]
         [Display(Name = "Host type")]
-        public HostType Type { get; set; }
+        public HostType? Type { get; set; }
 
         [Required]
         [Display(Name = "Room type")]
-        public RoomType RoomType { get; set; }
+        public RoomType? RoomType { get; set; }
 
         [Required]
         [Display(Name = "Rooms count")]
@@ -58,7 +58,7 @@
 
         [Required]
         [Display(Name = "Cancellation policy")]
-        public CancellationPolicy CancellationPolicy { get; set; }
+        public CancellationPolicy? CancellationPolicy { get; set; }
 
         [Required]
         [Display(Name = "Check in after")]

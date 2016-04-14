@@ -25,13 +25,29 @@
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult CreateMainInformation()
         {
             var host = this.hostsService.GetWorkInProgressOrCreateNew(this.User.Identity.GetUserId());
             var model = this.Mapper.Map<HostMainInformationViewModel>(host);
             model.Currencies = new SelectList(this.currencyRepository.All(), "Id", "Name");
 
             return this.View("MainInformation", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateMainInformation(HostMainInformationViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View("MainInformation", model);
+            }
+
+            var host = this.Mapper.Map<Host>(model);
+            this.hostsService.AddMainInformation(this.User.Identity.GetUserId(), host);
+
+            return this.View("MainInformation", model);
+
         }
 
         [HttpGet]

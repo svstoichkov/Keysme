@@ -8,8 +8,9 @@
     @Html.Partial("SideBarPartial")
     <div class="col-md-9">
         <!-- Checkout-Form -->
-        @using (Html.BeginForm("Create", "Host", FormMethod.Post, new { @class="sky-form"}))
+        @using (Html.BeginForm("CreateMainInformation", "Host", FormMethod.Post, new { @class="sky-form"}))
         {
+            @Html.AntiForgeryToken()
             @*<form action="#" id="sky-form" class="sky-form" novalidate="novalidate">*@
                 <header>Main information</header>
                 <fieldset>

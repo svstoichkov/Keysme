@@ -34,6 +34,35 @@
             return host;
         }
 
+        public void AddMainInformation(string userId, Host host)
+        {
+            var existingHost = this.GetWorkInProgressOrCreateNew(userId);
+            
+            existingHost.HostName = host.HostName;
+            existingHost.Title = host.Title;
+            existingHost.Description = host.Description;
+            existingHost.Type = host.Type;
+            existingHost.RoomType = host.RoomType;
+            existingHost.RoomsCount = host.RoomsCount;
+            existingHost.MaxGuests = host.MaxGuests;
+            existingHost.BedsCount = host.BedsCount;
+            existingHost.BathsCount = host.BathsCount;
+            existingHost.Price = host.Price;
+            existingHost.CurrencyId = host.CurrencyId;
+            existingHost.IsInstantBook = host.IsInstantBook;
+            existingHost.CancellationPolicy = host.CancellationPolicy;
+            existingHost.CheckInAfter = host.CheckInAfter;
+            existingHost.CheckOutBefore = host.CheckOutBefore;
+            existingHost.WiFiName = host.WiFiName;
+            existingHost.WiFiPassword = host.WiFiPassword;
+            existingHost.HouseManual = host.HouseManual;
+            existingHost.MainPhone = host.MainPhone;
+            existingHost.ReservationPhone = host.ReservationPhone;
+            existingHost.SmokingAllowed = host.SmokingAllowed;
+
+            this.hosts.SaveChanges();
+        }
+
         public void Create(string userId, Host host, Amenities amenities)
         {
             var user = this.users.GetById(userId);
@@ -56,20 +85,30 @@
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
 
+            existingHost.HostName = host.HostName;
+            existingHost.Title = host.Title;
+            existingHost.Description = host.Description;
             existingHost.Type = host.Type;
             existingHost.RoomType = host.RoomType;
-            existingHost.MaxGuests = host.MaxGuests;
             existingHost.RoomsCount = host.RoomsCount;
+            existingHost.MaxGuests = host.MaxGuests;
             existingHost.BedsCount = host.BedsCount;
             existingHost.BathsCount = host.BathsCount;
-            existingHost.City = host.City;
-            existingHost.Description = host.Description;
-            existingHost.Title = host.Title;
             existingHost.Price = host.Price;
             existingHost.CurrencyId = host.CurrencyId;
             existingHost.IsInstantBook = host.IsInstantBook;
-            existingHost.HostName = host.HostName;
+            existingHost.CancellationPolicy = host.CancellationPolicy;
+            existingHost.CheckInAfter = host.CheckInAfter;
+            existingHost.CheckOutBefore = host.CheckOutBefore;
+            existingHost.WiFiName = host.WiFiName;
+            existingHost.WiFiPassword = host.WiFiPassword;
+            existingHost.HouseManual = host.HouseManual;
+            existingHost.MainPhone = host.MainPhone;
+            existingHost.ReservationPhone = host.ReservationPhone;
             existingHost.SmokingAllowed = host.SmokingAllowed;
+
+
+            existingHost.City = host.City;
             existingHost.Address = host.Address;
             existingHost.State = host.State;
             existingHost.PostalCode = host.PostalCode;
@@ -79,14 +118,6 @@
             existingHost.Longitude = host.Longitude;
             existingHost.LocationName = host.LocationName;
             existingHost.Comment = host.Comment;
-            existingHost.CheckInAfter = host.CheckInAfter;
-            existingHost.CheckOutBefore = host.CheckOutBefore;
-            existingHost.CancellationPolicy = host.CancellationPolicy;
-            existingHost.WiFiName = host.WiFiName;
-            existingHost.WiFiPassword = host.WiFiPassword;
-            existingHost.HouseManual = host.HouseManual;
-            existingHost.MainPhone = host.MainPhone;
-            existingHost.ReservationPhone = host.ReservationPhone;
 
             if (existingHost.Amenities != null)
             {

@@ -17,5 +17,7 @@
         IQueryable<Host> GetAll();
 
         Host GetWorkInProgressOrCreateNew(string userId);
+
+        void AddMainInformation(string userId, Host host);
     }
 }
