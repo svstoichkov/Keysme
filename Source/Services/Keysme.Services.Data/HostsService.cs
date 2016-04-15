@@ -34,7 +34,6 @@
             if (host == null)
             {
                 host = new Host();
-                host.Amenities = new Amenities();
                 host.UserId = userId;
                 this.hosts.Add(host);
                 this.hosts.SaveChanges();
@@ -88,45 +87,45 @@
             this.hosts.SaveChanges();
         }
 
-        public void CreateAmenities(string userId, Amenities amenities)
+        public void CreateAmenities(string userId, Host host)
         {
             var existingHost = this.GetWorkInProgressOrCreateNew(userId);
 
-            existingHost.Amenities.AirConditioned = amenities.AirConditioned;
-            existingHost.Amenities.BarOrLounge = amenities.BarOrLounge;
-            existingHost.Amenities.ConciergeService = amenities.ConciergeService;
-            existingHost.Amenities.ComplimentaryBreakfast = amenities.ComplimentaryBreakfast;
-            existingHost.Amenities.ContinentalBreakfast = amenities.ContinentalBreakfast;
-            existingHost.Amenities.Essentials = amenities.Essentials;
-            existingHost.Amenities.Shampoo = amenities.Shampoo;
-            existingHost.Amenities.Tv = amenities.Tv;
-            existingHost.Amenities.Heating = amenities.Heating;
-            existingHost.Amenities.Kitchen = amenities.Kitchen;
-            existingHost.Amenities.Internet = amenities.Internet;
-            existingHost.Amenities.Wifi = amenities.Wifi;
-            existingHost.Amenities.HotTub = amenities.HotTub;
-            existingHost.Amenities.Washer = amenities.Washer;
-            existingHost.Amenities.Pool = amenities.Pool;
-            existingHost.Amenities.Dryer = amenities.Dryer;
-            existingHost.Amenities.ParkingFree = amenities.ParkingFree;
-            existingHost.Amenities.FitnessCenter = amenities.FitnessCenter;
-            existingHost.Amenities.Elevator = amenities.Elevator;
-            existingHost.Amenities.SmokeDetector = amenities.SmokeDetector;
-            existingHost.Amenities.CarbonMonoxideDetector = amenities.CarbonMonoxideDetector;
-            existingHost.Amenities.FirstAidKit = amenities.FirstAidKit;
-            existingHost.Amenities.SafetyCard = amenities.SafetyCard;
-            existingHost.Amenities.FireExtinguisher = amenities.FireExtinguisher;
-            existingHost.Amenities.AllTimeCheckin = amenities.AllTimeCheckin;
-            existingHost.Amenities.Hangers = amenities.Hangers;
-            existingHost.Amenities.HairDryer = amenities.HairDryer;
-            existingHost.Amenities.Iron = amenities.Iron;
-            existingHost.Amenities.DeskOrWorkspace = amenities.DeskOrWorkspace;
-            existingHost.Amenities.FamilyFriendly = amenities.FamilyFriendly;
-            existingHost.Amenities.SmokingAllowed = amenities.SmokingAllowed;
-            existingHost.Amenities.PetsAllowed = amenities.PetsAllowed;
-            existingHost.Amenities.WheelchairAccessible = amenities.WheelchairAccessible;
-            existingHost.Amenities.HasPets = amenities.HasPets;
-            existingHost.Amenities.AirportShuttleFree = amenities.AirportShuttleFree;
+            existingHost.AirConditioned = host.AirConditioned;
+            existingHost.BarOrLounge = host.BarOrLounge;
+            existingHost.ConciergeService = host.ConciergeService;
+            existingHost.ComplimentaryBreakfast = host.ComplimentaryBreakfast;
+            existingHost.ContinentalBreakfast = host.ContinentalBreakfast;
+            existingHost.Essentials = host.Essentials;
+            existingHost.Shampoo = host.Shampoo;
+            existingHost.Tv = host.Tv;
+            existingHost.Heating = host.Heating;
+            existingHost.Kitchen = host.Kitchen;
+            existingHost.Internet = host.Internet;
+            existingHost.Wifi = host.Wifi;
+            existingHost.HotTub = host.HotTub;
+            existingHost.Washer = host.Washer;
+            existingHost.Pool = host.Pool;
+            existingHost.Dryer = host.Dryer;
+            existingHost.ParkingFree = host.ParkingFree;
+            existingHost.FitnessCenter = host.FitnessCenter;
+            existingHost.Elevator = host.Elevator;
+            existingHost.SmokeDetector = host.SmokeDetector;
+            existingHost.CarbonMonoxideDetector = host.CarbonMonoxideDetector;
+            existingHost.FirstAidKit = host.FirstAidKit;
+            existingHost.SafetyCard = host.SafetyCard;
+            existingHost.FireExtinguisher = host.FireExtinguisher;
+            existingHost.AllTimeCheckin = host.AllTimeCheckin;
+            existingHost.Hangers = host.Hangers;
+            existingHost.HairDryer = host.HairDryer;
+            existingHost.Iron = host.Iron;
+            existingHost.DeskOrWorkspace = host.DeskOrWorkspace;
+            existingHost.FamilyFriendly = host.FamilyFriendly;
+            existingHost.SmokingAllowed = host.SmokingAllowed;
+            existingHost.PetsAllowed = host.PetsAllowed;
+            existingHost.WheelchairAccessible = host.WheelchairAccessible;
+            existingHost.HasPets = host.HasPets;
+            existingHost.AirportShuttleFree = host.AirportShuttleFree;
 
             this.hosts.SaveChanges();
         }
@@ -160,17 +159,18 @@
             this.hosts.SaveChanges();
         }
 
-        public void CreatePublish(string userId)
+        public int CreatePublish(string userId)
         {
             var existingHost = this.GetWorkInProgressOrCreateNew(userId);
             existingHost.IsComplete = true;
             this.hosts.SaveChanges();
+
+            return existingHost.Id;
         }
 
-        public void Create(string userId, Host host, Amenities amenities)
+        public void Create(string userId, Host host, Host amenities)
         {
             var user = this.users.GetById(userId);
-            host.Amenities = amenities;
             user.Hosts.Add(host);
             this.users.SaveChanges();
         }
@@ -185,7 +185,7 @@
             return this.hosts.All().Where(x => !x.IsDeleted);
         }
         
-        public void Update(string userId, int hostId, Host host, Amenities amenities)
+        public void Update(string userId, int hostId, Host host, Host amenities)
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
         
@@ -221,12 +221,6 @@
             existingHost.Longitude = host.Longitude;
             
             existingHost.Comment = host.Comment;
-        
-            if (existingHost.Amenities != null)
-            {
-                //t/his.amenitiesRepository.Delete(existingHost.Amenities);
-            }
-            existingHost.Amenities = amenities;
         
             this.hosts.SaveChanges();
         }

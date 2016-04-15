@@ -9,7 +9,7 @@
     using Data.Models;
 
     using Microsoft.AspNet.Identity;
-    
+
     using Services.Data.Contracts;
 
     using ViewModels.Host;
@@ -25,6 +25,14 @@
         {
             this.hostsService = hostsService;
             this.currencyRepository = currencyRepository;
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var host = this.hostsService.GetAll().FirstOrDefault(x => x.IsDeleted == false && x.Id == id);
+
+            return this.View(host);
         }
 
         [HttpGet]
@@ -82,7 +90,7 @@
         public ActionResult CreateAmenities()
         {
             var host = this.hostsService.GetWorkInProgressOrCreateNew(this.User.Identity.GetUserId());
-            var model = this.Mapper.Map<AmenitiesViewModel>(host.Amenities);
+            var model = this.Mapper.Map<AmenitiesViewModel>(host);
 
             return this.View("Amenities", model);
         }
@@ -96,8 +104,8 @@
                 return this.View("Amenities", model);
             }
 
-            var amenities = this.Mapper.Map<Amenities>(model);
-            this.hostsService.CreateAmenities(this.User.Identity.GetUserId(), amenities);
+            var host = this.Mapper.Map<Host>(model);
+            this.hostsService.CreateAmenities(this.User.Identity.GetUserId(), host);
 
             return this.RedirectToAction("CreateImages");
         }
@@ -115,10 +123,10 @@
         [ValidateAntiForgeryToken]
         public ActionResult CreateImages(IEnumerable<HttpPostedFileBase> files)
         {
-            var images = files.Select(file => System.Drawing.Image.FromStream(file.InputStream));
-
             try
             {
+                var images = files.Select(file => System.Drawing.Image.FromStream(file.InputStream));
+
                 this.hostsService.CreateImages(this.User.Identity.GetUserId(), images);
             }
             catch
@@ -144,9 +152,9 @@
         {
             //TODO: add checking
 
-            this.hostsService.CreatePublish(this.User.Identity.GetUserId());
+            var id = this.hostsService.CreatePublish(this.User.Identity.GetUserId());
 
-            return this.RedirectToAction("CreateMainInformation");
+            return this.RedirectToAction("Details", new { id = id });
         }
     }
 }

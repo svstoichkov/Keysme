@@ -92,7 +92,5 @@
         [MaxLength(20)]
         [Display(Name = "Reservation phone")]
         public string ReservationPhone { get; set; }
-
-        public bool SmokingAllowed { get; set; }
     }
 }

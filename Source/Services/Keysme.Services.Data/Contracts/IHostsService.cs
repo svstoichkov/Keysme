@@ -9,11 +9,11 @@
 
     public interface IHostsService
     {
-        void Create(string getUserId, Host host, Amenities amenities);
+        void Create(string getUserId, Host host, Host amenities);
         
         IQueryable<Host> GetOwn(string userId);
         
-        void Update(string getUserId, int hostId, Host host, Amenities amenities);
+        void Update(string getUserId, int hostId, Host host, Host amenities);
         
         void Delete(string getUserId, int id);
         
@@ -25,10 +25,10 @@
 
         void CreateLocation(string userId, Host host);
 
-        void CreateAmenities(string userId, Amenities amenities);
+        void CreateAmenities(string userId, Host host);
 
         void CreateImages(string userId, IEnumerable<Image> images);
 
-        void CreatePublish(string userId);
+        int CreatePublish(string userId);
     }
 }

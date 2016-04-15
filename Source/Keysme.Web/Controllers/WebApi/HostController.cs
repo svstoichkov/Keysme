@@ -43,7 +43,7 @@
             }
 
             var host = this.Mapper.Map<Host>(model.MainInformation);
-            var amenities = this.Mapper.Map<Amenities>(model.Amenities);
+            var amenities = this.Mapper.Map<Host>(model.Amenities);
 
             this.hostsService.Create(this.User.Identity.GetUserId(), host, amenities);
             return this.Ok();
@@ -58,7 +58,7 @@
             }
 
             var host = this.Mapper.Map<Host>(model.MainInformation);
-            var amenities = this.Mapper.Map<Amenities>(model.Amenities);
+            var amenities = this.Mapper.Map<Host>(model.Amenities);
 
             try
             {

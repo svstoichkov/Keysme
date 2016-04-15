@@ -5404,6 +5404,7 @@
     <Content Include="Views\Host\Location.cshtml" />
     <Content Include="Views\Host\Images.cshtml" />
     <Content Include="Views\Host\Publish.cshtml" />
+    <Content Include="Views\Host\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
