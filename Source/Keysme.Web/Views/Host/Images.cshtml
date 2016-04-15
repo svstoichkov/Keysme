@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create host";
+}
+
+@using Keysme.Global
+@model ICollection<Keysme.Data.Models.Image>
+
+<div class="row">
+    @Html.Partial("SideBarPartial")
+    <div class="col-md-9">
+        @using (Html.BeginForm("CreateImages", "Host", FormMethod.Post, new { @class = "sky-form", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <header>Images</header>
+            <fieldset>
+                <section>
+                    <input id="uploadImage" type="file" name="files" multiple onchange="PreviewImage();" class="btn-u form-control" accept="image/*"/>
+                </section>
+                <section>
+                    <ul class="row" id="previews">
+                        @foreach (var image in this.Model)
+                        {
+                            <li class="col-md-4 col-sm-6 preview">
+                                <img src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)" class="img-responsive img-bordered rounded-2x"/>
+                                <br/>
+                            </li>
+                        }
+                    </ul>
+                </section>
+            </fieldset>
+
+            <footer>
+                <button type="submit" class="btn-u">Continue</button>
+            </footer>
+        }
+    </div>
+</div>
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+    <style>
+        .preview {
+            display: inline-block;
+            opacity: 1;
+        }
+    </style>
+}
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script>
+        function PreviewImage() {
+            $("#previews").empty();
+            var files = document.getElementById("uploadImage").files;
+            for (var i = 0, length = files.length; i < length; i++) {
+                var oFReader = new FileReader();
+                oFReader.onload = function (oFREvent) {
+                    var li = $('<li>');
+                    li.addClass('col-md-4 col-sm-6 preview');
+                    var img = $('<img>');
+                    img.addClass('img-responsive img-bordered rounded-2x');
+                    img.attr('src', oFREvent.target.result);
+                    li.append(img);
+                    li.append($('<br>'));
+                    $("#previews").append(li);
+                }
+
+                oFReader.readAsDataURL(files[i]);
+            };
+        };
+
+    </script>
+}

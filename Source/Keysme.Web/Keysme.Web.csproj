@@ -5353,6 +5353,7 @@
     <Content Include="Content\VerificationImages\dummy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\HostImages\dummy" />
     <None Include="Properties\PublishProfiles\Keysme - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Keysme - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -5401,6 +5402,8 @@
     <Content Include="Views\Host\Amenities.cshtml" />
     <Content Include="Views\Host\SideBarPartial.cshtml" />
     <Content Include="Views\Host\Location.cshtml" />
+    <Content Include="Views\Host\Images.cshtml" />
+    <Content Include="Views\Host\Publish.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

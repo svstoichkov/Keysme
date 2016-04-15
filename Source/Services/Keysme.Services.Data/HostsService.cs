@@ -1,23 +1,31 @@
 ﻿namespace Keysme.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing.Imaging;
+    using System.IO;
     using System.Linq;
 
     using Contracts;
 
+    using Global;
+
     using Keysme.Data;
     using Keysme.Data.Models;
+
+    using Image = System.Drawing.Image;
 
     public class HostsService : IHostsService
     {
         private readonly IRepository<User> users;
         private readonly IRepository<Host> hosts;
-        private readonly IRepository<Amenities> amenitiesRepository;
+        private readonly IRepository<Keysme.Data.Models.Image> images;
 
-        public HostsService(IRepository<User> users, IRepository<Host> hosts, IRepository<Amenities> amenitiesRepository)
+        public HostsService(IRepository<User> users, IRepository<Host> hosts, IRepository<Keysme.Data.Models.Image> images)
         {
             this.users = users;
             this.hosts = hosts;
-            this.amenitiesRepository = amenitiesRepository;
+            this.images = images;
         }
 
         public Host GetWorkInProgressOrCreateNew(string userId)
@@ -38,7 +46,7 @@
         public void CreateMainInformation(string userId, Host host)
         {
             var existingHost = this.GetWorkInProgressOrCreateNew(userId);
-            
+
             existingHost.HostName = host.HostName;
             existingHost.Title = host.Title;
             existingHost.Description = host.Description;
@@ -67,7 +75,7 @@
         public void CreateLocation(string userId, Host host)
         {
             var existingHost = this.GetWorkInProgressOrCreateNew(userId);
-            
+
             existingHost.Country = host.Country;
             existingHost.City = host.City;
             existingHost.State = host.State;
@@ -123,6 +131,42 @@
             this.hosts.SaveChanges();
         }
 
+        public void CreateImages(string userId, IEnumerable<Image> images)
+        {
+            var existingHost = this.GetWorkInProgressOrCreateNew(userId);
+
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
+            var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.HostImagesFolder, existingHost.Id.ToString()));
+            if (Directory.Exists(imagePath))
+            {
+                Directory.Delete(imagePath, true);
+            }
+            Directory.CreateDirectory(imagePath);
+
+            foreach (var image in existingHost.Images.ToList())
+            {
+                this.images.Delete(image);
+            }
+
+            var resizedImages = images.Select(image => image.ResizeImage(1000, 562)).ToList();
+            for (int i = 0; i < resizedImages.Count; i++)
+            {
+                var name = existingHost.Id + $"_{i + 1}.jpg";
+                resizedImages[i].Save(Path.Combine(imagePath, name));
+
+                existingHost.Images.Add(new Keysme.Data.Models.Image { Filename = name });
+            }
+
+            this.hosts.SaveChanges();
+        }
+
+        public void CreatePublish(string userId)
+        {
+            var existingHost = this.GetWorkInProgressOrCreateNew(userId);
+            existingHost.IsComplete = true;
+            this.hosts.SaveChanges();
+        }
+
         public void Create(string userId, Host host, Amenities amenities)
         {
             var user = this.users.GetById(userId);
@@ -130,21 +174,21 @@
             user.Hosts.Add(host);
             this.users.SaveChanges();
         }
-
+        
         public IQueryable<Host> GetOwn(string userId)
         {
             return this.hosts.All().Where(x => x.UserId == userId && !x.IsDeleted);
         }
-
+        
         public IQueryable<Host> GetAll()
         {
             return this.hosts.All().Where(x => !x.IsDeleted);
         }
-
+        
         public void Update(string userId, int hostId, Host host, Amenities amenities)
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
-
+        
             existingHost.HostName = host.HostName;
             existingHost.Title = host.Title;
             existingHost.Description = host.Description;
@@ -166,7 +210,7 @@
             existingHost.MainPhone = host.MainPhone;
             existingHost.ReservationPhone = host.ReservationPhone;
             existingHost.SmokingAllowed = host.SmokingAllowed;
-
+        
             existingHost.Country = host.Country;
             existingHost.City = host.City;
             existingHost.State = host.State;
@@ -177,16 +221,16 @@
             existingHost.Longitude = host.Longitude;
             
             existingHost.Comment = host.Comment;
-
+        
             if (existingHost.Amenities != null)
             {
-                this.amenitiesRepository.Delete(existingHost.Amenities);
+                //t/his.amenitiesRepository.Delete(existingHost.Amenities);
             }
             existingHost.Amenities = amenities;
-
+        
             this.hosts.SaveChanges();
         }
-
+        
         public void Delete(string userId, int hostId)
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);

@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create host";
+}
+
+<div class="row">
+    @Html.Partial("SideBarPartial")
+    <div class="col-md-9">
+        @using (Html.BeginForm("CreatePublish", "Host", FormMethod.Post, new { @class = "sky-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <header>Publish</header>
+            @*<fieldset>
+                <section>
+                    <input id="uploadImage" type="file" name="files" multiple onchange="PreviewImage();" class="btn-u form-control" accept="image/*" />
+                </section>
+                <section>
+                    <ul class="row" id="previews">
+                        @foreach (var image in this.Model)
+                        {
+                            <li class="col-md-4 col-sm-6 preview">
+                                <img src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)" class="img-responsive img-bordered rounded-2x" />
+                                <br />
+                            </li>
+                        }
+                    </ul>
+                </section>
+            </fieldset>*@
+
+            <footer>
+                <button type="submit" class="btn-u">Publish</button>
+            </footer>
+        }
+    </div>
+</div>
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+}
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+}
