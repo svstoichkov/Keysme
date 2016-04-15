@@ -46,6 +46,7 @@
         public int? BathsCount { get; set; }
 
         [Required]
+        [Range(5, int.MaxValue)]
         public decimal? Price { get; set; }
 
         public SelectList Currencies { get; set; }

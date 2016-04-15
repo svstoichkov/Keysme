@@ -32,6 +32,11 @@
         {
             var host = this.hostsService.GetAll().FirstOrDefault(x => x.IsDeleted == false && x.Id == id);
 
+            if (host == null)
+            {
+                return this.RedirectToAction("CreateMainInformation");
+            }
+
             return this.View(host);
         }
 

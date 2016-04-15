@@ -6,148 +6,363 @@
 @model Keysme.Data.Models.Host
 
 <div class="content">
-				<!-- Magazine Slider -->
-				<div class="carousel slide carousel-v2 margin-bottom-40" id="portfolio-carousel">
-				    <ol class="carousel-indicators">
-				        @for (int i = 0; i < this.Model.Images.Count; i++)
-                        {
-                            <li class="@(i == 0 ? "active" : "") rounded-x" data-target="#portfolio-carousel" data-slide-to="@i"></li>
-                        }
-				    </ol>
+    <!-- Magazine Slider -->
+    <div class="carousel slide carousel-v2 margin-bottom-30" id="portfolio-carousel">
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < this.Model.Images.Count; i++)
+            {
+                <li class="@(i == 0 ? "active" : "") rounded-x" data-target="#portfolio-carousel" data-slide-to="@i"></li>
+            }
+        </ol>
 
-				    <div class="carousel-inner">
-				        @{
-				            var first = true;
-				        }
-				        @foreach (var image in this.Model.Images)
-                        {
-                            if (first)
-                            {
-                                first = false;
-                                <div class="item active">
-                                    <img class="full-width img-responsive" src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)">
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="item">
-                                    <img class="full-width img-responsive" src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)">
-                                </div>
-                            }
-                        }
-				    </div>
+        <div class="carousel-inner">
+            @{
+                var first = true;
+            }
+            @foreach (var image in this.Model.Images)
+            {
+                if (first)
+                {
+                    first = false;
+                    <div class="item active">
+                        <img class="full-width img-responsive" src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)">
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <img class="full-width img-responsive" src="/@Path.Combine(GlobalConstants.HostImagesFolder, image.HostId + "/" + image.Filename)">
+                    </div>
+                }
+            }
+        </div>
+        <a class="left carousel-control rounded-x" href="#portfolio-carousel" role="button" data-slide="prev">
+            <i class="fa fa-angle-left arrow-prev"></i>
+        </a>
+        <a class="right carousel-control rounded-x" href="#portfolio-carousel" role="button" data-slide="next">
+            <i class="fa fa-angle-right arrow-next"></i>
+        </a>
+    </div>
 
-					<a class="left carousel-control rounded-x" href="#portfolio-carousel" role="button" data-slide="prev">
-						<i class="fa fa-angle-left arrow-prev"></i>
-					</a>
-					<a class="right carousel-control rounded-x" href="#portfolio-carousel" role="button" data-slide="next">
-						<i class="fa fa-angle-right arrow-next"></i>
-					</a>
-				</div>
-				<!-- End Magazine Slider -->
+    <div class="funny-boxes funny-boxes-colored funny-boxes-blue margin-bottom-30">
+        <div class="row">
+            <div class="col-md-3 funny-boxes-img">
+                <img class="img-responsive" src="/assets/img/main/img26.jpg" alt="">
+                <ul class="list-unstyled">
+                    <li><i class="fa-fw fa fa-briefcase"></i> Dell, Google</li>
+                    <li><i class="fa-fw fa fa-map-marker"></i> New York, US</li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <h2><a href="#">Title</a></h2>
+                @*<ul class="list-unstyled funny-boxes-rating">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                    </ul>*@
+                <p>Description</p>
+            </div>
+        </div>
+    </div>
 
-				<div class="row margin-bottom-60">
-					<div class="col-sm-8">
-						<div class="headline"><h2>Product Description</h2></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in urna nec risus maximus ultricies. Nam nisi mauris, congue non lacus iaculis, interdum luctus dolor. Maecenas pellentesque sapien nec mauris dictum, et mollis lorem eleifend. In hac habitasse platea dictumst. Fusce nec elit et metus blandit posuere eget id ante. Integer fermentum auctor neque eu venenatis. Praesent diam eros, mollis a mattis sit amet, scelerisque sit amet dui. Morbi sed lectus ut lorem vehicula interdum a nec dui. Nam at placerat risus. Mauris eget faucibus tortor. Sed sed iaculis ligula. Aliquam porttitor viverra sagittis.</p>
-					</div>
-					<div class="col-sm-4">
-						<div class="headline"><h2>Product Details</h2></div>
-						<ul class="list-unstyled project-details">
-							<li><strong>Client:</strong> Web Design</li>
-							<li><strong>Date:</strong> 17 October 2014</li>
-							<li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
-							<li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
-						</ul>
-					</div>
-				</div>
+    <div class="row margin-bottom-10">
+        <div class="col-sm-3">
+            <div class="service-block service-block-default">
+                <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+                <h2 class="heading-md">Host type</h2>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="service-block service-block-default">
+                <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+                <h2 class="heading-md">Room type</h2>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="service-block service-block-default">
+                <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+                <h2 class="heading-md">Price</h2>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="service-block service-block-default">
+                <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+                <h2 class="heading-md">Purple Box</h2>
+            </div>
+        </div>
+    </div>
 
-				<div class="cube-portfolio">
-					<div id="grid-container" class="cbp-l-grid-agency">
-						<div class="cbp-item">
-							<div class="cbp-caption margin-bottom-20">
-								<div class="cbp-caption-defaultWrap">
-									<img src="/assets/img/portfolio/07.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-alignCenter">
-										<div class="cbp-l-caption-body">
-											<ul class="link-captions no-bottom-space">
-												<li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-												<li><a href="/assets/img/portfolio/07.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cbp-title-dark">
-								<div class="cbp-l-grid-agency-title">Dashboard</div>
-								<div class="cbp-l-grid-agency-desc">Web Design / Graphic</div>
-							</div>
-						</div>
-						<div class="cbp-item">
-							<div class="cbp-caption margin-bottom-20">
-								<div class="cbp-caption-defaultWrap">
-									<img src="/assets/img/portfolio/08.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-alignCenter">
-										<div class="cbp-l-caption-body">
-											<ul class="link-captions no-bottom-space">
-												<li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-												<li><a href="/assets/img/portfolio/08.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cbp-title-dark">
-								<div class="cbp-l-grid-agency-title">World Clock Widget</div>
-								<div class="cbp-l-grid-agency-desc">Logo / Web Design</div>
-							</div>
-						</div>
-						<div class="cbp-item">
-							<div class="cbp-caption margin-bottom-20">
-								<div class="cbp-caption-defaultWrap">
-									<img src="/assets/img/portfolio/09.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-alignCenter">
-										<div class="cbp-l-caption-body">
-											<ul class="link-captions no-bottom-space">
-												<li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-												<li><a href="/assets/img/portfolio/09.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cbp-title-dark">
-								<div class="cbp-l-grid-agency-title">To-Do Dashboard</div>
-								<div class="cbp-l-grid-agency-desc">Graphic / Logo</div>
-							</div>
-						</div>
-						<div class="cbp-item">
-							<div class="cbp-caption margin-bottom-20">
-								<div class="cbp-caption-defaultWrap">
-									<img src="/assets/img/portfolio/10.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-alignCenter">
-										<div class="cbp-l-caption-body">
-											<ul class="link-captions no-bottom-space">
-												<li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-												<li><a href="/assets/img/portfolio/10.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cbp-title-dark">
-								<div class="cbp-l-grid-agency-title">Events and More</div>
-								<div class="cbp-l-grid-agency-desc">Web Design / Graphic</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="sky-form">
+                <fieldset>
+                    <section>
+                        <div class="heading heading-v4">
+                            <h2>About</h2>
+                            <p>Hotel/Motel/B&B name (optional)</p>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <label>Main information</label>
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Rooms count</label> <br />
+                                <label>Guests per room</label><br />
+                                <label>Beds per room</label><br />
+                                <label>Baths per room</label><br />
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Check in after</label><br />
+                                <label>Check out before</label><br />
+                                <label>WiFi name</label><br />
+                                <label>WiFi password</label><br />
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="AirConditioned" disabled="disabled" value="true" @( this.Model.AirConditioned ? "checked" : "")>
+                                    <i></i>Air Conditioned
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="BarOrLounge" disabled="disabled" value="true" @( this.Model.BarOrLounge ? "checked" : "")>
+                                    <i></i>Bar Or Lounge
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="ConciergeService" disabled="disabled" value="true" @( this.Model.ConciergeService ? "checked" : "")>
+                                    <i></i>Concierge Service
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="ComplimentaryBreakfast" disabled="disabled" value="true" @( this.Model.ComplimentaryBreakfast ? "checked" : "")>
+                                    <i></i>Complimentary Breakfast
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="ContinentalBreakfast" disabled="disabled" value="true" @( this.Model.ContinentalBreakfast ? "checked" : "")>
+                                    <i></i>Continental Breakfast
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Essentials" disabled="disabled" value="true" @( this.Model.Essentials ? "checked" : "")>
+                                    <i></i>Essentials
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Shampoo" disabled="disabled" value="true" @( this.Model.Shampoo ? "checked" : "")>
+                                    <i></i>Shampoo
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Tv" disabled="disabled" value="true" @( this.Model.Tv ? "checked" : "")>
+                                    <i></i>TV
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Heating" disabled="disabled" value="true" @( this.Model.Heating ? "checked" : "")>
+                                    <i></i>Heating
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Kitchen" disabled="disabled" value="true" @( this.Model.Kitchen ? "checked" : "")>
+                                    <i></i>Kitchen
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Internet" disabled="disabled" value="true" @( this.Model.Internet ? "checked" : "")>
+                                    <i></i>Internet
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Wifi" disabled="disabled" value="true" @( this.Model.Wifi ? "checked" : "")>
+                                    <i></i>Wifi
+                                </label>
+                            </div>
+                            <div class="col col-md-4">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="HotTub" disabled="disabled" value="true" @( this.Model.HotTub ? "checked" : "")>
+                                    <i></i>Hot Tub
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Washer" disabled="disabled" value="true" @( this.Model.Washer ? "checked" : "")>
+                                    <i></i>Washer
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Pool" disabled="disabled" value="true" @( this.Model.Pool ? "checked" : "")>
+                                    <i></i>Pool
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Dryer" disabled="disabled" value="true" @( this.Model.Dryer ? "checked" : "")>
+                                    <i></i>Dryer
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="ParkingFree" disabled="disabled" value="true" @( this.Model.ParkingFree ? "checked" : "")>
+                                    <i></i>Parking Free
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="FitnessCenter" disabled="disabled" value="true" @( this.Model.FitnessCenter ? "checked" : "")>
+                                    <i></i>Fitness Center
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Elevator" disabled="disabled" value="true" @( this.Model.Elevator ? "checked" : "")>
+                                    <i></i>Elevator
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="SmokeDetector" disabled="disabled" value="true" @( this.Model.SmokeDetector ? "checked" : "")>
+                                    <i></i>Smoke Detector
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="CarbonMonoxideDetector" disabled="disabled" value="true" @( this.Model.CarbonMonoxideDetector ? "checked" : "")>
+                                    <i></i>Carbon Monoxide Detector
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="FirstAidKit" disabled="disabled" value="true" @( this.Model.FirstAidKit ? "checked" : "")>
+                                    <i></i>First-Aid Kit
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="SafetyCard" disabled="disabled" value="true" @( this.Model.SafetyCard ? "checked" : "")>
+                                    <i></i>Safety Card
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="FireExtinguisher" disabled="disabled" value="true" @( this.Model.FireExtinguisher ? "checked" : "")>
+                                    <i></i>Fire Extinguisher
+                                </label>
+                            </div>
+                            <div class="col col-md-4">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="AllTimeCheckin" disabled="disabled" value="true" @( this.Model.AllTimeCheckin ? "checked" : "")>
+                                    <i></i>Alltime Checkin
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Hangers" disabled="disabled" value="true" @( this.Model.Hangers ? "checked" : "")>
+                                    <i></i>Hangers
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="HairDryer" disabled="disabled" value="true" @( this.Model.HairDryer ? "checked" : "")>
+                                    <i></i>Hair Dryer
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="Iron" disabled="disabled" value="true" @( this.Model.Iron ? "checked" : "")>
+                                    <i></i>Iron
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="DeskOrWorkspace" disabled="disabled" value="true" @( this.Model.DeskOrWorkspace ? "checked" : "")>
+                                    <i></i>Desk Or Workspace
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="FamilyFriendly" disabled="disabled" value="true" @( this.Model.FamilyFriendly ? "checked" : "")>
+                                    <i></i>Family Friendly
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="SmokingAllowed" disabled="disabled" value="true" @( this.Model.SmokingAllowed ? "checked" : "")>
+                                    <i></i>Smoking Allowed
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="PetsAllowed" disabled="disabled" value="true" @( this.Model.PetsAllowed ? "checked" : "")>
+                                    <i></i>Pets Allowed
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="WheelchairAccessible" disabled="disabled" value="true" @( this.Model.WheelchairAccessible ? "checked" : "")>
+                                    <i></i>Wheelchair Accessible
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="HasPets" disabled="disabled" value="true" @( this.Model.HasPets ? "checked" : "")>
+                                    <i></i>Has Pets
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="AirportShuttleFree" disabled="disabled" value="true" @( this.Model.AirportShuttleFree ? "checked" : "")>
+                                    <i></i>Airport Shuttle-Free
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <label>Prices</label>
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Price</label> <br />
+                                <label>Can be instantly booked</label> <br />
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Cancellation</label><br />
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <label>House manual</label>
+                            </div>
+                            <div class="col col-md-8">
+                                <label>Manual</label> <br />
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <label>Contacts</label>
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Main phone</label> <br />
+                            </div>
+                            <div class="col col-md-4">
+                                <label>Reservation phone</label> <br />
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div id="map" style="height: 300px; width: 100%;"></div>
+            <hr/>
+            <ul class="list-unstyled project-details">
+                <li><strong>Country:</strong></li>
+                <li><strong>State:</strong></li>
+                <li><strong>City:</strong></li>
+                <li><strong>Address:</strong></li>
+                <li><strong>Postal code:</strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+}
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script>
+        function initAutocomplete() {
+            var coordinates = { lat: @this.Model.Latitude, lng: @this.Model.Longitude };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: coordinates,
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var marker = new google.maps.Marker({
+                position: coordinates,
+                map: map,
+                title: '@this.Model.Title'
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC_aGja_ubIScNvOHKuzIc75uPHhfeh3s&libraries=places&callback=initAutocomplete"
+            async defer></script>
+}

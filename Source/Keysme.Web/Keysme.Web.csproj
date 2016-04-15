@@ -667,6 +667,7 @@
     <Content Include="assets\img\intro\thematic\spa.jpg" />
     <Content Include="assets\img\intro\thematic\travel.jpg" />
     <Content Include="assets\img\intro\thematic\wedding.jpg" />
+    <Content Include="assets\img\keysme-logo.png" />
     <Content Include="assets\img\logo-2.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\logo1-default.png" />

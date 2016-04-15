@@ -46,6 +46,7 @@
                 var currencies = new List<Currency>
                                  {
                                      new Currency { Name = "US Dollar", Code = "USD", Symbol = "$", IsActive = true },
+                                     new Currency { Name = "Canadian Dollar", Code = "CAD", Symbol = "$", IsActive = true },
                                      new Currency { Name = "Euro", Code = "EUR", Symbol = "€", IsActive = true },
                                      new Currency { Name = "British Pound", Code = "GBP", Symbol = "£", IsActive = true },
                                      new Currency { Name = "Australian Dollar", Code = "AUD", Symbol = "$", IsActive = true },

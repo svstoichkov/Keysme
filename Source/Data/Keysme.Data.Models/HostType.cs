@@ -11,6 +11,7 @@ namespace Keysme.Data.Models
         [Display(Name = "Bed & Breakfast")]
         BAndB = 4,
         Apartment = 5,
-        House = 6
+        House = 6,
+        Unique = 7
     }
 }
