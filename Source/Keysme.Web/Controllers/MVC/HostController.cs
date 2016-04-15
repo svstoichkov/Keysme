@@ -1,12 +1,15 @@
 ﻿namespace Keysme.Web.Controllers.MVC
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
 
     using Data;
     using Data.Models;
+
+    using Global;
 
     using Microsoft.AspNet.Identity;
 
@@ -18,12 +21,14 @@
     public class HostController : BaseController
     {
         private readonly IHostsService hostsService;
+        private readonly IUsersService usersService;
         private readonly IRepository<Currency> currencyRepository;
 
         //TODO: add currency caching
-        public HostController(IHostsService hostsService, IRepository<Currency> currencyRepository)
+        public HostController(IHostsService hostsService, IUsersService usersService, IRepository<Currency> currencyRepository)
         {
             this.hostsService = hostsService;
+            this.usersService = usersService;
             this.currencyRepository = currencyRepository;
         }
 
@@ -37,7 +42,13 @@
                 return this.RedirectToAction("CreateMainInformation");
             }
 
-            return this.View(host);
+            var model = new DetailsViewModel
+            {
+                Host = host,
+                ProfileImagePath = Path.Combine(GlobalConstants.UserProfileImageFolder, host.UserId + ".jpg")
+            };
+
+            return this.View(model);
         }
 
         [HttpGet]

@@ -220,6 +220,7 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Host\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Host\LocationViewModel.cs" />
     <Compile Include="ViewModels\Profile\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Profile\ChangeInfoViewModel.cs" />
