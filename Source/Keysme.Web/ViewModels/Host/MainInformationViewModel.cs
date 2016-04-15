@@ -54,9 +54,6 @@
         [Display(Name = "Currency")]
         public int? CurrencyId { get; set; }
 
-        //[Required]
-        //public string IsInstantBookString { get; set; }
-
         public bool IsInstantBook { get; set; }
 
         [Required]
