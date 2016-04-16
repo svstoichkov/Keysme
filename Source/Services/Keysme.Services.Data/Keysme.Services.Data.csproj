@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="HostsService.cs" />
     <Compile Include="Contracts\IHostsService.cs" />
