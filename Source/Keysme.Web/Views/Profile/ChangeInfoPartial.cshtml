@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @model Keysme.Web.ViewModels.Profile.ChangeInfoViewModel
 
-@using (Html.BeginForm("ChangeInfo", "Profile", FormMethod.Post))
+@using (Html.BeginForm("ChangeInfo", "Profile", FormMethod.Post, new { @class = "sky-form" }))
 {
     @Html.AntiForgeryToken()
     <dl class="dl-horizontal">

@@ -35,7 +35,7 @@
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var host = this.hostsService.GetAll().FirstOrDefault(x => x.IsDeleted == false && x.Id == id);
+            var host = this.hostsService.GetAll().FirstOrDefault(x => x.Id == id);
 
             if (host == null)
             {

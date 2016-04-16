@@ -1,1388 +1,198 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
 }
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
-<head>
-    <title>Keys.me - Independent Accommodations</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Svetlozar Stoichkov - UpWork">
-    <meta name="description" content="Keys.me offers independent and private accommodations including boutique hotels, motels, B&B and private and unique apartments and houses." />
-    <meta name="keywords" content="keys, keys accommodation, keys hotel, idependent accommodation, private accommodation, boutique hotel, motel, independent hostel, bed and breakfast, B&B, uniqure aparment, private apartment rental, private house rental" />
-    <meta name="robots" content="index, follow">
-    <meta name="revisit-after" content="3 month">
+@using Keysme.Global
+@model Keysme.Web.ViewModels.Home.IndexViewModel
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- LOADING FONTS AND ICONS -->
-    <link href="http://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400,700,300" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.min.css">
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/revolution/css/settings.css">
-    <!-- REVOLUTION LAYERS STYLES -->
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/revolution/css/layers.css">
-    <!-- REVOLUTION NAVIGATION STYLES -->
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/revolution/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/revolution-slider/assets/css/noneed.css">
-    <!-- CSS Theme -->
-    <link rel="stylesheet" href="/assets/plugins/revolution-slider/assets/css/style.css">
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="/assets/plugins/revolution-slider/assets/css/custom.css">
-</head>
-<body>
-    <!-- SLIDER EXAMPLE -->
-    <section class="example">
-        <article class="content">
-            <div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="levano-restaurant-bar" style="background-color:transparent;padding:0px;">
-                <!-- START REVOLUTION SLIDER 5.0.7 fullscreen mode -->
-                <div id="rev_slider_24_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
-                    <ul>
-                        <!-- SLIDE  -->
-                        <li data-index="rs-80" data-transition="fade" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1000" data-thumb="/assets/plugins/revolution-slider/assets/images/notgenericherobg-100x50.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off" data-title="Intro" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/notgenericherobg.jpg" data-bgposition="center center" data-kenburns="on" data-duration="20000" data-ease="Power1.easeOut" data-scalestart="110" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-80-layer-1"
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['-130','-130','-130','-130']"
-                                 data-width="none"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap;">
-                                Beta
-                            </div>
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-80-layer-2"
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap;">
-                                KEYS
-                            </div>
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-80-layer-3"
-                                 data-x="['center','center','center','center']" data-hoffset="['10','10','10','10']"
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['30','30','40','70']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="700"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 6; white-space: nowrap; line-height: 40px;">
-                                Marketplace for independent and private hosts and guests to connect
-                            </div>
-                            <div class="tp-caption rev-btn rev-bordered  "
-                                 id="slide-80-layer-4"
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['100','100','120','140']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;"
-                                 data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(0, 0, 0, 0);bc:rgba(255, 224, 129, 1.00);"
-                                 data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
-                                 data-start="2800"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-82","delay":""}]'
-                                 data-responsive_offset="on"
-                                 data-responsive="off"
-                                 style="z-index: 15; white-space: nowrap; font-size: 17px; line-height: 17px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:Roboto;background-color:rgba(10, 10, 10, 0);padding:12px 35px 12px 35px;border-color:rgba(255, 255, 255, 0.50);border-style:solid;border-width:2px;letter-spacing:3px;">
-                                BECOME A HOST
-                            </div>
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption rev-scroll-btn "
-                                 id="slide-80-layer-5"
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['77','77','77','77']"
-                                 data-width="35"
-                                 data-height="55"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-style_hover="cursor:pointer;"
-                                 data-transform_in="y:50px;opacity:0;s:1500;e:Power3.easeInOut;"
-                                 data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-                                 data-start="1500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-basealign="slide"
-                                 data-responsive_offset="off"
-                                 data-responsive="off"
-                                 style="z-index: 7; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 400;border-color:rgba(255, 255, 255, 1.00);border-style:solid;border-width:3px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
-                                <span>
-                                </span>
-                            </div>
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption Restaurant-ScrollDownText  "
-                                 id="slide-80-layer-4"
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeInOut;"
-                                 data-transform_out="auto:auto;s:1000;"
-                                 data-start="1900"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-basealign="slide"
-                                 data-responsive_offset="off"
-                                 data-responsive="off"
-                                 style="z-index: 8; white-space: nowrap;">
-                                Scroll Down
-                            </div>
-                        </li>
-                        <!-- SLIDE  -->
-                        <li data-index="rs-81" data-transition="slideoverup" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1000" data-thumb="/assets/plugins/revolution-slider/assets/images/morning-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Host" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/morning.jpg" data-bgposition="right center" data-kenburns="on" data-duration="30000" data-ease="Power1.easeOut" data-scalestart="110" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-81-layer-1"
-                                 data-x="['left','left','center','center']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['70','21','174','124']"
-                                 data-fontsize="['60','60','60','60']"
-                                 data-lineheight="['60','60','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="700"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; font-size: 60px; line-height: 60px;">
-                                HOST
-                            </div>
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-84-layer-3"
-                                 data-x="['left','left','center','center']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['140','91','244','194']"
-                                 data-fontsize="['90','90','60','60']"
-                                 data-lineheight="['90','90','60','60']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap;">
-                                <span class="glyphicon glyphicon-bed"></span>
-                            </div>
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-81-layer-2"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['240','200','320','270']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="['900','700','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 6; white-space: nowrap; line-height: 59px;">
-                                We are building a simple room management system for:
-                            </div>
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-3"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['310','310','360','310']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Boutique Hotels
-                            </div>
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-4"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['360','360','410','360']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Independent Motels
-                            </div>
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-5"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['410','410','460','410']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Hostels
-                            </div>
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-6"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['460','460','510','460']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Bed & Breakfasts (B&B)
-                            </div>
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-7"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['510','510','560','510']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Private Homes and Apartments
-                            </div>
-                            <div class="tp-caption Restaurant-Description   tp-resizeme"
-                                 id="slide-81-layer-7"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['560','560','610','560']"
-                                 data-fontsize="['40','40','30','30']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; color: rgba(255, 255, 255, 0.50);">
-                                Unique Properties
-                            </div>
-                            <!-- LAYER NR. 8 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-81-layer-8"
-                                 data-x="['left','left','left','left']" data-hoffset="['600','500','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['610','610','650','610']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="['800','524','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1600"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 12; white-space: pre-wrap; line-height: 59px;">
-                                Hosts have options to allow instance bookings, exchange private messages or given price quotes.
-                            </div>
-                            <div class="tp-caption rev-btn rev-bordered  "
-                                 id="slide-81-layer-11"
-                                 data-x="['left','left','center','center']" data-hoffset="['600','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['750','600','750','750']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;"
-                                 data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(0, 0, 0, 0);bc:rgba(255, 224, 129, 1.00);"
-                                 data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
-                                 data-start="2800"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-82","delay":""}]'
-                                 data-responsive_offset="on"
-                                 data-responsive="off"
-                                 style="z-index: 15; white-space: nowrap; font-size: 17px; line-height: 17px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:Roboto;background-color:rgba(10, 10, 10, 0);padding:12px 35px 12px 35px;border-color:rgba(255, 255, 255, 0.50);border-style:solid;border-width:2px;letter-spacing:3px;">
-                                BECOME A HOST
-                            </div>
-                        </li>
-                        <!-- SLIDE  -->
-                        @*<li data-index="rs-82" data-transition="slideoverup" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1500" data-thumb="/assets/plugins/revolution-slider/assets/images/drink_cover-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Drinks" data-description="">
-                                <!-- MAIN IMAGE -->
-                                <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/drink_cover.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                                <!-- LAYERS -->
-                                <!-- BACKGROUND VIDEO LAYER -->
-                                <div class="rs-background-video-layer"
-                                     data-volume="mute"
-                                     data-videowidth="100%"
-                                     data-videoheight="100%"
-                                     data-videomp4="/assets/plugins/revolution-slider/assets/videos/drink.mp4"
-                                     data-videopreload="preload"
-                                     data-videoloop="loop"
-                                     data-forceCover="1"
-                                     data-aspectratio="16:9"
-                                     data-autoplay="true"
-                                     data-autoplayonlyfirsttime="false"
-                                     data-nextslideatend="true"></div>
-                                <!-- LAYER NR. 1 -->
-                                <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                     id="slide-82-layer-1"
-                                     data-x="['left','left','center','center']" data-hoffset="['778','585','0','0']"
-                                     data-y="['top','top','top','top']" data-voffset="['350','320','639','459']"
-                                     data-fontsize="['30','30','20','20']"
-                                     data-lineheight="['59','59','40','40']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
-                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                     data-start="1000"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap; line-height: 59px;">
-                                    Try Our
-                                </div>
-                                <!-- LAYER NR. 2 -->
-                                <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                     id="slide-82-layer-2"
-                                     data-x="['left','left','center','center']" data-hoffset="['780','580','1','1']"
-                                     data-y="['top','top','middle','middle']" data-voffset="['400','380','212','160']"
-                                     data-fontsize="['60','60','40','40']"
-                                     data-lineheight="['60','60','40','40']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
-                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                     data-start="1100"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 60px;">
-                                    PREMIUM ALES
-                                </div>
-                                <!-- LAYER NR. 3 -->
-                                <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                     id="slide-82-layer-3"
-                                     data-x="['left','left','center','center']" data-hoffset="['780','584','3','3']"
-                                     data-y="['top','top','top','top']" data-voffset="['492','472','727','555']"
-                                     data-fontsize="['30','30','20','20']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
-                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                     data-start="1200"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 7; white-space: nowrap;">
-                                    From $ 2,90
-                                </div>
-                                <!-- LAYER NR. 4 -->
-                                <div class="tp-caption Restaurant-Button rev-btn "
-                                     id="slide-82-layer-4"
-                                     data-x="['left','left','center','center']" data-hoffset="['780','588','2','2']"
-                                     data-y="['top','top','top','top']" data-voffset="['770','617','779','607']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;"
-                                     data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(0, 0, 0, 0);bc:rgba(255, 224, 129, 1.00);"
-                                     data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;s:1000;"
-                                     data-start="2200"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-83","delay":""}]'
-                                     data-responsive_offset="on"
-                                     data-responsive="off"
-                                     style="z-index: 8; white-space: nowrap;letter-spacing:3px;">
-                                    SEE OUR OPENING TIMES
-                                </div>
-                            </li>*@
-                        <!-- SLIDE  -->
-                        <li data-index="rs-83" data-transition="slideoverup" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1000" data-thumb="/assets/plugins/revolution-slider/assets/images/hammock-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="How It Works" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/hammock.jpg" data-bgposition="left center" data-kenburns="on" data-duration="30000" data-ease="Power1.easeOut" data-scalestart="110" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-83-layer-1"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','50','50']"
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','190','120']"
-                                 data-fontsize="['60','60','40','40']"
-                                 data-lineheight="['60','60','40','40']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="700"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; font-size: 60px; line-height: 60px;">
-                                Spaces for the global community
-                            </div>
-                            <!-- LAYER NR. 2 -->
-                            @*<div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                     id="slide-83-layer-2"
-                                     data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                     data-y="['top','top','top','top']" data-voffset="['170','170','257','257']"
-                                     data-fontsize="['30','30','20','20']"
-                                     data-lineheight="['59','59','40','40']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;s:1000;"
-                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                     data-start="1000"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 6; white-space: nowrap; line-height: 59px;">
-                                    Spaces for the global community
-                                </div>*@
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-83-layer-3"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['200','235','295','220']"
-                                 data-fontsize="['90','90','60','60']"
-                                 data-lineheight="['90','90','60','60']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap;">
-                                <span class="glyphicon glyphicon-globe"></span>
-                            </div>
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-83-layer-4"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['320','320','361','290']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1200"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 8; white-space: nowrap; line-height: 59px;">
-                                Find a space fits your style
-                            </div>
-                            <!-- LAYER NR. 5 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-83-layer-5"
-                                 data-x="['left','left','left','left']" data-hoffset="['50','50','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['385','385','400','330']"
-                                 data-fontsize="['30','30','20','20']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1300"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 9; white-space: nowrap;">
-                                Search for your preference to stay in hotel, B&B or private homes.  It’s your choice.
-                            </div>
-                            <!-- LAYER NR. 6 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-83-layer-6"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['480','480','500','420']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 10; white-space: nowrap; line-height: 59px;">
-                                Request Price Quotes
-                            </div>
-                            <!-- LAYER NR. 7 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-83-layer-7"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['535','535','540','460']"
-                                 data-fontsize="['30','30','20','20']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 11; white-space: nowrap;">
-                                Allow guests to request quote from participate hosts in a location for targeted price and date
-                            </div>
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-83-layer-8"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['620','620','620','550']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 10; white-space: nowrap; line-height: 59px;">
-                                Booking
-                            </div>
-                            <!-- LAYER NR. 7 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-83-layer-9"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['685','685','660','590']"
-                                 data-fontsize="['30','30','20','20']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 11; white-space: nowrap;">
-                                Connect and communicate with hosts and pay through Keys’ trusted services.
-                            </div>
-                        </li>
-                        <li data-index="rs-84" data-transition="slideoverup" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1000" data-thumb="/assets/plugins/revolution-slider/assets/images/travel-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Connect Hosts and Guests" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/travel.jpg" data-bgposition="left center" data-kenburns="on" data-duration="30000" data-ease="Power1.easeOut" data-scalestart="110" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-84-layer-1"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','190','190']"
-                                 data-fontsize="['60','60','40','40']"
-                                 data-lineheight="['60','60','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="700"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; font-size: 60px; line-height: 60px;">
-                                Hospitality with Trust
-                            </div>
-                            <!-- LAYER NR. 2 -->
-                            @*<div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                     id="slide-83-layer-2"
-                                     data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                     data-y="['top','top','top','top']" data-voffset="['170','170','257','257']"
-                                     data-fontsize="['30','30','20','20']"
-                                     data-lineheight="['59','59','40','40']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;s:1000;"
-                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                     data-start="1000"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 6; white-space: nowrap; line-height: 59px;">
-                                    Spaces for the global community
-                                </div>*@
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-84-layer-3"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['215','215','280','280']"
-                                 data-fontsize="['90','90','60','60']"
-                                 data-lineheight="['90','90','60','60']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap;">
-                                <span class="glyphicon glyphicon-heart-empty"></span>
-                            </div>
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-84-layer-4"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['320','320','361','361']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1200"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 8; white-space: nowrap; line-height: 59px;">
-                                Profiles and Reviews
-                            </div>
-                            <!-- LAYER NR. 5 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-84-layer-5"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['385','385','400','400']"
-                                 data-fontsize="['30','30','20','20']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1300"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 9; white-space: nowrap;">
-                                Keys requires hosts and guests to register before booking. We provide reviews and verifications on the users.
-                            </div>
-                            <!-- LAYER NR. 6 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-84-layer-6"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','0','0']"
-                                 data-y="['top','top','top','top']" data-voffset="['470','470','466','500']"
-                                 data-fontsize="['30','30','30','30']"
-                                 data-lineheight="['59','59','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 10; white-space: nowrap; line-height: 59px;">
-                                Trusted Services
-                            </div>
-                            <!-- LAYER NR. 7 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-84-layer-7"
-                                 data-x="['left','left','center','center']" data-hoffset="['50','50','10','10']"
-                                 data-y="['top','top','top','top']" data-voffset="['535','535','504','540']"
-                                 data-fontsize="['30','30','20','20']"
-                                 data-width="['1240','1024','778','480']"
-                                 data-height="none"
-                                 data-whitespace="normal"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 11; white-space: nowrap;">
-                                Keys verifies personal profiles, host authorizations for both parties. We provide a private messaging system and a secured payment service.
-                            </div>
-                        </li>
-                        <!-- SLIDE  -->
-                        <li data-index="rs-85" data-transition="slideoververtical" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="1000" data-thumb="/assets/plugins/revolution-slider/assets/images/travel1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Contact" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="" data-lazyload="/assets/plugins/revolution-slider/assets/images/travel1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption Restaurant-Display   tp-resizeme"
-                                 id="slide-85-layer-1"
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','120','140']"
-                                 data-fontsize="['60','60','40','40']"
-                                 data-lineheight="['60','60','40','40']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="700"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; font-size: 60px; line-height: 60px;">
-                                FIND US HERE
-                            </div>
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-85-layer-2"
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['200','180','172','192']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 6; white-space: nowrap; font-size: 20px; line-height: 40px;">
-                                Address
-                            </div>
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-85-layer-3"
-                                 data-x="['left','left','left','left']" data-hoffset="['250','250','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['206','186','214','234']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1100"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 25px;">
-                                N/A
-                            </div>
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-85-layer-4"
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['320','300','308','328']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1200"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 40px;">
-                                Phone
-                            </div>
-                            <!-- LAYER NR. 5 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-85-layer-5"
-                                 data-x="['left','left','left','left']" data-hoffset="['250','250','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['326','306','349','369']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1300"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 9; white-space: nowrap; font-size: 20px; line-height: 25px;">
-                                N/A
-                            </div>
-                            <!-- LAYER NR. 6 -->
-                            <div class="tp-caption Restaurant-Cursive   tp-resizeme"
-                                 id="slide-85-layer-6"
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['380','360','391','411']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 10; white-space: nowrap; font-size: 20px; line-height: 40px;">
-                                Email
-                            </div>
-                            <!-- LAYER NR. 7 -->
-                            <div class="tp-caption Restaurant-Price   tp-resizeme"
-                                 id="slide-85-layer-7"
-                                 data-x="['left','left','left','left']" data-hoffset="['250','250','30','30']"
-                                 data-y="['top','top','top','top']" data-voffset="['386','366','435','455']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
-                                 data-style_hover="c:rgba(255, 255, 255, 0.50);"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeOut;"
-                                 data-transform_out="opacity:0;s:1000;s:1000;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-start="1500"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 11; white-space: nowrap; font-size: 20px; line-height: 25px;">
-                                support@keys.me
-                            </div>
-                            <!-- LAYER NR. 8 -->
-                            @*<div class="tp-caption -   tp-resizeme"
-                                     id="slide-84-layer-8"
-                                     data-x="['left','left','left','left']" data-hoffset="['100','100','30','30']"
-                                     data-y="['top','top','bottom','bottom']" data-voffset="['500','430','152','-100']"
-                                     data-width="none"
-                                     data-height="none"
-                                     data-whitespace="nowrap"
-                                     data-visibility="['on','on','on','off']"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="x:left;s:1500;e:Power3.easeOut;"
-                                     data-transform_out="opacity:0;s:1000;s:1000;"
-                                     data-start="2500"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on"
-                                     style="z-index: 12; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d628.649893265494!2d7.004314796920626!3d50.93112389810982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1434545053661" width="400" height="300" frameborder="0" style="border:0"></iframe>
-                                </div>*@
-                        </li>
-                    </ul>
-                    <div class="tp-static-layers">
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption   tp-static-layer"
-                             id="slide-12-layer-2"
-                             data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
-                             data-y="['top','top','top','top']" data-voffset="['30','30','30','30']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="auto:auto;s:300;"
-                             data-start="500"
-                             data-basealign="slide"
-                             data-responsive_offset="off"
-                             data-responsive="off"
-                             data-startslide="0"
-                             data-endslide="4"
-                             style="z-index: 5;">
-                            <img src="/assets/plugins/revolution-slider/assets/images/dummy.png" alt="Logo" width="120" height="120" data-ww="['60px','60px','60px','60px']" data-hh="['60px','60px','60px','60px']" data-lazyload="/assets/plugins/revolution-slider/assets/images/keysme-logo.png" data-no-retina>
-                        </div>
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption rev-burger revb-white  tp-static-layer"
-                             id="slide-12-layer-6"
-                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','30']"
-                             data-y="['top','top','top','top']" data-voffset="['30','30','30','30']"
-                             data-width="60"
-                             data-height="60"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-style_hover="cursor:pointer;"
-                             data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="s:300;s:300;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"toggleclass","layer":"slide-12-layer-6","delay":"0","classname":"open"},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slide-12-layer-3","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slide-12-layer-4","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slide-12-layer-5","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slide-12-layer-7","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slide-12-layer-8","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"register","delay":""},{"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"login","delay":""}]'
-                             data-basealign="slide"
-                             data-responsive_offset="off"
-                             data-responsive="off"
-                             data-startslide="0"
-                             data-endslide="4"
-                             style="z-index: 6; min-width: 60px; max-width: 60px; max-width: 60px; max-width: 60px; white-space: nowrap; font-size: px; line-height: px; font-weight: 400;padding:22px 0px 0px 14px;border-color:rgba(255, 255, 255, 0.25);border-style:solid;border-width:2px;border-radius:50% 50% 50% 50%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                             id="slide-12-layer-3"
-                             data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                             data-y="['top','top','top','top']" data-voffset="['124','124','124','124']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                             data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                             data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                             data-start="bytrigger"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-80","delay":"100"},{"event":"click","action":"simulateclick","layer":"slide-12-layer-6","delay":""}]'
-                             data-basealign="slide"
-                             data-responsive_offset="on"
-                             data-startslide="0"
-                             data-endslide="4"
-                             data-end="bytrigger"
-                             data-lasttriggerstate="keep"
-                             style="z-index: 7; white-space: nowrap;">
-                            Welcome
-                        </div>
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                             id="slide-12-layer-4"
-                             data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                             data-y="['top','top','top','top']" data-voffset="['162','162','162','162']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                             data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                             data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                             data-start="bytrigger"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-81","delay":""},{"event":"click","action":"simulateclick","layer":"slide-12-layer-6","delay":""}]'
-                             data-basealign="slide"
-                             data-responsive_offset="on"
-                             data-startslide="0"
-                             data-endslide="4"
-                             data-end="bytrigger"
-                             data-lasttriggerstate="keep"
-                             style="z-index: 8; white-space: nowrap;">
-                            Host
-                        </div>
-                        <!-- LAYER NR. 5 -->
-                        <div class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                             id="slide-12-layer-5"
-                             data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                             data-y="['top','top','top','top']" data-voffset="['200','200','200','200']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                             data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                             data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                             data-start="bytrigger"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-83","delay":"100"},{"event":"click","action":"simulateclick","layer":"slide-12-layer-6","delay":""}]'
-                             data-basealign="slide"
-                             data-responsive_offset="on"
-                             data-startslide="0"
-                             data-endslide="4"
-                             data-end="bytrigger"
-                             data-lasttriggerstate="keep"
-                             style="z-index: 9; white-space: nowrap;">
-                            How it works
-                        </div>
-                        <!-- LAYER NR. 6 -->
-                        <div class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                             id="slide-12-layer-7"
-                             data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                             data-y="['top','top','top','top']" data-voffset="['238','238','238','238']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                             data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                             data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                             data-start="bytrigger"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-84","delay":"100"},{"event":"click","action":"simulateclick","layer":"slide-12-layer-6","delay":""}]'
-                             data-basealign="slide"
-                             data-responsive_offset="on"
-                             data-startslide="0"
-                             data-endslide="4"
-                             data-end="bytrigger"
-                             data-lasttriggerstate="keep"
-                             style="z-index: 10; white-space: nowrap;">
-                            Connect Hosts and Guests
-                        </div>
-                        <!-- LAYER NR. 7 -->
-                        <div class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                             id="slide-12-layer-8"
-                             data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                             data-y="['top','top','top','top']" data-voffset="['276','276','276','276']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                             data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                             data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                             data-start="bytrigger"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-85","delay":""},{"event":"click","action":"simulateclick","layer":"slide-12-layer-6","delay":"0"}]'
-                             data-basealign="slide"
-                             data-responsive_offset="on"
-                             data-startslide="0"
-                             data-endslide="4"
-                             data-end="bytrigger"
-                             data-lasttriggerstate="keep"
-                             style="z-index: 11; white-space: nowrap;">
-                            Contact
-                        </div>
-                        @if (!this.User.Identity.IsAuthenticated)
-                        {
-                            <a class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                               id="register"
-                               data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                               data-y="['top','top','top','top']" data-voffset="['314','314','314','314']"
-                               data-width="none"
-                               data-height="none"
-                               data-whitespace="nowrap"
-                               data-transform_idle="o:1;"
-                               data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                               data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                               data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                               data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                               data-start="bytrigger"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-basealign="slide"
-                               data-responsive_offset="on"
-                               data-startslide="0"
-                               data-endslide="4"
-                               data-end="bytrigger"
-                               data-lasttriggerstate="keep"
-                               style="z-index: 7; white-space: nowrap;"
-                               href="/Account/Register">
-                                Sign up
-                            </a>
-                            <a class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                               id="login"
-                               data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                               data-y="['top','top','top','top']" data-voffset="['352','352','352','352']"
-                               data-width="none"
-                               data-height="none"
-                               data-whitespace="nowrap"
-                               data-transform_idle="o:1;"
-                               data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                               data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                               data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                               data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                               data-start="bytrigger"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-basealign="slide"
-                               data-responsive_offset="on"
-                               data-startslide="0"
-                               data-endslide="4"
-                               data-end="bytrigger"
-                               data-lasttriggerstate="keep"
-                               style="z-index: 7; white-space: nowrap;"
-                               href="/Account/Login">
-                                Sign in
-                            </a>
-                        }
-                        else
-                        {<a class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                            id="register"
-                            data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                            data-y="['top','top','top','top']" data-voffset="['314','314','314','314']"
-                            data-width="none"
-                            data-height="none"
-                            data-whitespace="nowrap"
-                            data-transform_idle="o:1;"
-                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                            data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                            data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                            data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                            data-start="bytrigger"
-                            data-splitin="none"
-                            data-splitout="none"
-                            data-basealign="slide"
-                            data-responsive_offset="on"
-                            data-startslide="0"
-                            data-endslide="4"
-                            data-end="bytrigger"
-                            data-lasttriggerstate="keep"
-                            style="z-index: 7; white-space: nowrap;"
-                            href="/Profile">
-                            @this.User.Identity.Name
-                        </a>
-                        <a class="tp-caption Restaurant-Menuitem   tp-resizeme tp-static-layer"
-                           id="login"
-                           data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                           data-y="['top','top','top','top']" data-voffset="['352','352','352','352']"
-                           data-width="none"
-                           data-height="none"
-                           data-whitespace="nowrap"
-                           data-transform_idle="o:1;"
-                           data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power2.easeInOut;"
-                           data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                           data-transform_in="x:50px;opacity:0;s:500;e:Power2.easeInOut;"
-                           data-transform_out="x:50px;opacity:0;s:500;e:Power2.easeInOut;s:500;e:Power2.easeInOut;"
-                           data-start="bytrigger"
-                           data-splitin="none"
-                           data-splitout="none"
-                           data-basealign="slide"
-                           data-responsive_offset="on"
-                           data-startslide="0"
-                           data-endslide="4"
-                           data-end="bytrigger"
-                           data-lasttriggerstate="keep"
-                           style="z-index: 7; white-space: nowrap;"
-                           href="/Hosts">
-                            Hosts
-                        </a>
-                        }
+<div class="cube-portfolio container margin-bottom-60">
+    @*@<div class="content-xs">
+            <div id="filters-container" class="cbp-l-filters-text content-xs">
+                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
+                <div data-filter=".identity" class="cbp-filter-item"> Identity </div> |
+                <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div> |
+                <div data-filter=".graphic" class="cbp-filter-item"> Graphic </div> |
+                <div data-filter=".logos" class="cbp-filter-item"> Logo </div>
+            </div><!--/end Filters Container-->
+        </div>*@
+    <div id="grid-container" class="cbp-l-grid-agency">
+        @foreach (var host in this.Model.Hosts)
+        {
+            <div class="cbp-item">
+                <div class="cbp-caption margin-bottom-20">
+                    <div class="cbp-caption-defaultWrap">
+                            <img src="/@Path.Combine(GlobalConstants.HostImagesFolder, host.Id + "/" + host.Images.FirstOrDefault()?.Filename)">
                     </div>
-                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                    <div class="cbp-caption-activeWrap">
+                        <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                                <ul class="link-captions no-bottom-space">
+                                    <li><a href="/Host/Details/@host.Id"><i class="rounded-x fa fa-link"></i></a></li>
+                                    @*<li><a href="/@Path.Combine(GlobalConstants.HostImagesFolder, host.Id + "/" + host.Images.FirstOrDefault()?.Filename)" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div><!-- END REVOLUTION SLIDER -->
-        </article>
-    </section>
-    <!-- LOAD JQUERY LIBRARY -->
-    <script src="/assets/plugins/jquery/jquery.min.js"></script>
-    <!-- REVOLUTION JS FILES -->
-    <script src="/assets/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS (Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading) -->
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="/assets/plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script>
-        var tpj = jQuery;
-        var revapi24;
-        tpj(document).ready(function () {
-            if (tpj("#rev_slider_24_1").revolution == undefined) {
-                revslider_showDoubleJqueryError("#rev_slider_24_1");
-            } else {
-                revapi24 = tpj("#rev_slider_24_1").show().revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "../../revolution/js/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    navigation: {
-                        keyboardNavigation: "off",
-                        keyboard_direction: "horizontal",
-                        mouseScrollNavigation: "on",
-                        onHoverStop: "off",
-                        touch: {
-                            touchenabled: "on",
-                            swipe_threshold: 75,
-                            swipe_min_touches: 1,
-                            swipe_direction: "vertical",
-                            drag_block_vertical: false
-                        }
-                    ,
-                        bullets: {
-                            enable: true,
-                            hide_onmobile: true,
-                            hide_under: 1024,
-                            style: "uranus",
-                            hide_onleave: false,
-                            direction: "vertical",
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 30,
-                            v_offset: 0,
-                            space: 5,
-                            tmp: '<span class="tp-bullet-inner"></span>'
-                        }
-                    },
-                    viewPort: {
-                        enable: true,
-                        outof: "wait",
-                        visible_area: "80%"
-                    },
-                    responsiveLevels: [1240, 1024, 778, 480],
-                    gridwidth: [1240, 1024, 778, 480],
-                    gridheight: [868, 768, 960, 720],
-                    lazyType: "single",
-                    shadow: 0,
-                    spinner: "off",
-                    stopLoop: "on",
-                    stopAfterLoops: 0,
-                    stopAtSlide: 1,
-                    shuffle: "off",
-                    autoHeight: "off",
-                    fullScreenAlignForce: "off",
-                    fullScreenOffsetContainer: "",
-                    fullScreenOffset: "",
-                    disableProgressBar: "on",
-                    hideThumbsOnMobile: "off",
-                    hideSliderAtLimit: 0,
-                    hideCaptionAtLimit: 0,
-                    hideAllCaptionAtLilmit: 0,
-                    debugMode: false,
-                    fallbacks: {
-                        simplifyAll: "off",
-                        nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
-                    }
-                });
-            }
-        });	/*ready*/
-    </script>
-</body>
-</html>
+                <a class="cbp-title-dark" href="/Host/Details/@host.Id">
+                    <div class="cbp-l-grid-agency-title">@host.Title</div>
+                    <div class="cbp-l-grid-agency-desc">@host.Country, @host.City</div>
+                </a>
+            </div>
+        }
+        @*<div class="cbp-item graphic">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img12.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img12.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 01</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>
+        <div class="cbp-item web-design logos">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img18.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img18.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 02</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>
+        <div class="cbp-item graphic logos">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img7.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img7.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 03</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>
+        <div class="cbp-item web-design graphic">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img4.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img4.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 04</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>
+        <div class="cbp-item identity web-design">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img3.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img3.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 05</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>
+        <div class="cbp-item identity web-design">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="/assets/img/main/img6.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                <li><a href="/assets/img/main/img6.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title">Design Object 06</div>
+                <div class="cbp-l-grid-agency-desc">Web Design</div>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+<div class="text-center">
+    <ul class="pagination">
+        @if (this.Model.CurrentPage > 1)
+        {
+            <li><a href="/Home/Index/@this.Model.CurrentPage - 1">«</a></li>
+        }
+        @for (int i = 1; i <= this.Model.Pages; i++)
+        {
+            <li><a href="/Home/Index/@i" class="@(i == this.Model.CurrentPage ? "active" : "")">@i</a></li>
+        }
+        @if (this.Model.CurrentPage < this.Model.Pages)
+        {
+            <li><a href="/Home/Index/@this.Model.CurrentPage + 1">»</a></li>
+        }
+    </ul>
+</div>
+
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+}
+
+@section Scripts{
+    <script type="text/javascript" src="/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script type="text/javascript" src="/assets/js/plugins/cube-portfolio/cube-portfolio-2.js"></script>
+}

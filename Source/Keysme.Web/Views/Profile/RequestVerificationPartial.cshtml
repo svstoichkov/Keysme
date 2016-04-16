@@ -2,7 +2,7 @@
 @using Microsoft.AspNet.Identity
 @model Keysme.Web.ViewModels.Profile.RequestVerificationViewModel
 
-@using (Html.BeginForm("RequestVerification", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("RequestVerification", "Profile", FormMethod.Post, new { @class="sky-form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 

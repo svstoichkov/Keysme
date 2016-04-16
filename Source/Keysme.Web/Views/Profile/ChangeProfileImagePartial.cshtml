@@ -1,4 +1,4 @@
-﻿@using (Html.BeginForm("UploadProfileImage", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+﻿@using (Html.BeginForm("UploadProfileImage", "Profile", FormMethod.Post, new { @class="sky-form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 

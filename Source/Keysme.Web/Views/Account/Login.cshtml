@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "reg-page" }))
+        @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "reg-page" }))
         {
             @Html.AntiForgeryToken()
 

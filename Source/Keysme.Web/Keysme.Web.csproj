@@ -202,6 +202,7 @@
     <Compile Include="Controllers\MVC\AccountController.cs" />
     <Compile Include="Controllers\MVC\BaseController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
+    <Compile Include="Controllers\MVC\LandingController.cs" />
     <Compile Include="Controllers\MVC\HostController.cs" />
     <Compile Include="Controllers\MVC\ProfileController.cs" />
     <Compile Include="Controllers\WebApi\AccountController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Host\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Host\LocationViewModel.cs" />
     <Compile Include="ViewModels\Profile\ChangePasswordViewModel.cs" />
@@ -5380,7 +5382,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Landing\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
@@ -5407,6 +5409,7 @@
     <Content Include="Views\Host\Images.cshtml" />
     <Content Include="Views\Host\Publish.cshtml" />
     <Content Include="Views\Host\Details.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

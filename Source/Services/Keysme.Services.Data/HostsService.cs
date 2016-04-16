@@ -182,7 +182,7 @@
         
         public IQueryable<Host> GetAll()
         {
-            return this.hosts.All().Where(x => !x.IsDeleted);
+            return this.hosts.All().Where(x => !x.IsDeleted && x.IsComplete);
         }
         
         public void Update(string userId, int hostId, Host host, Host amenities)
