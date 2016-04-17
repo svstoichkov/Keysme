@@ -177,7 +177,7 @@
         }
         @for (int i = 1; i <= this.Model.Pages; i++)
         {
-            <li><a href="/Home/Index/@i" class="@(i == this.Model.CurrentPage ? "active" : "")">@i</a></li>
+            <li class="@(i == this.Model.CurrentPage ? "active" : "")"><a href="/Home/Index/@i">@i</a></li>
         }
         @if (this.Model.CurrentPage < this.Model.Pages)
         {

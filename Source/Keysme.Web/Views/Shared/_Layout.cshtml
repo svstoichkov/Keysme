@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var action = this.ViewContext.RouteData.Values["action"].ToString().ToLower();
+    var controller = this.ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -79,10 +84,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
                 <div class="container">
-                    @{
-                        var action = this.ViewContext.RouteData.Values["action"].ToString().ToLower();
-                        var controller = this.ViewContext.RouteData.Values["controller"].ToString().ToLower();
-                    }
                     <ul class="nav navbar-nav">
                         <li class="@(controller == "home" ? "active" : "")">
                             <a href="/Home">
@@ -123,7 +124,7 @@
                 <div class="container">
                     <h1 class="pull-left">@ViewBag.Title</h1>
                     @*<ul class="pull-right breadcrumb">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/Home">Home</a></li>
                             <li><a href="">Pages</a></li>
                             <li class="active">Blank Page</li>
                         </ul>*@

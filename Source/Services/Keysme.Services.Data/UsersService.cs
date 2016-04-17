@@ -28,7 +28,7 @@
         {
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserProfileImageFolder, userId + ".jpg"));
-            image = image.ResizeImage(440, 440);
+            image = image.ResizeImageWithBorders(440, 440);
             image.Save(imagePath, ImageFormat.Jpeg);
 
             var user = this.users.GetById(userId);

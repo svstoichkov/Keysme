@@ -147,7 +147,7 @@
                 this.images.Delete(image);
             }
 
-            var resizedImages = images.Select(image => image.ResizeImage(1024, 576)).ToList();
+            var resizedImages = images.Select(image => image.ResizeImageWithBorders(1024, 576)).ToList();
             for (int i = 0; i < resizedImages.Count; i++)
             {
                 var name = existingHost.Id + $"_{i + 1}.jpg";
