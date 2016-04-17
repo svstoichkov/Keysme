@@ -70,19 +70,20 @@
 <div class="row margin-bottom-10">
     <div class="col-sm-4">
         <div class="service-block service-block-default">
-            <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+            <i class="icon-custom rounded icon-color-dark @this.Model.Host.Type.GetLineIcon()"></i>
             <h2 class="heading-md">@this.Model.Host.Type.GetDisplayName()</h2>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="service-block service-block-default">
-            <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+            <i class="icon-custom rounded icon-color-dark @this.Model.Host.RoomType.GetLineIcon()"></i>
             <h2 class="heading-md">@this.Model.Host.RoomType.GetDisplayName()</h2>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="service-block service-block-default">
-            <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+            @*<i class="icon-custom rounded icon-color-dark @this.Model.Host.Type.GetLineIcon()"></i>*@
+            <i class="icon-custom rounded icon-color-dark">@this.Model.Host.Currency.Symbol</i>
             <h2 class="heading-md">@this.Model.Host.Price</h2>
         </div>
     </div>

@@ -27,9 +27,10 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- CSS Header and Footer -->
     <link rel="stylesheet" href="/assets/css/headers/header-default.css">
-    <link rel="stylesheet" href="/assets/css/footers/footer-v1.css">
+    <link rel="stylesheet" href="/assets/css/footers/footer-default.css">
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="/assets/plugins/animate.css">
+    <link rel="stylesheet" href="/assets/plugins/line-icons-pro/styles.css">
     <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
     <!-- CSS Theme -->
@@ -96,23 +97,31 @@
                                     Profile
                                 </a>
                             </li>
-                                <li class="@(controller == "host" && action == "createmaininformation" ? "active" : "")">
-                                    <a href="/Host/CreateMainInformation">
-                                        Create host
+                            <li class="@(controller == "host" && action == "createmaininformation" ? "active" : "")">
+                                <a href="/Host/CreateMainInformation">
+                                    Create host
+                                </a>
+                            </li>
+                            }
+                            @if (this.User.IsInRole("Admin"))
+                            {
+                                <li class="@(controller == "admin" ? "active" : "")">
+                                    <a href="/Admin/VerifyUser">
+                                        Administration
                                     </a>
                                 </li>
                             }
                             @*<li>
-                                <i class="search fa fa-search search-btn"></i>
-                                <div class="search-open">
-                                    <div class="input-group animated fadeInDown">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn">
-                                            <button class="btn-u" type="button">Go</button>
-                                        </span>
+                                    <i class="search fa fa-search search-btn"></i>
+                                    <div class="search-open">
+                                        <div class="input-group animated fadeInDown">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                            <span class="input-group-btn">
+                                                <button class="btn-u" type="button">Go</button>
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>*@
+                                </li>*@
                             <!-- End Search Block -->
                         </ul>
                     </div><!--/end container-->
@@ -132,69 +141,90 @@
             </div><!--/breadcrumbs-->
             <!--=== End Breadcrumbs ===-->
             <!--=== Content ===-->
-            <div class="content bg-color-light">
+            <div class="content bg-color@(ViewBag.TablesFix)-light">
                 <div class="container">
                     @RenderBody()
                 </div>
             </div>
             <!--=== End Content ===-->
-            <!--=== Footer Version 1 ===-->
-            <div class="footer-v1">
+            <div id="footer-default" class="footer-default">
                 <div class="footer">
                     <div class="container">
                         <div class="row">
-                            <!-- About -->
-                            <div class="col-md-3 md-margin-bottom-40">
-                                <a href="index.html"><img id="logo-footer" class="footer-logo" src="/assets/img/logo2-default.png" alt=""></a>
-                                <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                                <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
-                            </div><!--/col-md-3-->
-                            <!-- End About -->
-                            <!-- Latest -->
-                            <div class="col-md-3 md-margin-bottom-40">
-                                <div class="posts">
-                                    <div class="headline"><h2>Latest Posts</h2></div>
-                                    <ul class="list-unstyled latest-list">
-                                        <li>
-                                            <a href="#">Incredible content</a>
-                                            <small>May 8, 2014</small>
-                                        </li>
-                                        <li>
-                                            <a href="#">Best shoots</a>
-                                            <small>June 23, 2014</small>
-                                        </li>
-                                        <li>
-                                            <a href="#">New Terms and Conditions</a>
-                                            <small>September 15, 2014</small>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div><!--/col-md-3-->
-                            <!-- End Latest -->
-                            <!-- Link List -->
-                            <div class="col-md-3 md-margin-bottom-40">
-                                <div class="headline"><h2>Useful Links</h2></div>
-                                <ul class="list-unstyled link-list">
-                                    <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
-                                </ul>
-                            </div><!--/col-md-3-->
-                            <!-- End Link List -->
-                            <!-- Address -->
-                            <div class="col-md-3 map-img md-margin-bottom-40">
+                            <div class="col-md-4 md-margin-bottom-40">
+                                <!-- About -->
+                                <div class="headline"><h2>About</h2></div>
+                                @*<a href="http://travel.asiaroom.com"><img id="logo-footer" class="footer-logo" src="~/img/asiaroomlogo2.png" alt="logo2"></a>*@
+                                <p class="margin-bottom-25 md-margin-bottom-40"><a href="http://www.asiaroom.com">www.AsiaRoom.com</a> constantly publishes deals, tips and articles to prepare your travel to and from Asia.</p>
+                                <p class="margin-bottom-25 md-margin-bottom-40"><a href="http://travel.asiaroom.com">Travel.AsiaRoom.com</a> offers most cost-effective bookings for flights, hotels, cars and tours in Asia and the major cities in the world.</p>
+                                <!-- End About -->
+                                <!-- Contact Us -->
                                 <div class="headline"><h2>Contact Us</h2></div>
                                 <address class="md-margin-bottom-40">
-                                    25, Lorem Lis Street, Orange <br />
-                                    California, US <br />
-                                    Phone: 800 123 3456 <br />
-                                    Fax: 800 123 3456 <br />
-                                    Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                                    Phone: +1.828.389.3357 <br />
+                                    Email: <a href="mailto:support@asiaroom.com" class="">support@asiaroom.com</a>
                                 </address>
-                            </div><!--/col-md-3-->
-                            <!-- End Address -->
+                                <!-- End Contact Us -->
+                            </div><!--/col-md-4-->
+
+                            <div class="col-md-4 md-margin-bottom-40">
+                                <!-- Link List -->
+                                <div class="posts">
+                                    <div class="headline"><h2>Useful Links</h2></div>
+                                    <ul class="list-unstyled link-list">
+                                        <li><a href="http://travel.asiaroom.com">Travel.AsiaRoom.com</a><i class="fa fa-angle-right"></i></li>
+                                        <li>@Html.ActionLink("Tours", "Index", "Tour")<i class="fa fa-angle-right"></i></li>
+                                        <li>@Html.ActionLink("Tips and Articles", "Tips_And_Articles", "Blog")<i class="fa fa-angle-right"></i></li>
+                                        <li>@Html.ActionLink("Blogs", "Index", "Blog")<i class="fa fa-angle-right"></i></li>
+                                        <li>@Html.ActionLink("About us", "About", "Home")<i class="fa fa-angle-right"></i></li>
+                                        <li>@Html.ActionLink("Contact", "Contact", "Home")<i class="fa fa-angle-right"></i></li>
+                                        @*@if (AsiaRoomNew.Infrastructure.SessionHelper.IsInAnyRole("Admin"))
+                                            {
+                                                <li role="presentation">@Html.ActionLink("Taxi Admin", "Index", "Admin")<i class="fa fa-angle-right"></i></li>
+                                            }
+                                            @if (AsiaRoomNew.Infrastructure.SessionHelper.IsInAnyRole("Blogger"))
+                                            {
+                                                <li>@Html.ActionLink("Blog Admin", "BlogAdmin", "Blog")<i class="fa fa-angle-right"></i></li>
+                                            }
+                                            @if (AsiaRoomNew.Infrastructure.SessionHelper.IsInAnyRole("TourAdmin"))
+                                            {
+                                                <li role="presentation">@Html.ActionLink("Tour Admin", "Index", "TourAdmin")<i class="fa fa-angle-right"></i></li>
+                                            }
+                                            @Html.Partial("_LoginPartial2")*@
+
+
+                                    </ul>
+                                </div>
+                                <!-- End Link List -->
+                            </div><!--/col-md-4-->
+                            <div class="col-md-4">
+                                <!-- Monthly Newsletter -->
+                                <div class="headline"><h2>Newsletter Subscribe</h2></div>
+                                <p>Subscribe to our newsletter and stay up to date with the latest articles and deals!</p>
+                                @*@using (Html.BeginForm("NewsletterSubscribe", "Blog", FormMethod.Post, new { @class = "form-subsribe", role = "form" }))
+                                    {
+                                        <div class="input-group">
+                                            <input class="form-control" id="FullName" name="FullName" placeholder="Name" type="text" value="" />
+                                            <input class="form-control" id="Email" name="Email" placeholder="Email Address" type="text" value="" />
+                                            <span class="input-group-btn">
+                                                <input type="submit" class="btn-u" value="Subscribe" />
+                                            </span>
+                                        </div>
+                                    }*@
+                                <!-- End Monthly Newsletter -->
+                                <!-- Social Links -->
+                                <div class="headline"><h2>Stay Connected</h2></div>
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/asiaroombooking" data-original-title="Facebook" class="social_facebook"></a></li>
+                                    <li><a href="https://twitter.com/asiaroom_com" data-original-title="Twitter" class="social_twitter"></a></li>
+                                    <li><a href="https://plus.google.com/109112132220747757141/" data-original-title="Goole Plus" class="social_googleplus"></a></li>
+                                    <li><a href="https://www.linkedin.com/company/asiaroom-llc" data-original-title="Linkedin" class="social_linkedin"></a></li>
+                                    @*<li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
+                                        <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>*@
+                                    @*<li><a href="#" data-original-title="Feed" class="social_rss"></a></li>*@
+                                </ul>
+                                <!-- End Social Links -->
+                            </div><!--/col-md-4-->
                         </div>
                     </div>
                 </div><!--/footer-->
@@ -203,56 +233,20 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <p>
-                                    2015 &copy; All Rights Reserved.
-                                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                                    &copy; @DateTime.Now.Year - AsiaRoom, LLC&nbsp;&nbsp;&nbsp;All Rights Reserved.
+                                    @Html.ActionLink("Privacy Policy", "Privacy_Policy", "Home") | @Html.ActionLink("Terms of Service", "Terms_of_Service", "Home")
                                 </p>
                             </div>
-                            <!-- Social Links -->
                             <div class="col-md-6">
-                                <ul class="footer-socials list-inline">
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
-                                            <i class="fa fa-skype"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
-                                            <i class="fa fa-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
-                                            <i class="fa fa-dribbble"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="http://travel.asiaroom.com">
+                                    <img class="pull-right" id="logo-footer" src="~/assets/AsiaRoomLogo.png" alt="logo2" style="width: 140px;">
+                                </a>
                             </div>
-                            <!-- End Social Links -->
                         </div>
                     </div>
                 </div><!--/copyright-->
             </div>
-            <!--=== End Footer Version 1 ===-->
+            <!--=== End Footer ===-->
         </div>
         <!-- JS Global Compulsory -->
         <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>

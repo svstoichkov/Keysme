@@ -16,6 +16,12 @@
         {
             <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/assets/img/testimonials/user.jpg" alt="">
         }
+        @if (this.Model.IsVerified)
+        {
+            <div>
+                <span class="label label-primary">Verified</span>
+            </div>
+        }
         <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
             <li class="list-group-item active">
                 <a href="/Profile/Settings"><i class="fa fa-cog"></i> Settings</a>
@@ -42,7 +48,10 @@
                     <li class="active"><a data-toggle="tab" href="#profile">Edit Profile</a></li>
                     <li><a data-toggle="tab" href="#passwordTab">Change Password</a></li>
                     <li><a data-toggle="tab" href="#profileImage">Profile Image</a></li>
-                    <li><a data-toggle="tab" href="#verification">Request Verification</a></li>
+                    @if (!this.Model.IsVerified)
+                    {
+                        <li><a data-toggle="tab" href="#verification">Request Verification</a></li>
+                    }
                 </ul>
                 <div class="tab-content">
                     <div id="profile" class="profile-edit tab-pane fade in active">
@@ -63,12 +72,14 @@
                         <br>
                         @Html.Partial("ChangeProfileImagePartial")
                     </div>
-
-                    <div id="verification" class="profile-edit tab-pane fade">
-                        <h2 class="heading-md">Request verification</h2>
-                        <br>
-                        @Html.Partial("RequestVerificationPartial", this.Model.RequestVerificationViewModel)
-                    </div>
+                    @if (!this.Model.IsVerified)
+                    {
+                        <div id="verification" class="profile-edit tab-pane fade">
+                            <h2 class="heading-md">Request verification</h2>
+                            <br>
+                            @Html.Partial("RequestVerificationPartial", this.Model.RequestVerificationViewModel)
+                        </div>
+                    }
                 </div>
             </div>
         </div>

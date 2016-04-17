@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Reflection;
 
+    using Keysme.Data.Models;
+
     public static class EnumExtensions
     {
         public static string GetDisplayName(this Enum enumValue)
@@ -13,6 +15,17 @@
             if (member != null)
             {
                 return member.GetName();
+            }
+
+            return enumValue.ToString();
+        }
+
+        public static string GetLineIcon(this Enum enumValue)
+        {
+            var member = enumValue.GetType().GetMember(enumValue.ToString()).First().GetCustomAttribute<LineIconAttribute>();
+            if (member != null)
+            {
+                return member.Icon;
             }
 
             return enumValue.ToString();

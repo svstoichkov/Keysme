@@ -28,7 +28,7 @@
 
         public ApplicationSignInManager SignInManager => this.HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
 
-        public ApplicationUserManager UserManager => HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        public ApplicationUserManager UserManager => this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
         [HttpGet]
         public ActionResult Index()
@@ -38,7 +38,13 @@
             model.ChangeInfoViewModel = this.Mapper.Map<ChangeInfoViewModel>(user);
             model.ChangePasswordViewModel = new ChangePasswordViewModel();
             model.RequestVerificationViewModel = new RequestVerificationViewModel();
-            model.RequestVerificationViewModel.HasRequestedVerification = user.Verification != null;
+            if (user.Verification != null)
+            {
+                model.IsVerified = user.Verification.IsApproved;
+                model.RequestVerificationViewModel.HasRequestedVerification = true;
+                model.RequestVerificationViewModel.CountryCode = user.Verification.CountryCode;
+                model.RequestVerificationViewModel.VerificationType = user.Verification.Type;
+            }
             return this.View(model);
         }
 
@@ -117,7 +123,7 @@
             {
                 var frontImage = Image.FromStream(model.Front.InputStream);
                 var backImage = Image.FromStream(model.Back.InputStream);
-                this.usersService.Verify(this.User.Identity.GetUserId(), model.VerificationType, model.CountryCode, frontImage, backImage);
+                this.usersService.RequestVerification(this.User.Identity.GetUserId(), model.VerificationType, model.CountryCode, frontImage, backImage);
 
                 this.TempData["Success"] = "Verification has been requested.";
                 return this.RedirectToAction("Index");

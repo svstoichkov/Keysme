@@ -24,13 +24,13 @@
         <dt><strong>Date of birth</strong></dt>
         <dd>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     @Html.DropDownListFor(m => m.BirthMonth, Enumerable.Range(1, 12).Select(i => new SelectListItem { Value = i.ToString(), Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(i) }), "Select Month", new { @class = "form-control" })
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     @Html.DropDownListFor(m => m.BirthDay, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Day", new { @class = "form-control" })
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     @Html.DropDownListFor(m => m.BirthYear, Enumerable.Range(1910, DateTime.Now.Year - 1909).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Select Year", new { @class = "form-control" })
                 </div>
             </div>

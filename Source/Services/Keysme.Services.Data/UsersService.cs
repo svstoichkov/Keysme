@@ -6,6 +6,7 @@
     using Keysme.Data.Models;
     using System.Drawing.Imaging;
     using System.IO;
+    using System.Linq;
 
     using Contracts;
 
@@ -54,7 +55,7 @@
             this.users.SaveChanges();
         }
 
-        public void Verify(string userId, VerificationType type, CountryCode countryCode, Image frontImage, Image backImage)
+        public void RequestVerification(string userId, VerificationType type, CountryCode countryCode, Image frontImage, Image backImage)
         {
             var verification = new Verification();
             verification.Type = type;
@@ -82,6 +83,18 @@
         public User GetUser(string userId)
         {
             return this.users.GetById(userId);
+        }
+
+        public IQueryable<User> GetAll()
+        {
+            return this.users.All();
+        }
+
+        public void Verify(string userId)
+        {
+            var verification = this.verifications.All().First(x => x.User.Id == userId);
+            verification.IsApproved = true;
+            this.verifications.SaveChanges();
         }
     }
 }

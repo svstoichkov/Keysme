@@ -7,5 +7,7 @@
         public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
 
         public RequestVerificationViewModel RequestVerificationViewModel { get; set; }
+
+        public bool IsVerified { get; set; }
     }
 }

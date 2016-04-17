@@ -23,8 +23,6 @@
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
-
-        //public virtual Amenities Amenities { get; set; }
         
         public virtual ICollection<Image> Images
         {
@@ -129,6 +127,7 @@
 
         public DateTime? SnoozedTo { get; set; }
 
+        //Amenities
         public bool AirConditioned { get; set; }
 
         public bool BarOrLounge { get; set; }

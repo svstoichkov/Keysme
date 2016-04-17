@@ -6,6 +6,9 @@
     using System.IO;
     using System.Linq;
 
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     using Models;
 
     public class Configuration : DbMigrationsConfiguration<KeysmeDbContext>
@@ -18,6 +21,31 @@
 
         protected override void Seed(KeysmeDbContext context)
         {
+            var manager = new UserManager<User>(new UserStore<User>(context));
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+            var user = new User
+            {
+                Email = "admin@keys.me",
+                UserName = "admin@keys.me",
+                FirstName = "Admin",
+                LastName = "Admin",
+                BirthDate = DateTime.Now,
+                CreatedOn = DateTime.Now
+            };
+
+            manager.Create(user, "admin@keys.me");
+
+            if (!roleManager.Roles.Any())
+            {
+                roleManager.Create(new IdentityRole { Name = "Admin" });;
+            }
+
+            var adminUser = manager.FindByName("admin@keys.me");
+
+            manager.AddToRole(adminUser.Id, "Admin");
+
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var countriesCsv = Path.Combine(basePath, "country.csv");
             var countries = File.ReadAllLines(countriesCsv);

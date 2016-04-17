@@ -200,6 +200,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MVC\AccountController.cs" />
+    <Compile Include="Controllers\MVC\AdminController.cs" />
     <Compile Include="Controllers\MVC\BaseController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
     <Compile Include="Controllers\MVC\LandingController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\Admin\VerifyUsersViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Host\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Host\LocationViewModel.cs" />
@@ -270,6 +272,7 @@
     <Content Include="assets\ajax\cube-portfolio\team7.html" />
     <Content Include="assets\ajax\cube-portfolio\team8.html" />
     <Content Include="assets\ajax\cube-portfolio\team9.html" />
+    <Content Include="assets\AsiaRoomLogo.png" />
     <Content Include="assets\css\app.css" />
     <Content Include="assets\css\blocks.css" />
     <Content Include="assets\css\css-rtl\app-rtl.css" />
@@ -5410,6 +5413,8 @@
     <Content Include="Views\Host\Publish.cshtml" />
     <Content Include="Views\Host\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\VerifyUser.cshtml" />
+    <Content Include="Views\Admin\SideBarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5420,7 +5425,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
