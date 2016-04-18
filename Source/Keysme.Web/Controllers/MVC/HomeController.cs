@@ -22,9 +22,9 @@
         [HttpGet]
         public ActionResult Index(int id = 1)
         {
-            var count = this.hostsService.GetAll().Count();
+            var count = this.hostsService.GetAll().Count(x => x.IsApproved);
             var pages = (int)Math.Floor(count / (double)GlobalConstants.HomePageSize) + 1;
-            var hosts = this.hostsService.GetAll().OrderByDescending(x => x.CreatedOn).Skip((id - 1) * GlobalConstants.HomePageSize).Take(GlobalConstants.HomePageSize);
+            var hosts = this.hostsService.GetAll().Where(x => x.IsApproved).OrderByDescending(x => x.CreatedOn).Skip((id - 1) * GlobalConstants.HomePageSize).Take(GlobalConstants.HomePageSize);
 
             return this.View(new IndexViewModel { Hosts = hosts, CurrentPage = id, Pages = pages});
         }

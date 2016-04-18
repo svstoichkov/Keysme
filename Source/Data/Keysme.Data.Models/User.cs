@@ -20,6 +20,7 @@
         public User()
         {
             this.Hosts = new HashSet<Host>();
+            this.ProfileImage = "user.jpg";
         }
 
         [Required]

@@ -21,14 +21,12 @@
     public class HostController : BaseController
     {
         private readonly IHostsService hostsService;
-        private readonly IUsersService usersService;
         private readonly IRepository<Currency> currencyRepository;
 
         //TODO: add currency caching
-        public HostController(IHostsService hostsService, IUsersService usersService, IRepository<Currency> currencyRepository)
+        public HostController(IHostsService hostsService, IRepository<Currency> currencyRepository)
         {
             this.hostsService = hostsService;
-            this.usersService = usersService;
             this.currencyRepository = currencyRepository;
         }
 
@@ -45,7 +43,7 @@
             var model = new DetailsViewModel
             {
                 Host = host,
-                ProfileImagePath = Path.Combine(GlobalConstants.UserProfileImageFolder, host.UserId + ".jpg")
+                ProfileImagePath = Path.Combine(GlobalConstants.UserProfileImageFolder, host.User.ProfileImage)
             };
 
             return this.View(model);

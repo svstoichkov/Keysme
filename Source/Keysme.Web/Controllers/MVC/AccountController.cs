@@ -63,6 +63,13 @@
             return this.View();
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult PrivacyPolicy()
+        {
+            return this.View();
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

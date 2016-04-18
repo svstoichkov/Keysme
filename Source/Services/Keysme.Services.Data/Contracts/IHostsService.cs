@@ -30,5 +30,9 @@
         void CreateImages(string userId, IEnumerable<Image> images);
 
         int CreatePublish(string userId);
+
+        void DeleteAdmin(string userId, int hostId);
+
+        void Approve(string userId, int hostId);
     }
 }

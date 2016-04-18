@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Approve Host";
+    ViewBag.TablesFix = " ";
+}
+
+@using Keysme.Global
+
+@model Keysme.Web.ViewModels.Admin.UnapprovedHostsViewModel
+<div class="row">
+    @Html.Partial("SideBarPartial")
+    <div class="col-md-9">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-tasks"></i> List of unapproved hosts
+                </h3>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Modified on</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var host in this.Model.Hosts)
+                    {
+                        <tr>
+                            <td>@host.Title</td>
+                            <td>@host.ModifiedOn</td>
+                            <td>
+                                <a href="/Host/Details/@host.Id" class="btn-u" target="_blank">View</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Css{
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

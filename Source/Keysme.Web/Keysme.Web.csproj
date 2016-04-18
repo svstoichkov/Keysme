@@ -222,7 +222,8 @@
     <Compile Include="ViewModels\Account\RegisterExternalBindingModel.cs" />
     <Compile Include="ViewModels\Account\RemoveLoginBindingModel.cs" />
     <Compile Include="ViewModels\Account\SetPasswordBindingModel.cs" />
-    <Compile Include="ViewModels\Admin\VerifyUsersViewModel.cs" />
+    <Compile Include="ViewModels\Admin\UnapprovedHostsViewModel.cs" />
+    <Compile Include="ViewModels\Admin\VerifyUserViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Host\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Host\LocationViewModel.cs" />
@@ -5060,6 +5061,7 @@
     <Content Include="assets\video\youtube-business\video-business-img1.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ProfileImages\user.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -5417,6 +5419,7 @@
     <Content Include="Views\Admin\SideBarPartial.cshtml" />
     <Content Include="Views\Account\PrivacyPolicy.cshtml" />
     <Content Include="Views\Account\TermsOfService.cshtml" />
+    <Content Include="Views\Admin\UnapprovedHosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

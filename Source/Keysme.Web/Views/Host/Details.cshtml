@@ -7,6 +7,26 @@
 @using Keysme.Services.Data
 @model Keysme.Web.ViewModels.Host.DetailsViewModel
 
+@if (this.User.IsInRole("Admin"))
+{
+    <div class="margin-bottom-20">
+        @if (!this.Model.Host.IsDeleted)
+        {
+            using (Html.BeginForm("DeleteHost", "Admin", new { hostId = this.Model.Host.Id }, FormMethod.Post, new { onsubmit = "return confirm('Do you really want to delete?');" }))
+            {
+                <button class="btn-u btn-u-red" type="submit">Delete</button>
+            }
+        }
+        @if (!this.Model.Host.IsApproved)
+        {
+            using (Html.BeginForm("ApproveHost", "Admin", new { hostId = this.Model.Host.Id }, FormMethod.Post, new { onsubmit = "return confirm('Do you really want to approve?');" }))
+            {
+                <button class="btn-u btn-u-blue" type="submit">Approve</button>
+            }
+        }
+    </div>
+}
+
 <div class="carousel slide carousel-v2 margin-bottom-30" id="portfolio-carousel">
     <ol class="carousel-indicators">
         @for (int i = 0; i < this.Model.Host.Images.Count; i++)

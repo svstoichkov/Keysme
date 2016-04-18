@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing.Imaging;
     using System.IO;
     using System.Linq;
 
@@ -229,6 +228,23 @@
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
             existingHost.IsDeleted = true;
+            this.hosts.SaveChanges();
+        }
+
+        public void DeleteAdmin(string userId, int hostId)
+        {
+            var host = this.hosts.GetById(hostId);
+            host.IsDeleted = true;
+            host.DeletedOn = DateTime.Now;
+            //host.ModifiedBy = userId;
+            this.hosts.SaveChanges();
+        }
+
+        public void Approve(string userId, int hostId)
+        {
+            var host = this.hosts.GetById(hostId);
+            host.IsApproved = true;
+            //host.ModifiedBy= userId;
             this.hosts.SaveChanges();
         }
     }

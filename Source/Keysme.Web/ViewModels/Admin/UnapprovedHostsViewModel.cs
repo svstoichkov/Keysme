@@ -4,8 +4,8 @@
 
     using Data.Models;
 
-    public class VerifyUsersViewModel
+    public class UnapprovedHostsViewModel
     {
-        public IEnumerable<User> Users { get; set; }
+        public IEnumerable<Host> Hosts { get; set; }
     }
 }
