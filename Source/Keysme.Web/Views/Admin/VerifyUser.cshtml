@@ -4,6 +4,7 @@
     ViewBag.TablesFix = " ";
 }
 @using Keysme.Global
+@using Keysme.Services.Data
 @using Microsoft.AspNet.Identity
 @model Keysme.Web.ViewModels.Admin.VerifyUsersViewModel
 <div class="row">
@@ -42,6 +43,8 @@
                                             <div class="modal-body">
                                                 <p>@user.FirstName @user.LastName @user.BirthDate.ToString(@"MM-dd-yyyy") @user.Gender</p>
                                                 <p>@user.Location</p>
+                                                <p>@user.Verification.Type.GetDisplayName()</p>
+                                                <p>@user.Verification.CountryCode.GetDisplayName()</p>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
