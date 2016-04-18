@@ -56,6 +56,13 @@
             }
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult TermsOfService()
+        {
+            return this.View();
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

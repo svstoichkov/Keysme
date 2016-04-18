@@ -47,5 +47,9 @@
         [Required]
         [Display(Name = "Month of birth")]
         public int BirthMonth { get; set; }
+
+        [Required]
+        [Display(Name = "Terms and Conditions")]
+        public bool? TermsAndConditions { get; set; }
     }
 }
