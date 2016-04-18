@@ -44,6 +44,8 @@
                 model.RequestVerificationViewModel.HasRequestedVerification = true;
                 model.RequestVerificationViewModel.CountryCode = user.Verification.CountryCode;
                 model.RequestVerificationViewModel.VerificationType = user.Verification.Type;
+                model.RequestVerificationViewModel.FrontImagePath = user.Verification.FrontPicture;
+                model.RequestVerificationViewModel.BackImagePath = user.Verification.BackPicture;
             }
             return this.View(model);
         }

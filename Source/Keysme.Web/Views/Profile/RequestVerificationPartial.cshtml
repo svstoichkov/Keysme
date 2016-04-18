@@ -39,10 +39,10 @@
             <dd>
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.User.Identity.GetUserId() + "_front.jpg")">
+                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.Model.FrontImagePath)">
                     </div>
                     <div class="col-md-6">
-                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.User.Identity.GetUserId() + "_back.jpg")">
+                        <img class="img-responsive img-bordered rounded-2x profile-img margin-bottom-20" src="/@Path.Combine(GlobalConstants.UserVerificationImageFolder, this.Model.BackImagePath)">
                     </div>
                 </div>
             </dd>

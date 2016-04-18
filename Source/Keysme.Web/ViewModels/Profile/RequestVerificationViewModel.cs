@@ -15,5 +15,9 @@
         public CountryCode CountryCode { get; set; }
 
         public bool HasRequestedVerification { get; set; }
+
+        public string FrontImagePath { get; set; }
+
+        public string BackImagePath { get; set; }
     }
 }

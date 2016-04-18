@@ -28,12 +28,13 @@
         public void AddProfileImage(string userId, Image image)
         {
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
-            var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserProfileImageFolder, userId + ".jpg"));
-            image = image.ResizeImageWithBorders(440, 440);
+            var imageName = Guid.NewGuid() + ".jpg";
+            var imagePath = Path.Combine(basePath, Path.Combine(GlobalConstants.UserProfileImageFolder, imageName));
+            image = image.ResizeImageWithCropping(440, 440);
             image.Save(imagePath, ImageFormat.Jpeg);
 
             var user = this.users.GetById(userId);
-            user.ProfileImage = userId + ".jpg";
+            user.ProfileImage = imageName;
             this.users.SaveChanges();
         }
 
@@ -60,8 +61,8 @@
             var verification = new Verification();
             verification.Type = type;
             verification.CountryCode = countryCode;
-            verification.FrontPicture = userId + "_front.jpg";
-            verification.BackPicture = userId + "_back.jpg";
+            verification.FrontPicture = Guid.NewGuid() + ".jpg";
+            verification.BackPicture = Guid.NewGuid() + ".jpg";
 
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
 
