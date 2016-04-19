@@ -18,6 +18,6 @@
 
         IQueryable<User> GetAll();
 
-        void Verify(string userId);
+        void AdminVerify(string userId);
     }
 }

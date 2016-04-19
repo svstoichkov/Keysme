@@ -1,4 +1,4 @@
-﻿namespace Keysme.Data.Models
+﻿    namespace Keysme.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -107,9 +107,11 @@
         [MaxLength(20)]
         [Display(Name = "Postal code")]
         public string PostalCode { get; set; }
-        
+
+        [MaxLength(255)]
         public string Latitude { get; set; }
-        
+
+        [MaxLength(255)]
         public string Longitude { get; set; }
 
         //Admin

@@ -11,7 +11,12 @@
     {
         public static string GetDisplayName(this Enum enumValue)
         {
-            var member = enumValue.GetType().GetMember(enumValue.ToString()).First().GetCustomAttribute<DisplayAttribute>();
+            if (enumValue == null)
+            {
+                return "";
+            }
+
+            var member = enumValue.GetType().GetMember(enumValue.ToString()).FirstOrDefault()?.GetCustomAttribute<DisplayAttribute>();
             if (member != null)
             {
                 return member.GetName();
@@ -22,7 +27,12 @@
 
         public static string GetLineIcon(this Enum enumValue)
         {
-            var member = enumValue.GetType().GetMember(enumValue.ToString()).First().GetCustomAttribute<LineIconAttribute>();
+            if (enumValue == null)
+            {
+                return "";
+            }
+
+            var member = enumValue.GetType().GetMember(enumValue.ToString()).FirstOrDefault()?.GetCustomAttribute<LineIconAttribute>();
             if (member != null)
             {
                 return member.Icon;

@@ -7,10 +7,10 @@
 <div class="row">
     @Html.Partial("SideBarPartial")
     <div class="col-md-9">
-        @using (Html.BeginForm("CreateMainInformation", "Host", FormMethod.Post, new { @class="sky-form"}))
+        @using (Html.BeginForm("CreateMainInformation", "Host", FormMethod.Post, new { @class = "sky-form" }))
         {
             @Html.AntiForgeryToken()
-                <header>Main information</header>
+            <header>Main information</header>
                 <fieldset>
                     <section>
                         @Html.LabelFor(m => m.Title, new { @class = "input" })
@@ -90,11 +90,29 @@
                     <div class="row">
                         <section class="col col-md-6">
                             @Html.LabelFor(m => m.CheckInAfter, new { @class = "input" })
-                            @Html.TextBoxFor(m => m.CheckInAfter, new { @class = "form-control" })
+                            @Html.DropDownListFor(x => x.CheckInAfter, new List<SelectListItem>
+                                                {
+                                                    new SelectListItem { Text = "10 AM", Value = "10" },
+                                                    new SelectListItem { Text = "11 AM", Value = "11" },
+                                                    new SelectListItem { Text = "12 PM", Value = "12"},
+                                                    new SelectListItem { Text = "1 PM", Value = "13" },
+                                                    new SelectListItem { Text = "2 PM", Value = "14" },
+                                                    new SelectListItem { Text = "3 PM", Value = "15" },
+                                                    new SelectListItem { Text = "4 PM", Value = "16" },
+                                                }, new { @class = "form-control" })
                         </section>
                         <section class="col col-md-6">
                             @Html.LabelFor(m => m.CheckOutBefore, new { @class = "input" })
-                            @Html.TextBoxFor(m => m.CheckOutBefore, new { @class = "form-control" })
+                            @Html.DropDownListFor(x => x.CheckOutBefore, new List<SelectListItem>
+                                                {
+                                                    new SelectListItem { Text = "10 AM", Value = "10" },
+                                                    new SelectListItem { Text = "11 AM", Value = "11" },
+                                                    new SelectListItem { Text = "12 PM", Value = "12"},
+                                                    new SelectListItem { Text = "1 PM", Value = "13" },
+                                                    new SelectListItem { Text = "2 PM", Value = "14" },
+                                                    new SelectListItem { Text = "3 PM", Value = "15" },
+                                                    new SelectListItem { Text = "4 PM", Value = "16" },
+                                                }, new { @class = "form-control" })
                         </section>
                     </div>
                 </fieldset>
@@ -115,7 +133,7 @@
                 <fieldset>
                     <section>
                         @Html.LabelFor(m => m.HouseManual, new { @class = "input" })
-                        @Html.TextAreaFor(m => m.HouseManual, new { @class = "form-control", rows="5" })
+                        @Html.TextAreaFor(m => m.HouseManual, new { @class = "form-control", rows = "5" })
                     </section>
                 </fieldset>
 
@@ -135,7 +153,7 @@
                 <footer>
                     <button type="submit" class="btn-u">Continue</button>
                 </footer>
-}
+        }
     </div>
 </div>
 

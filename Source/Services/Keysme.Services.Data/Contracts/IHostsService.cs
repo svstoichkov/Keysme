@@ -9,13 +9,9 @@
 
     public interface IHostsService
     {
-        void Create(string getUserId, Host host, Host amenities);
-        
         IQueryable<Host> GetOwn(string userId);
         
-        void Update(string getUserId, int hostId, Host host, Host amenities);
-        
-        void Delete(string getUserId, int id);
+        void Delete(string userId, int id);
         
         IQueryable<Host> GetAll();
 
@@ -31,8 +27,8 @@
 
         int CreatePublish(string userId);
 
-        void DeleteAdmin(string userId, int hostId);
+        void AdminDelete(string userId, int hostId);
 
-        void Approve(string userId, int hostId);
+        void AdminApprove(string userId, int hostId);
     }
 }

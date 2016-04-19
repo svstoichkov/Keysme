@@ -166,13 +166,6 @@
 
             return existingHost.Id;
         }
-
-        public void Create(string userId, Host host, Host amenities)
-        {
-            var user = this.users.GetById(userId);
-            user.Hosts.Add(host);
-            this.users.SaveChanges();
-        }
         
         public IQueryable<Host> GetOwn(string userId)
         {
@@ -184,46 +177,6 @@
             return this.hosts.All().Where(x => !x.IsDeleted && x.IsComplete);
         }
         
-        public void Update(string userId, int hostId, Host host, Host amenities)
-        {
-            var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
-        
-            existingHost.HostName = host.HostName;
-            existingHost.Title = host.Title;
-            existingHost.Description = host.Description;
-            existingHost.Type = host.Type;
-            existingHost.RoomType = host.RoomType;
-            existingHost.RoomsCount = host.RoomsCount;
-            existingHost.MaxGuests = host.MaxGuests;
-            existingHost.BedsCount = host.BedsCount;
-            existingHost.BathsCount = host.BathsCount;
-            existingHost.Price = host.Price;
-            existingHost.CurrencyId = host.CurrencyId;
-            existingHost.IsInstantBook = host.IsInstantBook;
-            existingHost.CancellationPolicy = host.CancellationPolicy;
-            existingHost.CheckInAfter = host.CheckInAfter;
-            existingHost.CheckOutBefore = host.CheckOutBefore;
-            existingHost.WiFiName = host.WiFiName;
-            existingHost.WiFiPassword = host.WiFiPassword;
-            existingHost.HouseManual = host.HouseManual;
-            existingHost.MainPhone = host.MainPhone;
-            existingHost.ReservationPhone = host.ReservationPhone;
-            existingHost.SmokingAllowed = host.SmokingAllowed;
-        
-            existingHost.Country = host.Country;
-            existingHost.City = host.City;
-            existingHost.State = host.State;
-            existingHost.Address = host.Address;
-            existingHost.Apartment = host.Apartment;
-            existingHost.PostalCode = host.PostalCode;
-            existingHost.Latitude = host.Latitude;
-            existingHost.Longitude = host.Longitude;
-            
-            existingHost.Comment = host.Comment;
-        
-            this.hosts.SaveChanges();
-        }
-        
         public void Delete(string userId, int hostId)
         {
             var existingHost = this.hosts.All().First(x => x.Id == hostId && x.UserId == userId);
@@ -231,7 +184,7 @@
             this.hosts.SaveChanges();
         }
 
-        public void DeleteAdmin(string userId, int hostId)
+        public void AdminDelete(string userId, int hostId)
         {
             var host = this.hosts.GetById(hostId);
             host.IsDeleted = true;
@@ -240,7 +193,7 @@
             this.hosts.SaveChanges();
         }
 
-        public void Approve(string userId, int hostId)
+        public void AdminApprove(string userId, int hostId)
         {
             var host = this.hosts.GetById(hostId);
             host.IsApproved = true;

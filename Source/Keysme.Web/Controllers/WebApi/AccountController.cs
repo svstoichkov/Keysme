@@ -53,46 +53,6 @@
             }
         }
 
-        [HttpPut]
-        public IHttpActionResult Put(ProfileViewModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState);
-            }
-
-            try
-            {
-                var user = this.Mapper.Map<User>(model);
-                this.usersService.Update(this.User.Identity.GetUserId(), user);
-                return this.Ok();
-            }
-            catch
-            {
-                return this.BadRequest();
-            }
-        }
-
-        // POST api/Account/ChangePassword
-        [Route("ChangePassword")]
-        public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState);
-            }
-
-            var result = await this.UserManager.ChangePasswordAsync(this.User.Identity.GetUserId(), model.OldPassword,
-                                                                    model.NewPassword);
-
-            if (!result.Succeeded)
-            {
-                return this.GetErrorResult(result);
-            }
-
-            return this.Ok();
-        }
-
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
@@ -122,56 +82,6 @@
 
             return this.Ok();
         }
-
-        [HttpPost]
-        [Route("UploadProfileImage")]
-        public IHttpActionResult UploadProfileImage()
-        {
-            var httpRequest = HttpContext.Current.Request;
-            if (httpRequest.Files.Count == 1)
-            {
-                var postedFile = httpRequest.Files[0];
-                try
-                {
-                    var image = Image.FromStream(postedFile.InputStream);
-                    this.usersService.AddProfileImage(this.User.Identity.GetUserId(), image);
-                }
-                catch
-                {
-                    return this.BadRequest();
-                }
-
-                return this.Ok();
-            }
-
-            return this.BadRequest();
-        }
-
-        //[HttpPost]
-        //[Route("verify")]
-        //public IHttpActionResult Verify(string type, string countryCode)
-        //{
-        //    var httpRequest = HttpContext.Current.Request;
-        //    if (httpRequest.Files.Count == 2)
-        //    {
-        //        var front = httpRequest.Files["front"];
-        //        var back = httpRequest.Files["back"];
-        //        try
-        //        {
-        //            var frontImage = Image.FromStream(front.InputStream);
-        //            var backImage = Image.FromStream(back.InputStream);
-        //            this.usersService.Verify(this.User.Identity.GetUserId(), type, countryCode, frontImage, backImage);
-        //        }
-        //        catch
-        //        {
-        //            return this.BadRequest();
-        //        }
-        //
-        //        return this.Ok();
-        //    }
-        //
-        //    return this.BadRequest();
-        //}
 
 
 

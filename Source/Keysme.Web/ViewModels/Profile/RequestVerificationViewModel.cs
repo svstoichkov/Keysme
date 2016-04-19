@@ -1,5 +1,6 @@
 ﻿namespace Keysme.Web.ViewModels.Profile
 {
+    using System.ComponentModel.DataAnnotations;
     using System.Web;
 
     using Data.Models;
@@ -10,9 +11,11 @@
 
         public HttpPostedFileBase Back { get; set; }
 
-        public VerificationType VerificationType { get; set; }
+        [Required]
+        public VerificationType? VerificationType { get; set; }
 
-        public CountryCode CountryCode { get; set; }
+        [Required]
+        public CountryCode? CountryCode { get; set; }
 
         public bool HasRequestedVerification { get; set; }
 

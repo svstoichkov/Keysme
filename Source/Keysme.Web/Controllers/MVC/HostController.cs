@@ -54,7 +54,20 @@
         {
             var host = this.hostsService.GetWorkInProgressOrCreateNew(this.User.Identity.GetUserId());
             var model = this.Mapper.Map<MainInformationViewModel>(host);
-            model.Currencies = new SelectList(this.currencyRepository.All(), "Id", "Name");
+            model.Currencies = new SelectList(this.currencyRepository.All().Where(x => x.IsActive), "Id", "Name");
+            var checkInItems = new List<SelectListItem>
+                                                {
+                                                    new SelectListItem { Text = "10 AM", Value = "10" },
+                                                    new SelectListItem { Text = "11 AM", Value = "11" },
+                                                    new SelectListItem { Text = "12 PM", Value = "12"},
+                                                    new SelectListItem { Text = "1 PM", Value = "13" },
+                                                    new SelectListItem { Text = "2 PM", Value = "14" },
+                                                    new SelectListItem { Text = "3 PM", Value = "15" },
+                                                    new SelectListItem { Text = "4 PM", Value = "16" },
+                                                };
+
+
+            this.ViewBag.CheckInItems = checkInItems;
 
             return this.View("MainInformation", model);
         }
@@ -137,6 +150,11 @@
         [ValidateAntiForgeryToken]
         public ActionResult CreateImages(IEnumerable<HttpPostedFileBase> files)
         {
+            if (!files.Any())
+            {
+                return this.RedirectToAction("CreateImages");
+            }
+
             try
             {
                 var images = files.Select(file => System.Drawing.Image.FromStream(file.InputStream));
@@ -155,7 +173,21 @@
         [HttpGet]
         public ActionResult CreatePublish()
         {
-            //TODO: add checking
+            var host = this.hostsService.GetWorkInProgressOrCreateNew(this.User.Identity.GetUserId());
+            if (!this.CheckMainInformation(host))
+            {
+                return this.RedirectToAction("CreateMainInformation");
+            }
+
+            if (!this.CheckLocation(host))
+            {
+                return this.RedirectToAction("CreateLocation");
+            }
+
+            if (!this.CheckImages(host))
+            {
+                return this.RedirectToAction("CreateImages");
+            }
 
             return this.View("Publish");
         }
@@ -164,11 +196,57 @@
         [ValidateAntiForgeryToken]
         public ActionResult CreatePublish(string dummy)
         {
-            //TODO: add checking
+            var host = this.hostsService.GetWorkInProgressOrCreateNew(this.User.Identity.GetUserId());
+            if (!this.CheckMainInformation(host))
+            {
+                return this.RedirectToAction("CreateMainInformation");
+            }
+
+            if (!this.CheckLocation(host))
+            {
+                return this.RedirectToAction("CreateLocation");
+            }
+
+            if (!this.CheckImages(host))
+            {
+                return this.RedirectToAction("CreateImages");
+            }
 
             var id = this.hostsService.CreatePublish(this.User.Identity.GetUserId());
 
             return this.RedirectToAction("Details", new { id = id });
+        }
+
+        private bool CheckMainInformation(Host host)
+        {
+            return host.Title != null
+                   && host.Description != null
+                   && host.Type != null
+                   && host.RoomType != null
+                   && host.MaxGuests != null
+                   && host.BedsCount != null
+                   && host.BathsCount != null
+                   && host.Price != null
+                   && host.Currency != null
+                   && host.CancellationPolicy != null
+                   && host.MainPhone != null
+                   && host.ReservationPhone != null;
+        }
+
+        private bool CheckLocation(Host host)
+        {
+            return host.Country != null
+                   && host.City != null
+                   && host.State != null
+                   && host.Address != null
+                   && host.PostalCode != null
+                   && host.Latitude != null
+                   && host.Longitude != null;
+        }
+
+        private bool CheckImages(Host host)
+        {
+            return host.Images.Count > 0;
         }
     }
 }

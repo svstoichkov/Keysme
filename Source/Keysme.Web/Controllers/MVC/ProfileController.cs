@@ -121,11 +121,17 @@
         [ValidateAntiForgeryToken]
         public ActionResult RequestVerification(RequestVerificationViewModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                this.TempData["Error"] = "Error.";
+                return this.RedirectToAction("Index");
+            }
+
             try
             {
                 var frontImage = Image.FromStream(model.Front.InputStream);
                 var backImage = Image.FromStream(model.Back.InputStream);
-                this.usersService.RequestVerification(this.User.Identity.GetUserId(), model.VerificationType, model.CountryCode, frontImage, backImage);
+                this.usersService.RequestVerification(this.User.Identity.GetUserId(), model.VerificationType.GetValueOrDefault(), model.CountryCode.GetValueOrDefault(), frontImage, backImage);
 
                 this.TempData["Success"] = "Verification has been requested.";
                 return this.RedirectToAction("Index");

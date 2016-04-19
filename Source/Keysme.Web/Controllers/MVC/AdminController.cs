@@ -31,7 +31,7 @@
         [HttpPost]
         public ActionResult VerifyUser(string userId)
         {
-            this.usersService.Verify(userId);
+            this.usersService.AdminVerify(userId);
             return this.RedirectToAction("VerifyUser");
         }
 
@@ -45,15 +45,15 @@
         [HttpPost]
         public ActionResult ApproveHost(int hostId)
         {
-            this.hostsService.Approve(this.User.Identity.GetUserId(), hostId);
-            return this.RedirectToAction("VerifyUser");
+            this.hostsService.AdminApprove(this.User.Identity.GetUserId(), hostId);
+            return this.RedirectToAction("UnapprovedHosts");
         }
 
         [HttpPost]
         public ActionResult DeleteHost(int hostId)
         {
-            this.hostsService.DeleteAdmin(this.User.Identity.GetUserId(), hostId);
-            return this.RedirectToAction("Details", "Host", new { id = hostId });
+            this.hostsService.AdminDelete(this.User.Identity.GetUserId(), hostId);
+            return this.RedirectToAction("UnapprovedHosts");
         }
     }
 }

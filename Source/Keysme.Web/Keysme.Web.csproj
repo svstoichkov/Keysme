@@ -209,7 +209,9 @@
     <Compile Include="Controllers\WebApi\AccountController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="Controllers\WebApi\BaseController.cs" />
+    <Compile Include="Controllers\WebApi\HomeController.cs" />
     <Compile Include="Controllers\WebApi\HostController.cs" />
+    <Compile Include="Controllers\WebApi\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,8 +235,6 @@
     <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
     <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
     <Compile Include="ViewModels\Host\AmenitiesViewModel.cs" />
-    <Compile Include="ViewModels\Host\HostCreateViewModel.cs" />
-    <Compile Include="ViewModels\Host\HostUpdateViewModel.cs" />
     <Compile Include="ViewModels\Host\MainInformationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />

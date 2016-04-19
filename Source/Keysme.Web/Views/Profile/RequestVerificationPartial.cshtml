@@ -19,12 +19,12 @@
         <hr>
         <dt>Type of verification</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.VerificationType, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.VerificationType, "Select type", new { @class = "form-control" })
         </dd>
         <hr>
         <dt>Country</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.CountryCode, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.CountryCode, "Select country", new { @class = "form-control" })
         </dd>
         <hr>
         <dt>

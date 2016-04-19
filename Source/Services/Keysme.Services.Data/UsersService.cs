@@ -91,7 +91,7 @@
             return this.users.All();
         }
 
-        public void Verify(string userId)
+        public void AdminVerify(string userId)
         {
             var verification = this.verifications.All().First(x => x.User.Id == userId);
             verification.IsApproved = true;
