@@ -97,7 +97,7 @@
             switch (result)
             {
                 case SignInStatus.Success:
-                    return this.RedirectToLocal(returnUrl);
+                    return this.RedirectToLocal(returnUrl ?? "/Home/Index");
                 case SignInStatus.LockedOut:
                     return this.View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -193,7 +193,7 @@
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return this.RedirectToAction("Index", "Landing");
+                    return this.RedirectToAction("Index", "Home");
                 }
                 this.AddErrors(result);
             }
