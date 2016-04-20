@@ -85,10 +85,9 @@
         [MaxLength(20)]
         [Display(Name = "Main phone")]
         public string MainPhone { get; set; }
-
-        [Required]
+        
         [MaxLength(20)]
-        [Display(Name = "Reservation phone")]
+        [Display(Name = "Reservation phone (optional)")]
         public string ReservationPhone { get; set; }
     }
 }

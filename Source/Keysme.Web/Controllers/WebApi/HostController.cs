@@ -224,8 +224,7 @@
                    && host.Price != null
                    && host.Currency != null
                    && host.CancellationPolicy != null
-                   && host.MainPhone != null
-                   && host.ReservationPhone != null;
+                   && host.MainPhone != null;
         }
 
         private bool CheckLocation(Host host)
